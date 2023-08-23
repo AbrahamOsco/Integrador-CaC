@@ -1,61 +1,81 @@
 /* normalizamos */
-*{
+/* 
+    todo lo que normalicemos deberia estar en un archivo aparte
+    ya que seria común para todos los archivos
+    asi como los estilos del header y footer
+    - Nicolas
+*/
+* {
     margin: 0px;
     padding: 0px;
 }
-
 
 a:hover {
     text-decoration: none;
 }
 
-
-header{
-    background-color: rgb(48,52,63);
+html {
+    /* variables css para ser reutilizadas con var(--nombre-de-variable), en css las variables se llaman "custom properties" */
+    --color-fondo:rgb(48, 52, 63);
 }
 
+/* header */
 
-.navbar{
-    max-width: 1200px; /* limitamos el ancho del navbar */
-    margin: 0 auto;  /* 0 para arriba y abajo y auto para centrar el elemento dentro de su contenedor */
-    display: flex; /* hace que los elemento esten uno al lado del otro */
-    justify-content: space-between; /*poner nuestros 2 elementos en ambas puntas del contenedor*/
-    align-items: center;     /* el menu y la imagen no estan centrado (en la misma linea ) entonces lo centramos*/
-    padding-bottom: 20px;
-    /*padding: 10px 20px 20px 20px; /* NO entiendo porque agregar esto asi si es identico el header y el footer en el index que en Porque? shop.html*/   
+header {
+    background-color: var(--color-fondo);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    /* Elementos dentro del header uno al lado del otro y con espacio en el medio y alineados */
 }
 
-.navbar__menu{
+header nav ul {
     display: flex;
     align-items: center;
-    gap: 20px;   
+    gap: 20px;
+    /* elementos de la barra de navegacion (los links a otras partes de la pagina */
+    list-style-type: none;
+    /* como es una lista hay que quitar el item de esta */
 }
 
+/* links de navegacion */
 
-.navbar__item a {
+header a,
+footer a {
+    text-decoration: none;
     color: white;
-    text-decoration:none;
     font-family: 'Raleway';
-    font-size: 22px;
 }
 
-footer{
-    background-color: rgb(48,52,63);
-    width: 100%; /* limitamos el ancho del navbar */
-    height: 250px;    
+/* footer */
+
+footer {
+    background-color: var(--color-fondo);
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem 2rem;
+    align-items: center;
+
 }
 
-.navbarFooter{
-    text-align: left; /* ponemos el texto a la izquierda */
-    display: flex;       /* poner ls enlaces al lado del icono del funko      */
-    align-items: center; /* alinear items todos en una misma linea  */
-    justify-content: space-between ;    /* a los 2 unicos elementos los ponemos cada uno en lados opuesto*/
-    padding: 70px 0px 0px 0px ; /*"hacemos "bajar" a los elementos unos pixeles"*/      
-    margin: 0px 100px ; /* acercamos a los elementos entre si unos pixeles */
+footer nav  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.4rem;
+
+    list-style-type: none;
 }
 
-.footer__p__center{
-    text-align: center;
+footer img {
+    width:100px
 }
 
 
+
+footer p {
+    color: white;
+    position: relative;
+    top:3rem;
+}
