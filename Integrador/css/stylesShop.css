@@ -1,0 +1,61 @@
+/* normalizamos */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+a:hover {
+    text-decoration: none;
+}
+
+
+header{
+    background-color: rgb(48,52,63);
+}
+
+
+.navbar{
+    max-width: 1200px; /* limitamos el ancho del navbar */
+    margin: 0 auto;  /* 0 para arriba y abajo y auto para centrar el elemento dentro de su contenedor */
+    display: flex; /* hace que los elemento esten uno al lado del otro */
+    justify-content: space-between; /*poner nuestros 2 elementos en ambas puntas del contenedor*/
+    align-items: center;     /* el menu y la imagen no estan centrado (en la misma linea ) entonces lo centramos*/
+    padding-bottom: 20px;
+    /*padding: 10px 20px 20px 20px; /* NO entiendo porque agregar esto asi si es identico el header y el footer en el index que en Porque? shop.html*/   
+}
+
+.navbar__menu{
+    display: flex;
+    align-items: center;
+    gap: 20px;   
+}
+
+
+.navbar__item a {
+    color: white;
+    text-decoration:none;
+    font-family: 'Raleway';
+    font-size: 22px;
+}
+
+footer{
+    background-color: rgb(48,52,63);
+    width: 100%; /* limitamos el ancho del navbar */
+    height: 250px;    
+}
+
+.navbarFooter{
+    text-align: left; /* ponemos el texto a la izquierda */
+    display: flex;       /* poner ls enlaces al lado del icono del funko      */
+    align-items: center; /* alinear items todos en una misma linea  */
+    justify-content: space-between ;    /* a los 2 unicos elementos los ponemos cada uno en lados opuesto*/
+    padding: 70px 0px 0px 0px ; /*"hacemos "bajar" a los elementos unos pixeles"*/      
+    margin: 0px 100px ; /* acercamos a los elementos entre si unos pixeles */
+}
+
+.footer__p__center{
+    text-align: center;
+}
+
+

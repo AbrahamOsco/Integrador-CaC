@@ -1,0 +1,229 @@
+/* normalizamos */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+/* cuando pasamos el mouse por etiquetas a no nos aparecera subrayado el enlace. */
+a:hover {
+    text-decoration: none;
+}
+
+header{
+    background-color: rgb(48,52,63);
+}
+
+.navbar{
+    max-width: 1200px; /* limitamos el ancho del navbar */
+    margin: 0 auto;  /* 0 para arriba y abajo y auto para centrar el elemento dentro de su contenedor */
+    display: flex; /* hace que los elemento esten uno al lado del otro */
+    justify-content: space-between; /*poner nuestros 2 elementos en ambas puntas del contenedor*/
+    align-items: center;     /* el menu y la imagen no estan centrado (en la misma linea ) entonces lo centramos*/
+    padding-bottom: 20px;   
+}
+
+.navbar__menu{
+    display: flex;
+    align-items: center;
+    gap: 20px;   
+}
+
+
+.navbar__item a {
+    color: white;
+    text-decoration:none;
+    font-family: 'Raleway';
+    font-size: 22px;
+}
+
+.articleIng{
+    background-image: linear-gradient(
+        0deg, rgba(0,0,0, 0.5), rgba(0,0,0, 0.5)
+     ), url('../img/funkos-banner.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 160% 75%; 
+    background-size: 100% 200%;
+    height: 350px; /* altura de la imagen*/
+    text-align: left;
+    padding: 100px 100px 0px 100px;
+}
+
+.articleIng__h3{
+    filter: brightness(100%);
+    font-family: 'Raleway';
+    font-size: 50px ;
+    color: rgb(255, 255, 255);    
+}
+.articleIng__p{
+    filter: brightness(100%);
+    font-family: 'Raleway';
+    font-size: 20px ;
+    color: rgb(255, 255, 255); 
+    padding-top: 20px;   
+}
+
+.articleIng__a{
+    font-family: 'Raleway';
+    display: inline-block;
+    background-color: white;
+    border-radius: 25px;
+    margin-top: 40px;
+    padding: 15px 80px 15px 80px;
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+
+.DivMerGra{
+    display: flex; /* Activa el flexbox para alinear los elementos en fila */
+    align-items: center; /* pone los elementos en la misma linea centrada */
+    justify-content: center; /* centrar objetos sin usar padding ni margin aplica al div q contiene los elementos*/
+    padding-top: 10px;
+}
+
+.articleMerGra__h3{
+    font-family: 'Raleway';
+    font-size:40px;
+    color: black;
+}
+
+.articleMerGra__p{
+    font-family: 'Raleway';
+    font-size:20px;
+    color: black;
+}
+
+.articleMerGra__hr{
+    margin-top: 30px;
+    color: #FF3333;
+    width: 165%;
+    border-style: solid;
+    border-width: 2px;
+
+}
+
+.articleMerGra__a{
+    font-family: 'Raleway';
+    display: inline-block;
+    background-color: rgb(0, 0, 0);
+    border-radius: 25px;
+    margin-top: 20px;
+    padding: 15px 60px 15px 60px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.pictureMerGra{
+    padding-left: 250px;
+}
+
+.pictureMerGra__small{
+    padding-left: 0px;
+}
+
+.articleMerGra__hr__small{
+    width: 680px;
+}
+
+.DivMerGra__inverter{
+    flex-direction: row-reverse; /* ponemos elementos al reves*/
+    margin: 0px 220px 0px 0px;
+}
+
+
+.UltLan__h2{
+    font-family: 'Raleway';
+    font-size:50px;
+    font-weight: bold;
+    color: black;
+    font-weight: 900;
+}
+
+.UltLan__ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 60px 20px 20px 10px ;
+}
+
+
+.UltLan__a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Raleway';
+    font-size: 20px;
+    /*hijos herean estos estilos */
+} 
+
+.div__PNombGlob{
+    margin-bottom: 20px;
+}
+
+.div__H3NombProd{
+    margin-bottom: 15px;
+}
+
+
+.div__PCuotas{
+    color: #1D84B5;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* aplicarle  */
+.carousel{
+    margin-left: 20px;
+}
+
+/* configuramos la altura y el ancho del carousel  */ 
+.carousel__Size{
+    max-height: 1000px;
+    width: 1850px;
+}
+
+
+/* ponemos el fondo blanco con sombra pertenciente al arrow */
+
+/*  we change arrow color here in backgimg in ->fill: black or blue or white,etc an we change arrow size with backgr-size */
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='black' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='black' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+.carousel__setupArrow{
+    background-size: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: white;
+    border: solid white 1px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer        */
+
+footer{
+    background-color: rgb(48,52,63);
+    width: 100%; /* limitamos el ancho del navbar */
+    height: 250px;    
+}
+
+.navbarFooter{
+    text-align: left; /* ponemos el texto a la izquierda */
+    display: flex;       /* poner ls enlaces al lado del icono del funko      */
+    align-items: center; /* alinear items todos en una misma linea  */
+    justify-content: space-between ;    /* a los 2 unicos elementos los ponemos cada uno en lados opuesto*/
+    padding: 70px 0px 0px 0px ; /*"hacemos "bajar" a los elementos unos pixeles"*/      
+    margin: 0px 100px ; /* acercamos a los elementos entre si unos pixeles */
+}
+
+.footer__p__center{
+    text-align: center;
+}
+
