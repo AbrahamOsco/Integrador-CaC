@@ -24,7 +24,6 @@
         </figure>
 
         <nav>
-
             <ul>
                 <li>
                     <a href="#">SHOP</a>
@@ -41,49 +40,79 @@
                     </a>
                 </li>
             </ul>
-
         </nav>
-
     </header>
 
     <main>
-        <aside>
-            <h2>Buscar</h2>
-            <input type="text" name="buscarElemento" id="buscarElementoiD">
-            <h2>Ordenar Por</h2>
-            <div>
-                <input type="text" name="buscarElemento" id="buscarElementoiD">
-            </div>
-            <div>
-                <label for="">
-                    <select name="" id="">
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                    </select>
+
+        <section class="sidebar">
+            <form>
+                <p> Buscar </p>
+                <input type="text" name="busqueda" placeholder="items">
+
+                <p> Ordenar Por </p>
+                <select name="orden" id="">
+                    <option value="">Orden</option>
+                </select>
+
+                <p>Precio</p>
+                <input type="number">
+                <input type="number">
+
+                <p>Filtrar</p>
+                <label>
+                    <input type="checkbox" name="filter">
+                    Nuevos <br>
                 </label>
-            </div>
+                <label>
+                    <input type="checkbox" name="filter">
+                    Ofertas <br>
+                </label>
+                <label>
+                    <input type="checkbox" name="filter">
+                    Edicion Especial <br>
+                </label>
+                <label>
+                    <input type="checkbox" name="filter">
+                    Favoritos <br>
+                </label>
+            </form>
 
-        </aside>
+        </section>
 
-        <br>
-        <h1>"hola como andas"</h1>
-        <h1>"hola como andas"</h1>
-        <h1>"hola como andas"</h1>
-        <h1>"hola como andas"</h1>
-        <h1>"hola como andas"</h1>
-        <h1>"hola como andas"</h1>
-        <h1>"hola como andas"</h1>
-        <h1>"hola como andas"</h1>
-        <h1>"hola como andas"</h1>
-        <h1>"hola como andas"</h1>
-        <h1>"hola como andas"</h1>
-        <h1>"hola como andas"</h1>
-        <h1>"hola como andas"</h1>
-        <h1>"hola como andas"</h1>
-        <h1>"hola como andas"</h1>
-        <h1>"hola como andas"</h1>
-        </br>
+        <section class="products">
+
+            <article>
+                <img src="./../img/pokemon/vulpix-1.webp" alt="vulpix">
+
+                <p class="nuevo show">Nuevo</p>
+                <p class="edition">Pokemon</p>
+                <p class="name">Vulpix</p>
+                <p class="precio">300</p>
+                <p class="otros">Recomendados</p>
+            </article>
+
+            <article>
+                <img src="./../img/pokemon/vulpix-1.webp" alt="vulpix">
+
+                <p class="nuevo">Nuevo</p>
+                <p class="edition">Pokemon</p>
+                <p class="name">Vulpix</p>
+                <p class="precio">300</p>
+                <p class="otros">Recomendados</p>
+            </article>
+
+            <article>
+                <img src="./../img/pokemon/vulpix-1.webp" alt="vulpix">
+
+                <p class="nuevo">Nuevo</p>
+                <p class="edition">Pokemon</p>
+                <p class="name">Vulpix</p>
+                <p class="precio">300</p>
+                <p class="otros">Recomendados</p>
+            </article>
+
+        </section>
 
     </main>
 

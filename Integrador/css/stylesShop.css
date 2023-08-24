@@ -16,17 +16,26 @@ a:hover {
 
 html {
     /* variables css para ser reutilizadas con var(--nombre-de-variable), en css las variables se llaman "custom properties" */
-    --color-fondo:rgb(48, 52, 63);
+    --color-fondo: rgb(48, 52, 63);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
 }
 
 /* header */
 
 header {
-    background-color: var(--color-fondo);
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    background-color: var(--color-fondo);
     padding: 1rem 2rem;
+
     /* Elementos dentro del header uno al lado del otro y con espacio en el medio y alineados */
 }
 
@@ -43,23 +52,23 @@ header nav ul {
 
 header a,
 footer a {
-    text-decoration: none;
     color: white;
     font-family: 'Raleway';
+    text-decoration: none;
 }
 
 /* footer */
 
 footer {
-    background-color: var(--color-fondo);
     display: flex;
     justify-content: space-between;
-    padding: 3rem 2rem;
     align-items: center;
+    background-color: var(--color-fondo);
+    padding: 3rem 2rem;
 
 }
 
-footer nav  ul {
+footer nav ul {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -69,13 +78,92 @@ footer nav  ul {
 }
 
 footer img {
-    width:100px
+    width: 100px
 }
 
-
-
 footer p {
-    color: white;
     position: relative;
-    top:3rem;
+    top: 3rem;
+    color: white;
+}
+
+/* main layout */
+
+main {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* search filter */
+
+main .sidebar {
+    width: 20%;
+}
+
+.sidebar p {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.sidebar input[type=number] {
+    width: 5rem;
+}
+
+/* items */
+
+main .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    width: 60%;
+}
+
+.products article {
+    position: relative;
+    max-width: 250px;
+    font-size: 1.3rem;
+    box-shadow: 0 0 0.5rem #0009;
+    transition: scale 0.3s, box-shadow 0.3s;
+    padding: 1rem;
+}
+
+.products article:hover {
+    cursor: pointer;
+    box-shadow: 0 0 1rem #0009;
+    scale: 1.1;
+}
+
+.products img {
+    max-width: 100%;
+
+}
+
+.products .nuevo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: crimson;
+    color: white;
+    display: none;
+}
+
+.products .nuevo.show {
+    display: block;
+}
+
+.products .edition {
+    font-size: 0.8em;
+}
+
+.products .name {
+    font-weight: bold;
+}
+
+.products .precio {
+    font-size: 0.8em;
+}
+
+.products .otros {
+    font-size: 0.6em;
+    color: deepskyblue;
 }
