@@ -1,18 +1,9 @@
-/* normalizamos */
 /* 
     todo lo que normalicemos deberia estar en un archivo aparte
     ya que seria común para todos los archivos
     asi como los estilos del header y footer
     - Nicolas
 */
-* {
-    margin: 0px;
-    padding: 0px;
-}
-
-a:hover {
-    text-decoration: none;
-}
 
 html {
     /* variables css para ser reutilizadas con var(--nombre-de-variable), en css las variables se llaman "custom properties" */
@@ -22,7 +13,7 @@ html {
 body {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    margin: 0;
     min-height: 100vh;
 }
 
@@ -33,19 +24,18 @@ header {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    /* Elementos dentro del header uno al lado del otro y con espacio en el medio y alineados */
     background-color: var(--color-fondo);
     padding: 1rem 2rem;
-
-    /* Elementos dentro del header uno al lado del otro y con espacio en el medio y alineados */
 }
 
-header nav ul {
+header .navbar {
+    /* elementos de la barra de navegacion (los links a otras partes de la pagina */
     display: flex;
     align-items: center;
     gap: 20px;
-    /* elementos de la barra de navegacion (los links a otras partes de la pagina */
     list-style-type: none;
-    /* como es una lista hay que quitar el item de esta */
+    /* como es una lista hay que quitar el item o bullet que trae por defecto */
 }
 
 /* links de navegacion */
@@ -63,17 +53,17 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: auto;
+    /* margen necesario para que este abajo aunque la pagina no llene la altura del viewport */
     background-color: var(--color-fondo);
     padding: 3rem 2rem;
-
 }
 
-footer nav ul {
+footer .navbar {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 0.4rem;
-
     list-style-type: none;
 }
 
@@ -81,7 +71,7 @@ footer img {
     width: 100px
 }
 
-footer p {
+footer .copyright {
     position: relative;
     top: 3rem;
     color: white;
@@ -92,6 +82,7 @@ footer p {
 main {
     display: flex;
     justify-content: space-evenly;
+    padding: 1.5rem;
 }
 
 /* search filter */
@@ -109,61 +100,68 @@ main .sidebar {
     width: 5rem;
 }
 
-/* items */
+/* layout de los productos */
 
-main .products {
+main .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 1rem;
     width: 60%;
 }
 
-.products article {
+.products-grid article {
     position: relative;
+    transition: 
+        scale 0.3s,
+        box-shadow 0.3s;
+    box-shadow: 0 0 0.5rem #0009;
+    background-color: white;
+    padding: 1rem;
     max-width: 250px;
     font-size: 1.3rem;
-    box-shadow: 0 0 0.5rem #0009;
-    transition: scale 0.3s, box-shadow 0.3s;
-    padding: 1rem;
 }
 
-.products article:hover {
+.products-grid article:hover {
+    scale: 1.1;
     cursor: pointer;
     box-shadow: 0 0 1rem #0009;
-    scale: 1.1;
 }
 
-.products img {
+/* productos individualmente */
+
+.products-grid img {
     max-width: 100%;
-
+    /* evitar que las imagenes sean mas grandes que el propio contenedor */
 }
 
-.products .nuevo {
+.products-grid .new-tag {
+    display: none;
     position: absolute;
     top: 0;
     right: 0;
+    z-index: -10;
     background-color: crimson;
     color: white;
-    display: none;
 }
 
-.products .nuevo.show {
+.products-grid article.new .new-tag {
     display: block;
+    /* mostrar este cartel solo cuando el contenedor tiene una class determinada */
 }
 
-.products .edition {
+.products-grid .edition {
     font-size: 0.8em;
 }
 
-.products .name {
+.products-grid .name {
     font-weight: bold;
 }
 
-.products .precio {
+.products-grid .precio {
     font-size: 0.8em;
 }
 
-.products .otros {
-    font-size: 0.6em;
+.products-grid .otros {
     color: deepskyblue;
+    font-size: 0.6em;
 }

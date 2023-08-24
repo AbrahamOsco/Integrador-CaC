@@ -5,9 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Shop </title>
-    <!-- Links necesarios porque esto me cambia un poco los padding y
-    margin en el hader y en footer lo mantengo para mantener la cohesion -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"> -->
     <!-- Para la fuente raleway-->
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
     <!-- always the style.css goes the last -->
@@ -16,6 +13,7 @@
 <body>
 
     <header>
+        <!-- por ahora ningun hypervinculo está puesto, hasta que el resto de paginas esten hechas -->
 
         <figure>
             <a href="#">
@@ -24,7 +22,7 @@
         </figure>
 
         <nav>
-            <ul>
+            <ul class="navbar">
                 <li>
                     <a href="#">SHOP</a>
                 </li>
@@ -35,7 +33,7 @@
                     <a href="#">LOGIN</a>
                 </li>
                 <li>
-                    <a href="./pages/carrito.html">
+                    <a href="#">
                         <img src="../img/icons/cart-icon.svg" alt="icono de carrito">
                     </a>
                 </li>
@@ -56,36 +54,30 @@
                 </select>
 
                 <p>Precio</p>
-                <input type="number">
-                <input type="number">
+                <input type="number" step="100">
+                <input type="number" step="100">
 
                 <p>Filtrar</p>
                 <label>
-                    <input type="checkbox" name="filter">
-                    Nuevos <br>
+                    <input type="checkbox" name="filter"> Nuevos <br>
                 </label>
                 <label>
-                    <input type="checkbox" name="filter">
-                    Ofertas <br>
+                    <input type="checkbox" name="filter"> Ofertas <br>
                 </label>
                 <label>
-                    <input type="checkbox" name="filter">
-                    Edicion Especial <br>
+                    <input type="checkbox" name="filter"> Edicion Especial <br>
                 </label>
                 <label>
-                    <input type="checkbox" name="filter">
-                    Favoritos <br>
+                    <input type="checkbox" name="filter"> Favoritos <br>
                 </label>
             </form>
-
         </section>
 
-        <section class="products">
+        <section class="products-grid">
 
-            <article>
+            <article class="new">
                 <img src="./../img/pokemon/vulpix-1.webp" alt="vulpix">
-
-                <p class="nuevo show">Nuevo</p>
+                <p class="new-tag">Nuevo</p>
                 <p class="edition">Pokemon</p>
                 <p class="name">Vulpix</p>
                 <p class="precio">300</p>
@@ -94,7 +86,6 @@
 
             <article>
                 <img src="./../img/pokemon/vulpix-1.webp" alt="vulpix">
-
                 <p class="nuevo">Nuevo</p>
                 <p class="edition">Pokemon</p>
                 <p class="name">Vulpix</p>
@@ -104,22 +95,19 @@
 
             <article>
                 <img src="./../img/pokemon/vulpix-1.webp" alt="vulpix">
-
                 <p class="nuevo">Nuevo</p>
                 <p class="edition">Pokemon</p>
                 <p class="name">Vulpix</p>
                 <p class="precio">300</p>
                 <p class="otros">Recomendados</p>
             </article>
-
         </section>
-
     </main>
 
     <footer>
 
         <nav>
-            <ul>
+            <ul class="navbar">
                 <li>
                     <a href="#"> SHOP </a>
                 </li>
@@ -131,13 +119,13 @@
                 </li>
             </ul>
         </nav>
-        <p> All rights reserved 2023 - Funkoshop &copy; </p>
+        <p class="copyright"> All rights reserved 2023 - Funkoshop &copy; </p>
+
         <figure>
             <a href="#">
                 <img src="../img/branding/isotype.svg" alt="logo de Funkoshop">
             </a>
         </figure>
     </footer>
-
 </body>
 </html>
