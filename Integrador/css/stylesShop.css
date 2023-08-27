@@ -2,7 +2,8 @@
     todo lo que normalicemos deberia estar en un archivo aparte
     ya que seria común para todos los archivos
     asi como los estilos del header y footer
-    - Nicolas
+    - Nicolas <- -> por supuesto luego tendremos que 
+    hacer un refactor del codigo, nada va a quedar como esta ahora cambiara y mucho. 
 */
 
 * {

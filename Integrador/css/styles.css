@@ -9,9 +9,13 @@ a:hover {
     text-decoration: none;
 }
 
-header{
+html, header{
     background-color: rgb(48,52,63);
 }
+
+header{
+    padding: 1rem 2rem;
+}   
 
 .navbar{
     max-width: 1200px; /* limitamos el ancho del navbar */
@@ -23,17 +27,32 @@ header{
 }
 
 .navbar__menu{
+    list-style: none;
     display: flex;
     align-items: center;
     gap: 20px;   
-}
+}   
 
-
+/* Pasos para hacer la transicion al pasar el mouse sobre los enlaces. 1) configurar transition: 
+en el selector directo el 'a' del navbar NO en el padre ni en el abuelo. 
+*/
 .navbar__item a {
+    transition:
+        color 0.5s,
+        background-color 0.2s;
     color: white;
+    padding: 15px 10px;
+    border-radius: 5px;
     text-decoration:none;
+    font-weight: bold;
     font-family: 'Raleway';
-    font-size: 22px;
+    font-size: 20px;
+}
+/* Paso 2) configurar el a:hover y listo. */
+
+.navbar a:hover {
+    background-color: white;
+    color: var(--color-fondo);
 }
 
 .articleIng{
@@ -206,7 +225,7 @@ header{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Footer        */
+/* Footer */
 
 footer{
     background-color: rgb(48,52,63);
@@ -223,7 +242,16 @@ footer{
     margin: 0px 100px ; /* acercamos a los elementos entre si unos pixeles */
 }
 
+.navbarFooter ul{
+    list-style: none;
+}
+
 .footer__p__center{
+    filter: brightness(100%);
+    font-family: 'Raleway';
+    font-size: 20px ;
+    color: rgb(255, 255, 255); 
+    padding-top: 20px;   
     text-align: center;
 }
 
