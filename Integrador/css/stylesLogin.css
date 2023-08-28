@@ -49,9 +49,13 @@ en el selector directo el 'a' del navbar NO en el padre ni en el abuelo.
     font-family: 'Raleway';
     font-size: 20px;
 }
+
+.navbar__item__padd{
+    padding-top: 14px;
+}
 /* Paso 2) configurar el a:hover y listo. */
 
-.navbar a:hover {
+.navbar__menu a:hover {
     background-color: white;
     color: var(--color-fondo);
 }
@@ -62,7 +66,7 @@ en el selector directo el 'a' del navbar NO en el padre ni en el abuelo.
 footer{
     background-color: rgb(48,52,63);
     width: 100%; /* limitamos el ancho del navbar */
-    height: 250px;    
+    height: 250px;
 }
 
 .navbarFooter{
@@ -70,7 +74,7 @@ footer{
     display: flex;       /* poner ls enlaces al lado del icono del funko      */
     align-items: center; /* alinear items todos en una misma linea  */
     justify-content: space-between ;    /* a los 2 unicos elementos los ponemos cada uno en lados opuesto*/
-    padding: 70px 0px 0px 0px ; /*"hacemos "bajar" a los elementos unos pixeles"*/      
+    padding: 50px 0px 0px 0px ; /*"hacemos "bajar" a los elementos unos pixeles"*/      
     margin: 0px 100px ; /* acercamos a los elementos entre si unos pixeles */
 }
 
@@ -99,6 +103,7 @@ main{
 /* Styles a los elementos del registro */
 
 .div__tituloLogin{
+    padding-top: 30px;
     text-align: center;
     font-weight: bold;
     font-family: 'Raleway';
@@ -110,6 +115,7 @@ main{
     flex-direction: column;
     align-items: baseline;
     justify-content: center;
+    padding-right: 100px;
 }
 
 .div__inputData{
@@ -123,7 +129,7 @@ main{
 .div__inputData label{
     font-family: 'Inter';
     font-size: 25px;
-    padding-right: 50px;
+    padding-right: 20px;
 }
 
 .div__inputData input{
@@ -132,7 +138,9 @@ main{
     outline: none; /* Elimina el contorno predeterminado al enfocar el input */
     font-size: 20px;
 }
-
+.div__marginLeftEmail input{
+    margin-left: 70px;
+}
 
 .div__bigPlaceHolder input::placeholder{
     font-size: 30px;
@@ -149,7 +157,7 @@ main{
 
 .div__ButtonYRecordar label {
     font-family: "Inter";
-    padding-left: 5px;
+    padding-left: 10px;
     font-size: 20px;
     color: #1F1F1F;
 }
@@ -158,7 +166,6 @@ main{
     width: 18px;
     height: 18px;
     border: 44px solid #000000;
-    border-radius: 200px;
     font-weight: bold; /* Texto más negrita */
 }
 
