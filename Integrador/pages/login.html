@@ -44,45 +44,35 @@
         </nav>
     </header>  <!-- Fin header-->
     <main>
-        <section>
-            <div>
-                <h2>INGRESA A MI CUENTA</h2>                
-
+        <form>
+            <div class="div__tituloLogin">
+                <h2>INGRESAR A MI CUENTA</h2>
+            </div>                
+            <div class="div__inputMailYContraseña">
                 <div class="div__inputData">
-                    <label for = "inputMail" >Email: </label>
+                    <label for = "inputMail"> Email: </label>
                     <input type="text" name="inputMail" id="idInputMail" placeholder="johndoe@correo.com" > 
                 </div>
-
-                <div class="div__inputData div__label__smallPadding" >
+        
+                <div class="div__inputData  div__bigPlaceHolder" >
                     <label  for = "inputPassword"> Contraseña: </label>
-                    <input type="password" name="inputPassword" id="idInputPassword" placeholder="•••••••••" > 
+                    <input type="password" name="inputPassword" id="idInputPassword" placeholder="• • • • • • • • • " > 
                 </div>
-                
-                <div>
-                    <button>
-                        <p>Ingresar</p>
-                    </button>
-                    <label for="mayor"> Recordarme </label>
-                    <input type="checkbox" name="mayor"  id="mayor"> 
-              
-                </div>
-      
-                <div>
-                    <a href="#"> <p>Olvidé mi contraseña</p> </a>
-                </div>
-
-                <p>"hola que onda"</p>
-                <p>"hola que onda"</p>
-                <p>"hola que onda"</p>
-                <p>"hola que onda"</p>
-                <p>"hola que onda"</p>
-                <p>"hola que onda"</p>
-                <p>"hola que onda"</p>
-                <p>"hola que onda"</p>
-                <p>"hola que onda"</p>
-                
             </div>
-        </section>
+                
+            <div class="div__ButtonYRecordar">
+                <button class="button__IngresarLogin" >
+                    <p>Ingresar</p>
+                </button>
+                <input type="checkbox" name="mayor"  id="mayor">       
+                <label for="mayor"> Recordarme </label>
+            </div>
+            <div class="div__EnlaceOlvidContras" >
+                <a  href="#"> <p>Olvidé mi contraseña</p> </a>
+            </div>
+
+
+        </form>
     </main>
 
     <footer> <!-- Inicio del footer-->

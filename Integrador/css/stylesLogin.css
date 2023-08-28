@@ -97,20 +97,32 @@ main{
 }
 
 /* Styles a los elementos del registro */
-h2{
+
+.div__tituloLogin{
+    text-align: center;
     font-weight: bold;
     font-family: 'Raleway';
-    font-size: 40px;
+    font-size: 42px;
+}
+
+.div__inputMailYContraseña{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
 }
 
 .div__inputData{
+    margin-left: 40%;
+    margin-top: 30px;
     margin-bottom: 25px;
-    text-align: center;
+    padding-right: 50px;
+    height: 100%; /* Añade esta línea */
 } 
 
 .div__inputData label{
     font-family: 'Inter';
-    font-size: 20px;
+    font-size: 25px;
     padding-right: 50px;
 }
 
@@ -118,11 +130,58 @@ h2{
     border: none; /* Elimina todos los bordes */
     border-bottom: 4px solid #FF3333; /* Agrega borde inferior de 2px de grosor y color naranja */
     outline: none; /* Elimina el contorno predeterminado al enfocar el input */
+    font-size: 20px;
 }
 
-.div__label__smallPadding{
-    padding-right: 0px;
+
+.div__bigPlaceHolder input::placeholder{
+    font-size: 30px;
+    font-family: "Inter";
+}
+
+.div__ButtonYRecordar{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.div__ButtonYRecordar label {
+    font-family: "Inter";
+    padding-left: 5px;
+    font-size: 20px;
+    color: #1F1F1F;
+}
+
+.div__ButtonYRecordar input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    border: 44px solid #000000;
+    border-radius: 200px;
+    font-weight: bold; /* Texto más negrita */
+}
+
+
+
+.button__IngresarLogin{
+    background-color: #FF3333;
+    border: 15px solid #FF3333;
+    padding: 0px 10px;
+    color: white;
+    margin-right: 30px;
+}
+
+.div__EnlaceOlvidContras{
+    text-align: center;
+    justify-content: center;
     padding-left: 50px;
+}
+
+.div__EnlaceOlvidContras a {
+    color: #1D84B5;
+    text-decoration:none;
+    font-family: "Inter";
 }
 
 
