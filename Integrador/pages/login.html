@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,59 +11,62 @@
 
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
 
-    <!-- always the style.css goes the last -->    
+    <!-- always the style.css goes the last -->
     <link rel="stylesheet" href="../css/stylesLogin.css">
 </head>
+
 <body>
-    <header>   <!-- inicio header-->
+    <header>
+        <!-- inicio header-->
         <nav class="navbar">
             <picture>
-                <a href=""> 
+                <a href="">
                     <img src="../img/branding/logo_light_horizontal.svg" alt="logo de logo_light">
                 </a>
             </picture>
-            <ul class="navbar__menu" >
+            <ul class="navbar__menu">
                 <li class="navbar__item">
-                    <a  href="./pages/shop.html">VER TIENDA</a>
+                    <a href="#">VER TIENDA</a>
                 </li>
                 <li class="navbar__item">
-                    <a  href="./pages/contact.html">ADMIN</a>
+                    <a href="#">ADMIN</a>
                 </li>
                 <li class="navbar__item">
-                    <a  href="./pages/login.html">SALIR</a>
+                    <a href="#">SALIR</a>
                 </li>
                 </li>
             </ul>
         </nav>
-    </header>  <!-- Fin header-->
+    </header> <!-- Fin header-->
     <main>
         <form>
             <div class="div__tituloLogin">
                 <h2>INGRESAR A MI CUENTA</h2>
-            </div>                
+            </div>
             <div class="div__inputMailYContraseña">
                 <div class="div__inputData div__marginLeftEmail">
-                    <label for = "inputMail"> Email: </label>
-                    <input type="text" name="inputMail" id="idInputMail" placeholder="johndoe@correo.com" > 
+                    <label for="inputMail"> Email: </label>
+                    <input type="email" name="inputMail" id="idInputMail" placeholder="johndoe@correo.com">
                 </div>
-        
-                <div class="div__inputData  div__bigPlaceHolder" >
-                    <label  for = "inputPassword"> Contraseña: </label>
-                    <input type="password" name="inputPassword" id="idInputPassword" placeholder="• • • • • • • • • " > 
+
+                <div class="div__inputData  div__bigPlaceHolder">
+                    <label for="inputPassword"> Contraseña: </label>
+                    <input type="password" name="inputPassword" id="idInputPassword" placeholder="• • • • • • • • • ">
                 </div>
-            </div>
-                
-            <div class="div__ButtonYRecordar">
-                <button class="button__IngresarLogin" >
-                    <p>Ingresar</p>
-                </button>
-                <input type="checkbox" name="mayor"  id="mayor">       
-                <label for="mayor"> Recordarme </label>
-            </div>
-            <div class="div__EnlaceOlvidContras" >
-                <a  href="#"> <p>Olvidé mi contraseña</p> </a>
             </div>
 
+            <div class="div__ButtonYRecordar">
+                <button type="submit" class="button__IngresarLogin">
+                    <p>Ingresar</p>
+                </button>
+                <input type="checkbox" name="mayor" id="mayor">
+                <label for="mayor"> Recordarme </label>
+            </div>
+            <div class="div__EnlaceOlvidContras">
+                <a href="#">
+                    <p>Olvidé mi contraseña</p>
+                </a>
+            </div>
 
         </form>
     </main>
@@ -85,6 +89,6 @@
         <p class="articleIng__p footer__p__center"> All rights reserved 2023 - Funkoshop &copy; </p>
     </footer> <!-- Fin del footer-->
 
-    
 </body>
+
 </html>

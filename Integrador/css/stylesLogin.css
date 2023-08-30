@@ -45,17 +45,17 @@ en el selector directo el 'a' del navbar NO en el padre ni en el abuelo.
     padding: 15px 10px;
     border-radius: 5px;
     text-decoration:none;
-    font-weight: bold;
     font-family: 'Raleway';
     font-size: 20px;
 }
 
 .navbar__item__padd{
-    padding-top: 14px;
+    padding-top: 7px;
+    margin-top: 7px;
 }
 /* Paso 2) configurar el a:hover y listo. */
 
-.navbar__menu a:hover {
+.navbar__item a:hover {
     background-color: white;
     color: var(--color-fondo);
 }
@@ -165,8 +165,6 @@ main{
 .div__ButtonYRecordar input[type="checkbox"] {
     width: 18px;
     height: 18px;
-    border: 44px solid #000000;
-    font-weight: bold; /* Texto más negrita */
 }
 
 
