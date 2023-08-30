@@ -1,0 +1,170 @@
+
+/* ------------------------------------------------FONTS------------------------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Raleway:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;700&family=Raleway:wght@700&display=swap');
+
+/* ------------------------------------------------HEADER------------------------------------------------ */
+
+.logo{
+    background-color: #30343F;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   
+}
+.cart_nav{
+width: 30%;
+padding: 2em;
+}
+.cart_nav_ul{
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+}
+.list_cart_nav, .cart_footer_list{
+    list-style: none;
+}
+.list_cartnav_link:hover{
+    color: #FF3333;
+}
+.list_cartnav_link{
+    color: #fff;
+    text-decoration: none;
+}
+/* ------------------------------------------------CART SECTION------------------------------------------------ */
+.cart_title{
+    border-bottom: 5px solid #FF3333;
+    width: 506px;
+    height: 62px;
+    padding-bottom: 8px;
+    font-family: 'Raleway', sans-serif;
+    color: #111111;
+    line-height: 54px;
+    font-size: 46px;
+    position: relative;
+    top: 92px;
+    left: 110px;
+}
+/* .container_detail{
+   
+  
+} */
+.detail{
+    background-color: #FAFAFF;
+    width: 1520px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    position: relative;
+    top: 120.15px;
+    left: 110px;
+    padding: 3px;
+}
+.detail_list{
+    display: flex;
+    justify-content: space-around; 
+}
+.item_detail{
+    list-style: none;
+    color: #000;
+    font-family: 'Inter', sans-serif;
+}
+
+/* .container_product{
+ 
+} */
+.product_cart{
+    margin-bottom: 15%;
+    position: relative;
+  
+}
+.product1, .product2{
+   
+    height: 195px;
+    position: relative;
+    top: 120.15px;
+    left: 110px;
+    margin-top: 3%;
+    background-color: #FAFAFF;
+    border-radius: 25px;
+    padding: 6px;
+    border:3px solid #FAFAFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    width: 1520px;
+    display: flex;
+    align-items: center;
+   
+}
+.product1:hover, .product2:hover{
+    border:3px solid #FF3333;
+}
+
+
+.logo_product{
+    width: 118px;
+    height: 116.28px;
+}
+.product_block{
+    display: flex;
+}
+.pidgeotto_logo{
+    margin-bottom: 0;
+}
+
+/* ------------------------------------------------ASIDE------------------------------------------------ */
+/* .aside_summary{
+   
+   
+} */
+.sumary{
+    font-family: "Raleway";
+    font-size: 46px;
+    border-bottom: 5px solid #FF3333;
+    width: 224px;
+    padding-bottom: 8px;
+    position: relative;
+    left: 75%;
+
+    
+}
+.items_aside{
+    width: 500px;
+    position: relative;
+    left: 60%;
+    font-family: "inter";
+}
+.button{
+    width: 500px;
+    padding: 20px;
+    background-color: #FF3333;
+    margin-bottom: 50px;
+    border:3px solid #fff;
+    color: #fff;
+    font-size: 32px ;
+}
+.button:hover{
+    border:3px solid #30343F;
+}
+.border{
+    border-bottom: 2px solid #FF3333;
+}
+/* ------------------------------------------------FOOTER------------------------------------------------ */
+.cart_footer{
+    background-color: #30343F;
+    overflow: hidden;
+}
+.footer_container{
+    display: flex;
+    justify-content: space-around;
+    padding: 2% 2% 0 2%;
+}
+.cart_footer_ul{
+    font-weight: 500;
+    
+}
+/* .cart_footer_list{
+    
+} */
+.copyright{
+    color: #fff;
+    text-align: center;
+}
