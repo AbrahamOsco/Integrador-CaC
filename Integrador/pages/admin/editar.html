@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>item</title>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>  
+    <link rel="stylesheet" href="../css/estilositem.css">  
+</head>
+<body>
+    <header>
+        <nav class="navmenu container">
+            <picture class="nav_logo">
+                <a href="./index.html">
+                    <img src="../img/branding/logo_light_horizontal.svg" alt="isologo">
+                </a>
+            </picture>
+            <ul class="menu_item">
+                <li class="item">
+                    <ul class="submenu">
+                        <li class="submenu_item"></li>
+                        <a href="" class="navbar_link"></a>
+                        <li class="submenu_item"></li>
+                        <a href="" class="submenu_link"></a>
+                        <li class="submenu_item"></li>
+                        <a href="" clas="submenu_link"></a>
+                    </ul>
+                </li>
+                <li class="item">
+                    <a class="link" href="">VER TIENDA</a>
+                </li>
+                <li class="item">
+                    <a class="link" href="">ADMI</a>
+                </li>
+                <li class="item">
+                    <a class="link" href="">SALIR</a>
+                </li>
+                
+            </ul>
+        </nav>
+    </header>
+
+   
+    <h1>Editar Item</h1>
+<div class="flex-container">
+    <form action="#" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label class="categoria" for="categoria">Categoría:</label>
+            <select id="categoria" name="categoria">
+                <option value="figuras">Figuras</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label class="licencia" for="licencia">Licencia:</label>
+            <select id="licencia" name="licencia">
+                <option value="licencia1">Naruto shippuden</option>
+            </select>
+        </div>
+    </form>
+</div>
+
+    
+    
+
+        <label for="nombre">Nombre del Producto:</label>
+        <input type="text" id="nombre" name="nombre"><br><br>
+
+        <label for="sku">SKU</label>
+        <input type="text" id="sku" name="sku"><br><br>
+
+        <label for="precio">Precio</label>
+        <input type="text" id="precio" name="precio"><br><br>
+
+        <label for="stock">Stock</label>
+        <input type="text" id="stock" name="stock"><br><br>
+
+        <label for="descuento">Descuento:</label>
+        <select id="descuento" name="descuento">
+      
+        </select><br><br>
+
+        <label for="cuotas">Cuotas:</label>
+        <select id="cuotas" name="cuotas">
+            <option value="1">6 cuota sin interes</option>
+            <option value="2">2 cuotas</option>
+        </select><br><br>
+
+        <label for="imagenes">Imágenes:</label>
+        <input type="file" id="imagenes" name="imagenes" multiple><br><br>
+
+        <input type="submit" value="Guardar">
+    </form>
+
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="#">SHOP</a></li>
+                <li><a href="#">REGISTRARSE</a></li>
+                <li><a href="#">CONTACTO</a></li>
+            </ul>
+        </nav>
+        <p>All rights reserved 2023 - Funkoshop &copy;</p>
+        <figure>
+            <a href="#"><img src="../img/branding/isotype.svg" alt="logo de Funkoshop"></a>
+        </figure>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+</body>
+</html>
