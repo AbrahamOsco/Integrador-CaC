@@ -5,29 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>item</title>
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>  
-    <link rel="stylesheet" href="../../css/estilositem.css">  
+    <link rel="stylesheet" href="../css/estilositem.css">  
 </head>
 <body>
     <header>
-        <nav class="navmenu">
-            <picture>
-                <a href="../../index.html">
-                    <img src="../../img/branding/logo_light_horizontal.svg" alt="isologo">
+        <nav class="navmenu container">
+            <picture class="nav_logo">
+                <a href="./index.html">
+                    <img src="../img/branding/logo_light_horizontal.svg" alt="isologo">
                 </a>
             </picture>
             <ul class="menu_item">
                 <li class="item">
-                    <a href="../shop/shop.html">SHOP</a>
+                    <a class="navbar_link witch_icon" href="../pages/Shop.html">SHOP<iconify-icon icon="ion:chevron-down"></iconify-icon></a>
+                    <ul class="submenu">
+                        <li class="submenu_item"></li>
+                        <a href="" class="navbar_link"></a>
+                        <li class="submenu_item"></li>
+                        <a href="" class="submenu_link"></a>
+                        <li class="submenu_item"></li>
+                        <a href="" clas="submenu_link"></a>
+                    </ul>
                 </li>
                 <li class="item">
-                    <a href="../pages/contact.html">CONTACTO</a>
+                    <a class="link" href="../pages/contact.html">CONTACTO</a>
                 </li>
                 <li class="item">
-                    <a href="../admin/login.html">LOGIN</a>
+                    <a class="link" href="../pages/login.html">LOGIN</a>
                 </li>
                 <li class="item">
-                    <a href="../shop/cart.html">
-                        <img src="../../img/icons/cart-icon.svg" alt="carrito">
+                    <a class="link" href=".pages/car.html">
+                        <img src="../img/icons/cart-icon.svg" alt="carrito">
                     </a>
                 </li>
             </ul>
@@ -37,7 +45,7 @@
     <div class="modelo">
         <div class="imagen">
             <section class="baby_yoda">
-                <img src="../../img/star-wars/baby-yoda-1.webp" alt="">
+                <img src="../img/star-wars/baby-yoda-1.webp" alt="">
             </section>
         </div>
         
@@ -58,15 +66,15 @@
         </div>
     </div>
 
-    <section>
-        <h2>PRODUCTO RELACIONADO</h2>
-        <ul>
-            <li>
-                <articule>
+    <section class="shilder">
+        <h2 class="shilder_title">PRODUCTO RELACIONADO</h2>
+        <ul class="shilder_items">
+            <li class="shilder_item">
+                <articule class="card_item">
                     <a href="">
                         <div class="troper">
                             <section class="producto_imagenes" >
-                                <img src="../../img/star-wars/trooper-1.webp" alt="figura de troper blanco">
+                                <img src="../img/star-wars/trooper-1.webp" alt="figura de troper blanco">
                             </section>
                             <div class="producto_contenido">
                                 <h2>Nuevo</h2>
@@ -84,7 +92,7 @@
                     <a href="">
                         <div class=" pokemon">
                             <section>
-                                <img src="../../img/pokemon/pidgeotto-1.webp" alt="figura de pokemon pidgeotto">
+                                <img src="../img/pokemon/pidgeotto-1.webp" alt="figura de pokemon pidgeotto">
                             </section>
                             <div>
                                 <h2>Nuevo</h2>
@@ -102,7 +110,7 @@
                     <a href="">
                         <div class="harry">
                             <section>
-                                <img src="../../img/harry-potter/luna-1.webp" alt="figura de lunner harry-potter">
+                                <img src="../img/harry-potter/luna-1.webp" alt="figura de lunner harry-potter">
                             </section>
                             <div>
                                 <h2>Nuevo</h2>
@@ -121,15 +129,16 @@
     <footer>
         <nav>
             <ul>
-                <li><a href="../shop/shop.html">SHOP</a></li>
-                <li><a href="../admin/register.html">REGISTRARSE</a></li>
+                <li><a href="#">SHOP</a></li>
+                <li><a href="#">REGISTRARSE</a></li>
                 <li><a href="#">CONTACTO</a></li>
             </ul>
         </nav>
         <p>All rights reserved 2023 - Funkoshop &copy;</p>
         <figure>
-            <a href="#"><img src="../../img/branding/isotype.svg" alt="logo de Funkoshop"></a>
+            <a href="#"><img src="../img/branding/isotype.svg" alt="logo de Funkoshop"></a>
         </figure>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
 </body>
 </html>
