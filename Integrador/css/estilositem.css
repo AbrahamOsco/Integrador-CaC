@@ -1,36 +1,153 @@
 
+:root{
+/*palette*/
+--primary-solid:#ff3333;
+--primary-900:rgba(255,51,51,0.9);
+--primary-500:rgba(255,51,51,0.5);
+--primary-300:rgba(255,51,0.3);
 
-/* Estilos generales */
-body {
-    font-family: 'Raleway', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
+--secondary-solid:#1d84b5;
+--secondary-900:rgb(29,132,181,0.9);
+--secondary-500:rgb(29,132,181,0.5);
+--secondary-300:rgb(29,132,181,0.3);
+
+--dark-solid:#1f1f1f;
+--dark-900:rgb(31,31,31,0.9);
+--dark-500: rgb(31,31,31,0.5);
+--dark-300: rgb(31,31,31,0.3);
+
+--dark-bg-solid: #30343F;
+--light-bg-solid:#fafaff;
+--ligt-font-solid: #FFFFFF;
+
+/*typography*/
+--base-font: 'Inter', sans-serif;
+--alternative-font: 'Raleway', san-serif;
+/*font-sizez*/
+--font-display:4.6em;
+--font-jumbo:3.8em;
+--font-xlarge:3em;
+--font-large:2.4em;
+--font-medium:1.8em;
+--font-xsmall:1.4em;
+/*spacing*/
+--spacing-128:12.8rem;
+--spacing-68:6.8rem;
+--spacing-36:3.6rem;
+--spacing-28:2.8rem;
+--spacing-24:2.4rem;
+--spacing-20:2rem;
+--spacing-16:1.6rem;
+--spacing-12:1.2rem;
+--spacing-8:0.8rem;
+
+
+
+
 }
 
+html{
+    font-family: var(--base-font);
+    font-size: 62.5%;
+    color: var(--dark-bg-solid);
+}
+a{
+    text-decoration: none;
+    font-size: 2rem;
+    font-family: inherit;
+    color: inherit;
+}
+
+
+
+header,
+footer{
+    font-family: var(--alternative-font);
+    color: var(--ligt-font-solid);
+}
+
+ul,ol{
+    list-style-type: none;
+}
+p{
+    font-size: 1rem;
+}
+img{
+    width: 100%;
+}
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
 }
 
-/* Estilos del header */
+header{
+    background-color: var(--dark-bg-solid);
+    padding: var(--spacing-36);
+}
+
 .navmenu {
-    background-color: #343a40;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    color: white;
 }
-
 .menu_item {
-    list-style: none;
     display: flex;
-    gap: 20px;
+   align-items: center;
+   gap: var(--spacing-20);
+   }
+/*header*/
+
+
+
+.nav_logo{
+    max-width: 300px;
 }
 
-.menu_item a {
+
+.link{
+    font-size: var(--font-medium);
+    padding: var(--spacing-8) var(--spacing-16);
+    display: inline-block;
+    transition: background .3s ease-in-out;
+}
+
+.link :hover{
+    background-color: var(--primary-900);
+}
+.witch_icon{
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-8);
+    display: block;
+    padding: var(--spacing-8) var(--spacing-16);
+    font-size:var(--font-medium);
+    transition: background .3s ease-in-out;
+}
+
+.witch_submenu:hover .submenu{
+    display: block;
+}
+
+.submenu{
+
+    display: none;
+    width: 300px;
+    position:absolute;
+    background-color: var(--dark-bg-solid);
+}
+.submenu_item{
+    
+    display: none;
+    padding: var(--spacing-8) var (var(--spacing-16));
+     font-size: var(--font-medium);
+
+}
+.navbar_link:hover{
+    background-color: var(--primary-900);
+
+}
+.item {
     text-decoration: none;
     color: white;
     font-size: 18px;
@@ -96,7 +213,16 @@ body {
     margin-top: 10px;
     cursor: pointer;
 }
+.shilder{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-36);
 
+}
+.shilder_items{
+
+    display: flex;
+}
 /* Estilos de los productos relacionados */
 .producto_relacionado {
     border: 1px solid #ccc;
@@ -119,7 +245,8 @@ body {
 }
 
 .producto_relacionado img {
-    max-width: 100px;
+    max-width: 80px; /* Ajusta el tamaño máximo de las imágenes */
+    max-height: 80px; /* Ajusta la altura máxima de las imágenes */
 }
 
 /* Estilos del artículo dentro del producto relacionado */
@@ -134,6 +261,7 @@ body {
     color: #dc3545;
     margin-top: 5px;
 }
+
 
 
 /* Estilos del footer */
@@ -168,3 +296,28 @@ footer p {
 footer figure img {
     max-width: 80px;
 }
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espacio entre elementos */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: row; /* Alinear elementos horizontalmente */
+    gap: 10px; /* Espacio entre elementos */
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column; /* Apilar etiqueta y select verticalmente */
+}
+
+
+
+
+
+/* Estilos adicionales para los elementos del formulario según sea necesario */
