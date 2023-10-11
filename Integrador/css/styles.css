@@ -148,33 +148,13 @@ en el selector directo el 'a' del navbar NO en el padre ni en el abuelo.
     font-weight: 900;
 }
 
-.UltLan__ul{
-    display: flex;
-    align-items: center;
-    list-style: none;
-    margin: 60px 20px 20px 10px ;
-}
 
 
 .UltLan__a{
     text-decoration: none;
     font-size: 20px;
-} 
-
-.div__PNombGlob{
-    margin-bottom: 20px;
 }
 
-.div__H3NombProd{
-    margin-bottom: 15px;
-}
-
-
-.div__PCuotas{
-    color: #1D84B5;
-    margin-top: 15px;
-    font-weight: bold;
-}
 
 /* aplicarle  */
 .carousel{
@@ -235,5 +215,92 @@ footer{
     font-size: 20px ;
     padding-top: 20px;   
     text-align: center;
+}
+
+/* Carrusel css*/
+.carou-title{
+    font-family: 'Raleway';
+    font-size:60px;
+    font-weight: bolder;
+    font-weight: 800;
+}
+.carou-body{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    justify-content: center;
+}
+.card-item{
+    margin: 0px 10px;
+}
+
+.card-content{
+    padding: 20px;
+}
+
+.card-content-title{
+    font-size: 25;
+    font-weight: 500;
+}
+
+.card-content-nameProduct{
+    font-size: 25;
+    font-weight: 700;
+}
+
+.card-content-price{
+    font-size: 30px;
+    font-weight: 500;
+}
+.card-content-cuotas{
+    font-size: 25;
+    color: #1D84B5;
+    font-weight: bold;
+}
+
+.card-imagen-front, .card-imagen-back, .card-imagen-cover{
+    max-height: 95%;
+    max-width: 95%;
+}
+
+.card-imagen-cover{
+    display: flex;
+    position: relative;
+}
+
+.card-imagen-cover img{
+    animation: fade .7s;
+}
+
+.card-imagen-back{
+    display: none;
+}
+
+
+.card-imagen-cover:hover .card-imagen-back{
+    display: block;
+}
+
+.card-imagen-cover:hover .card-imagen-front{
+    display: none;
+}
+
+@keyframes fade{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+    
+}
+
+.card-item-tag{
+    font-size: 14;
+    background-color: red;
+    color: white;
+    padding: 8px 12px;
+    position: absolute;
+    right: 0;
 }
 
