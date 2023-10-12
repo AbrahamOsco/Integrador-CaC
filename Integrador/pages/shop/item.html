@@ -3,10 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>item</title>
+    <!-- Enlace a los estilos de Glide.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+    
+    <!-- Enlace al archivo JavaScript de Glide.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>  
     <link rel="stylesheet" href="../css/estilositem.css">  
+    <script src="https://cdn.jsdelivr.net/npm/glidejs@3.4.1/dist/glide.min.js"></script>
+    <script src="Botones.js"></script>
+
+    <title>item</title>
+
 </head>
+
 <body>
     <header>
         <nav class="navmenu container">
@@ -19,12 +30,9 @@
                 <li class="item">
                     <a class="navbar_link witch_icon" href="../pages/Shop.html">SHOP<iconify-icon icon="ion:chevron-down"></iconify-icon></a>
                     <ul class="submenu">
-                        <li class="submenu_item"></li>
-                        <a href="" class="navbar_link"></a>
-                        <li class="submenu_item"></li>
-                        <a href="" class="submenu_link"></a>
-                        <li class="submenu_item"></li>
-                        <a href="" clas="submenu_link"></a>
+                        <li class="submenu_item"><a href="#" class="navbar_link"></a></li>
+                        <li class="submenu_item"><a href="#" class="submenu_link"></a></li>
+                        <li class="submenu_item"><a href="#" class="submenu_link"></a></li>
                     </ul>
                 </li>
                 <li class="item">
@@ -34,7 +42,7 @@
                     <a class="link" href="../pages/login.html">LOGIN</a>
                 </li>
                 <li class="item">
-                    <a class="link" href=".pages/car.html">
+                    <a class="link" href="./pages/car.html"> <!-- Corregido el atributo href -->
                         <img src="../img/icons/cart-icon.svg" alt="carrito">
                     </a>
                 </li>
@@ -53,75 +61,82 @@
             <article class="articulos">
                 <h3 class="articulo_titulo">star wars</h3>
                 <h2 class="articulo_titulo2">BABY YODA BLUEBALL</h2>
-                <P class="articulo_detalle">Figura coleccionada  de baby  yoda (group)-
-                    the mandolorian Saga, edicion limitada.
-                </P>
+                <p class="articulo_detalle">Figura coleccionada de baby yoda (group) -
+                    the mandalorian Saga, edición limitada.
+                </p>
                 <p class="precio_producto">$1799,99</p>
-                <p class="poitivo">+</p>
-                <p class="negativo">-</p>
-                <p class="carrito">Agregar a Carrito</p>
-                <p class="pago">ver metodo de pago</p>
-                <p>3 cuotas sin interes</p>
+                <div class="cantidad-items">
+
+                <input type="text" id="cantidadItems" value="0">
+                <button id="btnMas">+</button>
+                <button id="btnMenos">-</button>
+                </div>
+
+                <p class="carrito">Agregar al Carrito</p> <!-- Corregido "Agregar a Carrito" a "Agregar al Carrito" -->
+                <p class="pago">Ver método de pago</p> <!-- Corregido "ver metodo de pago" a "Ver método de pago" -->
+                <p>3 cuotas sin interés</p>
             </article>
         </div>
     </div>
 
     <section class="shilder">
-        <h2 class="shilder_title">PRODUCTO RELACIONADO</h2>
+        <h2 class="shilder_title">producto relacionado</h2>
         <ul class="shilder_items">
             <li class="shilder_item">
-                <articule class="card_item">
-                    <a href="">
-                        <div class="troper">
-                            <section class="producto_imagenes" >
+                <article class="card_item">
+                    <a class="card-item__link" href="">
+                        <div class="card-item__content">
+                            <picture class="card-item__cover" >
+                                <span class="card-item__tag">Nuevo</span>
                                 <img src="../img/star-wars/trooper-1.webp" alt="figura de troper blanco">
-                            </section>
-                            <div class="producto_contenido">
-                                <h2>Nuevo</h2>
-                                <p>STAR WARS</p>
-                                <h2 class="producto_titulo">STORMTROOPER LIGHTSABER</h3>
-                                <p>$1799,99</p>
-                                <p>3 CUOTAS SIN INTERES</p>
+                            </picture>
+                            <div class="card-item__content">
+                                <p class="card_name">Start Wars</p>
+                                <h4 class="producto_titulo">STORMTROOPER LIGHTSABER</h4>
+                                <p class="card_price">$1799,99</p>
+                                <p class="card_cuota">3 CUOTAS SIN INTERES</p>
                             </div>       
                         </div>
                     </a>
-                </articule>
+                </article>
             </li>
             <li>
-                <articule>
-                    <a href="">
-                        <div class=" pokemon">
-                            <section>
+                <article class="card_item">
+                    <a class="card-item__link" href="">
+                        <div class= "card-item__content">
+                            <picture class="card-item__cover">
+                                <span class="card-item__tag">Nuevo</span>
+
                                 <img src="../img/pokemon/pidgeotto-1.webp" alt="figura de pokemon pidgeotto">
-                            </section>
-                            <div>
-                                <h2>Nuevo</h2>
-                                <p>POKEMON</p>
-                                <h3>PIDGEOTTO</h3>
-                                <p>$1799,99</p>
-                                <p>3 CUOTAS SIN INTERES</p>
+                            </picture>
+                            <div class="producto_contenido">
+                                <p class="card_name">Pokemon</p>
+                                <h4 class="producto_titulo" >Pidgeotto</h4>
+                                <p class="card_price">$1799,99</p>
+                                <p class="card_cuota">3 Cuotas sin interes</p>
                             </div>    
                         </div>
                     </a>
-                </articule>
+                </article>
             </li>
             <li>
-                <articule>
-                    <a href="">
-                        <div class="harry">
-                            <section>
+                <article class="card_item">
+                    <a class="card-item__link" href="">
+                        <div class="card-item__content">
+                            <picture class="card-item__cover">
+                                <span class="card-item__tag">Nuevo</span>
+
                                 <img src="../img/harry-potter/luna-1.webp" alt="figura de lunner harry-potter">
-                            </section>
-                            <div>
-                                <h2>Nuevo</h2>
-                                <p>HARRY POTTER</p>
-                                <h3>LUNA LOVEGOOD LION MASK</h3>
-                                <p>$1799,99</p>
-                                <p>3 CUOTAS SIN INTERES</p>
+                            </picture>
+                            <div class="producto_contenido">
+                                <p class="card_name">Harry Potter</p>
+                                <h2 class="producto_titulo">Luna LOVEGOOD LION MASK</h3>
+                                <p class="card_price">$1799,99</p>
+                                <p class="card_cuota">3 Cuotas sin Interes</p>
                             </div>  
                         </div>
                     </a>
-                </articule>
+                </article>
             </li>
         </ul>
     </section>
@@ -140,5 +155,22 @@
         </figure>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+    <script>
+        new Glide('.glide', {
+            type: 'carousel',
+            startAt: 0,
+            perView: 3,
+            gap: 30,
+            breakpoints: {
+                991: {
+                    perView: 2
+                },
+                768: {
+                    perView: 1
+                }
+            }
+        }).mount();
+        </script>
+        
 </body>
 </html>
