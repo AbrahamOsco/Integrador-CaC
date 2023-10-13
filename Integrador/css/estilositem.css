@@ -219,25 +219,82 @@ header{
     gap: var(--spacing-36);
 
 }
+.shilder_title{
+    font-family: var(--alternative-font);
+    font-size: var(--font-display);
+    text-transform: uppercase;
+}
 .shilder_items{
 
     display: flex;
+    gap: var(--spacing-24);
 }
-/* Estilos de los productos relacionados */
-.producto_relacionado {
-    border: 1px solid #ccc;
-    padding: 20px;
+.card-item__cover{
     display: flex;
-    align-items: flex-start; /* Alinea el contenido arriba */
-    margin-bottom: 20px;
-    background-color: white;
+    position: relative;
 }
-
-.producto_contenido {
+.card-item_tag{
+    font-size: var(--font-xsmall);
+    text-transform: uppercase;
+    background-color: var(--primary-solid);
+    color: var(--ligt-font-solid);
+    padding: var(--spacing-8) var(--spacing-12);
+    position: absolute;
+    right: 0;
+}
+.card-item__cover img{
+    animation: fade .7s;
+}
+.card-item__img--back{
+    display: none;
+}
+.card-item__cover:hover .card-item__img--back{
+    display: block;
+}
+.card-item__cover:hover .card-item__img--front{
+    display: none;
+}
+.card-item__content{
     display: flex;
     flex-direction: column;
+    gap: var(--spacing-12);
+    padding: var(--spacing-12);
+}
+.card_name{
+    font-size: var(--font-xsmall);
+    font-weight: 500;
 }
 
+.producto_titulo{
+    font-size: var(--font-medium);
+    text-transform: uppercase;
+
+    font-weight: 700;
+}
+/* Estilos de los productos relacionados */
+.card_price {
+    font-size: var(--font-xsmall);
+
+    font-weight: 500;
+}
+
+.card_cuota {
+    font-size: var(--font-xsmall);
+    color: var(--secondary-solid);
+    text-transform: uppercase;
+
+    font-weight: 700;
+}
+@keyframes fade{
+    0%{
+        opacity: 0
+        100% };
+
+        
+            opacity: 1;
+        }
+    }
+}
 .producto_imagenes {
     display: flex;
     gap: 20px;
