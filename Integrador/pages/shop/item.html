@@ -20,15 +20,15 @@
 
 <body>
     <header>
-        <nav class="navmenu container">
-            <picture class="nav_logo">
+        <nav class="navbar container">
+            <picture class="navbar_logo">
                 <a href="../../index.html">
                     <img src="../../img/branding/logo_light_horizontal.svg" alt="isologo">
                 </a>
             </picture>
             <ul class="menu_item">
                 <li class="item">
-                    <a class="navbar_link witch_icon" href="../../pages/Shop.html">SHOP<iconify-icon icon="ion:chevron-down"></iconify-icon></a>
+                    <a class="navbar_link" href="../../pages/Shop.html">SHOP<iconify-icon icon="ion:chevron-down"></iconify-icon></a>
                     <ul class="submenu">
                         <li class="submenu_item"><a href="#" class="navbar_link"></a></li>
                         <li class="submenu_item"><a href="#" class="submenu_link"></a></li>
@@ -39,7 +39,7 @@
                     <a class="link" href="../../pages/contact.html">CONTACTO</a>
                 </li>
                 <li class="item">
-                    <a class="link" href="../../pages/login.html">LOGIN</a>
+                    <a class="link" href="../admin/login.html">LOGIN">LOGIN</a>
                 </li>
                 <li class="item">
                     <a class="link" href="../../pages/car.html"> <!-- Corregido el atributo href -->
@@ -142,18 +142,20 @@
         </ul>
     </section>
 
-    <footer>
-        <nav>
-            <ul>
-                <li><a href="#">SHOP</a></li>
-                <li><a href="#">REGISTRARSE</a></li>
-                <li><a href="#">CONTACTO</a></li>
+    <footer class="footer">
+        <nav clas="navbar container">
+            <ul class="navbar-items">
+                <li class="item"><a class="link" href="../../pages/shop/shop.html">SHOP</a></li>
+                <li class="item"><a class="link" href="../../pages/admin/register.html">REGISTRARSE</a></li>
+                <li class="item" ><a class="link" href="../../pages/contact.html">CONTACTO</a></li>
             </ul>
+        
+            <picture class="navbar_logo">
+                <img class="logo" src="../../img/branding/isotype.svg" alt="logo de Funkoshop"></a>
+            </picture>
         </nav>
-        <p>All rights reserved 2023 - Funkoshop &copy;</p>
-        <figure>
-            <a href="#"><img src="../../img/branding/isotype.svg" alt="logo de Funkoshop"></a>
-        </figure>
+        <p class="footer_copi">All rights reserved 2023 - Funkoshop &copy;</p>
+
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
     <script>
