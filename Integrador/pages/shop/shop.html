@@ -19,13 +19,13 @@
         <figure>
             <a href="../../index.html">
                 <h1>
-                    <img class="full-logo" src="../../img/branding/logo_light_horizontal.svg" alt="Funkoshop">
+                    <img class="header__full-logo" src="../../img/branding/logo_light_horizontal.svg" alt="Funkoshop">
                 </h1>
             </a>
         </figure>
 
         <nav>
-            <ul class="navbar">
+            <ul class="header__navbar">
                 <li>
                     <a href="../shop/shop.html">SHOP</a>
                 </li>
@@ -50,7 +50,7 @@
 
     <main>
 
-        <section class="sidebar">
+        <section class="sidebar-section">
             <form>
                 <fieldset>
                     <legend> Buscar </legend>
@@ -59,12 +59,12 @@
 
                 <fieldset>
                     <legend> Ordenar Por </legend>
-                    <select name="orden">
+                    <select name="order">
                         <option value="mayor_a_menor"> Mayor a menor </option>
                     </select>
                 </fieldset>
 
-                <fieldset class="precio">
+                <fieldset class="price">
                     <legend> Precio </legend>
                     <label>
                         Min <input type="text" name="min" placeholder="0" size="4" inputmode="numeric">
@@ -74,7 +74,7 @@
                     </label>
                 </fieldset>
 
-                <fieldset class="filtrar">
+                <fieldset class="filter">
                     <legend> Filtrar </legend>
                     <label>
                         <input type="checkbox" name="filter" value="nuevos"> Nuevos <br>
@@ -92,55 +92,55 @@
             </form>
         </section>
 
-        <section class="products">
-            <div class="products-grid">
+        <section class="product-section">
+            <div class="product-grid">
 
-                <article class="new">
-                    <img src="../../img/pokemon/vulpix-1.webp" alt="vulpix">
-                    <p class="new-tag">Nuevo</p>
-                    <p class="edition">Pokemon</p>
-                    <p class="name">Vulpix</p>
-                    <p class="precio">300</p>
-                    <p class="otros"> 3 cuotas sin interes </p>
+                <article class="product product--new">
+                    <img class="product__img" src="../../img/pokemon/vulpix-1.webp" alt="vulpix">
+                    <p class="product__new-tag">Nuevo</p>
+                    <p class="product__edition">Pokemon</p>
+                    <p class="product__name">Vulpix</p>
+                    <p class="product__price">300</p>
+                    <p class="product__other"> 3 cuotas sin interes </p>
                 </article>
 
-                <article class="">
-                    <img src="../../img/pokemon/vulpix-1.webp" alt="vulpix">
-                    <p class="new-tag">Nuevo</p>
-                    <p class="edition">Pokemon</p>
-                    <p class="name">Vulpix</p>
-                    <p class="precio">300</p>
-                    <p class="otros"> 3 cuotas sin interes </p>
+                <article class="product">
+                    <img class="product__img" src="../../img/pokemon/vulpix-1.webp" alt="vulpix">
+                    <p class="product__new-tag">Nuevo</p>
+                    <p class="product__edition">Pokemon</p>
+                    <p class="product__name">Vulpix</p>
+                    <p class="product__price">300</p>
+                    <p class="product__other"> 3 cuotas sin interes </p>
                 </article>
 
-                <article class="new">
-                    <img src="../../img/pokemon/vulpix-1.webp" alt="vulpix">
-                    <p class="new-tag">Nuevo</p>
-                    <p class="edition">Pokemon</p>
-                    <p class="name">Vulpix</p>
-                    <p class="precio">300</p>
-                    <p class="otros"> 3 cuotas sin interes </p>
+                <article class="product product--new">
+                    <img class="product__img" src="../../img/pokemon/vulpix-1.webp" alt="vulpix">
+                    <p class="product__new-tag">Nuevo</p>
+                    <p class="product__edition">Pokemon</p>
+                    <p class="product__name">Vulpix</p>
+                    <p class="product__price">300</p>
+                    <p class="product__other"> 3 cuotas sin interes </p>
                 </article>
 
-                <article class="">
-                    <img src="../../img/pokemon/vulpix-1.webp" alt="vulpix">
-                    <p class="new-tag">Nuevo</p>
-                    <p class="edition">Pokemon</p>
-                    <p class="name">Vulpix</p>
-                    <p class="precio">300</p>
-                    <p class="otros"> 3 cuotas sin interes </p>
+                <article class="product">
+                    <img class="product__img" src="../../img/pokemon/vulpix-1.webp" alt="vulpix">
+                    <p class="product__new-tag">Nuevo</p>
+                    <p class="product__edition">Pokemon</p>
+                    <p class="product__name">Vulpix</p>
+                    <p class="product__price">300</p>
+                    <p class="product__other"> 3 cuotas sin interes </p>
                 </article>
 
             </div>
-            <!-- pendiente: botones para navegar por los productos -->
-            <div class="buttons">
-                <a class="arrow disabled">&lt</a>
-                <a class="selected">1</a>
-                <a>2</a>
-                <a>...</a>
-                <a>4</a>
-                <a>5</a>
-                <a class="arrow">&gt</a>
+
+            <div class="product-buttons">
+                <button class="arrow disabled">&lt</button>
+                <button class="active">1</button>
+                <button>2</button>
+                <button>...</button>
+                <button>4</button>
+                <button>5</button>
+                <button class="arrow">&gt</button>
             </div>
         </section>
     </main>
@@ -148,7 +148,7 @@
     <footer>
 
         <nav>
-            <ul class="navbar">
+            <ul class="footer__navbar">
                 <li>
                     <a href="../shop/shop.html"> SHOP </a>
                 </li>
@@ -160,11 +160,11 @@
                 </li>
             </ul>
         </nav>
-        <p class="copyright"> All rights reserved 2023 - Funkoshop &copy; </p>
+        <p class="footer__copyright"> All rights reserved 2023 - Funkoshop &copy; </p>
 
         <figure>
-            <a href="#">
-                <img class="logo" src="../../img/branding/isotype.svg" alt="logo de Funkoshop">
+            <a href="../../index.html">
+                <img class="footer__logo" src="../../img/branding/isotype.svg" alt="logo de Funkoshop">
             </a>
         </figure>
     </footer>
