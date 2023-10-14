@@ -8,13 +8,16 @@
     <title> Shop </title>
     <!-- Raleway Font-->
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
-    <!-- local style sheets -->
+    <!-- GlideJS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.0/dist/css/glide.core.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.0/dist/css/glide.theme.min.css"> -->
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.0/dist/glide.min.js"></script>
+    <!-- Local Style Sheets -->
     <link rel="stylesheet" href="../../css/stylesShop.css">
 </head>
 <body>
 
     <header>
-        <!-- por ahora ningun hypervinculo está puesto, hasta que el resto de paginas esten hechas -->
 
         <figure>
             <a href="../../index.html">
@@ -93,54 +96,109 @@
         </section>
 
         <section class="product-section">
-            <div class="product-grid">
+            <div class="glide">
+                <div class="glide__track" data-glide-el="track">
+                    <div class="glide__slides">
+                        <div class="product-grid glide__slide">
 
-                <article class="product product--new">
-                    <img class="product__img" src="../../img/pokemon/vulpix-1.webp" alt="vulpix">
-                    <p class="product__new-tag">Nuevo</p>
-                    <p class="product__edition">Pokemon</p>
-                    <p class="product__name">Vulpix</p>
-                    <p class="product__price">300</p>
-                    <p class="product__other"> 3 cuotas sin interes </p>
-                </article>
+                            <article class="product product--new">
+                                <img class="product__img" src="../../img/pokemon/vulpix-1.webp" alt="vulpix">
+                                <p class="product__new-tag">Nuevo</p>
+                                <p class="product__edition">Pokemon</p>
+                                <p class="product__name">Vulpix</p>
+                                <p class="product__price">300</p>
+                                <p class="product__other"> 3 cuotas sin interes </p>
+                            </article>
 
-                <article class="product">
-                    <img class="product__img" src="../../img/pokemon/vulpix-1.webp" alt="vulpix">
-                    <p class="product__new-tag">Nuevo</p>
-                    <p class="product__edition">Pokemon</p>
-                    <p class="product__name">Vulpix</p>
-                    <p class="product__price">300</p>
-                    <p class="product__other"> 3 cuotas sin interes </p>
-                </article>
+                            <article class="product">
+                                <img class="product__img" src="../../img/pokemon/vulpix-1.webp" alt="vulpix">
+                                <p class="product__new-tag">Nuevo</p>
+                                <p class="product__edition">Pokemon</p>
+                                <p class="product__name">Vulpix</p>
+                                <p class="product__price">300</p>
+                                <p class="product__other"> 3 cuotas sin interes </p>
+                            </article>
 
-                <article class="product product--new">
-                    <img class="product__img" src="../../img/pokemon/vulpix-1.webp" alt="vulpix">
-                    <p class="product__new-tag">Nuevo</p>
-                    <p class="product__edition">Pokemon</p>
-                    <p class="product__name">Vulpix</p>
-                    <p class="product__price">300</p>
-                    <p class="product__other"> 3 cuotas sin interes </p>
-                </article>
+                            <article class="product product--new">
+                                <img class="product__img" src="../../img/pokemon/vulpix-1.webp" alt="vulpix">
+                                <p class="product__new-tag">Nuevo</p>
+                                <p class="product__edition">Pokemon</p>
+                                <p class="product__name">Vulpix</p>
+                                <p class="product__price">300</p>
+                                <p class="product__other"> 3 cuotas sin interes </p>
+                            </article>
 
-                <article class="product">
-                    <img class="product__img" src="../../img/pokemon/vulpix-1.webp" alt="vulpix">
-                    <p class="product__new-tag">Nuevo</p>
-                    <p class="product__edition">Pokemon</p>
-                    <p class="product__name">Vulpix</p>
-                    <p class="product__price">300</p>
-                    <p class="product__other"> 3 cuotas sin interes </p>
-                </article>
+                            <article class="product">
+                                <img class="product__img" src="../../img/pokemon/vulpix-1.webp" alt="vulpix">
+                                <p class="product__new-tag">Nuevo</p>
+                                <p class="product__edition">Pokemon</p>
+                                <p class="product__name">Vulpix</p>
+                                <p class="product__price">300</p>
+                                <p class="product__other"> 3 cuotas sin interes </p>
+                            </article>
 
-            </div>
+                            <article class="product product--new">
+                                <img class="product__img" src="../../img/pokemon/vulpix-1.webp" alt="vulpix">
+                                <p class="product__new-tag">Nuevo</p>
+                                <p class="product__edition">Pokemon</p>
+                                <p class="product__name">Vulpix</p>
+                                <p class="product__price">300</p>
+                                <p class="product__other"> 3 cuotas sin interes </p>
+                            </article>
 
-            <div class="product-buttons">
-                <button class="arrow disabled">&lt</button>
-                <button class="active">1</button>
-                <button>2</button>
-                <button>...</button>
-                <button>4</button>
-                <button>5</button>
-                <button class="arrow">&gt</button>
+                            <article class="product">
+                                <img class="product__img" src="../../img/pokemon/vulpix-1.webp" alt="vulpix">
+                                <p class="product__new-tag">Nuevo</p>
+                                <p class="product__edition">Pokemon</p>
+                                <p class="product__name">Vulpix</p>
+                                <p class="product__price">300</p>
+                                <p class="product__other"> 3 cuotas sin interes </p>
+                            </article>
+
+                            <article class="product product--new">
+                                <img class="product__img" src="../../img/pokemon/vulpix-1.webp" alt="vulpix">
+                                <p class="product__new-tag">Nuevo</p>
+                                <p class="product__edition">Pokemon</p>
+                                <p class="product__name">Vulpix</p>
+                                <p class="product__price">300</p>
+                                <p class="product__other"> 3 cuotas sin interes </p>
+                            </article>
+
+                            <article class="product">
+                                <img class="product__img" src="../../img/pokemon/vulpix-1.webp" alt="vulpix">
+                                <p class="product__new-tag">Nuevo</p>
+                                <p class="product__edition">Pokemon</p>
+                                <p class="product__name">Vulpix</p>
+                                <p class="product__price">300</p>
+                                <p class="product__other"> 3 cuotas sin interes </p>
+                            </article>
+
+                            <article class="product product--new">
+                                <img class="product__img" src="../../img/pokemon/vulpix-1.webp" alt="vulpix">
+                                <p class="product__new-tag">Nuevo</p>
+                                <p class="product__edition">Pokemon</p>
+                                <p class="product__name">Vulpix</p>
+                                <p class="product__price">300</p>
+                                <p class="product__other"> 3 cuotas sin interes </p>
+                            </article>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-buttons-section">
+
+                    <div class="product-buttons glide__bullets" data-glide-el="controls[nav]">
+                        <button data-glide-dir="=0">1</button>
+                        <button data-glide-dir="=1">2</button>
+                        <button data-glide-dir="=null" onclick="this.blur()">...</button>
+                        <button data-glide-dir="=3">4</button>
+                        <button data-glide-dir="=4">5</button>
+                        <!-- arrows must be at the end because otherwise each button thats treated as a glide bullet is offseted -->
+                        <button class="arrow arrow--left" data-glide-dir="<">&lt</button>
+                        <button class="arrow arrow--right" data-glide-dir=">">&gt</button>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -168,5 +226,34 @@
             </a>
         </figure>
     </footer>
+
+    <script>
+
+        function setupGlide() {
+            const glide = new Glide('.glide', {
+                perView: 1,
+                rewind: false,
+                gap: 0,
+                bound: true,
+                dragThreshold: false,
+            })
+            glide.mount()
+        }
+
+        function cloneGrid(num = 1) {
+            const productGrid = document.querySelector(".product-grid")
+            for (let i = 0; i < num; i++) {
+                productGrid.after(productGrid.cloneNode(true))
+            }
+        }
+
+        cloneGrid(4)
+        setupGlide()
+        // pending:
+        // - slide to some index using JS
+        // - make grid smaller on small screens
+
+    </script>
+
 </body>
 </html>
