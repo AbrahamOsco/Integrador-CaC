@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css');
+@import url('https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css');
+
 
 :root{
 /*palette*/
@@ -60,11 +64,7 @@ a{
 
 
 
-header,
-footer{
-    font-family: var(--alternative-font);
-    color: var(--ligt-font-solid);
-}
+
 
 ul,ol{
     list-style-type: none;
@@ -72,14 +72,18 @@ ul,ol{
 p{
     font-size: 1rem;
 }
-img{
-    width: 100%;
-}
 .container {
     max-width: 1200px;
     margin: 0 auto;
 }
+img{
+    width: 100%;
+}
 
+header, footer{
+    font-family: var(--alternative-font);
+    color: var(--ligt-font-solid);
+}
 header{
     background-color: var(--dark-bg-solid);
     padding: var(--spacing-36);
@@ -100,7 +104,7 @@ header{
 
 
 
-.nav_logo{
+.navbar_logo{
     max-width: 300px;
 }
 
@@ -143,6 +147,11 @@ header{
      font-size: var(--font-medium);
 
 }
+.navbar{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
 .navbar_link:hover{
     background-color: var(--primary-900);
 
@@ -152,22 +161,29 @@ header{
     color: white;
     font-size: 18px;
 }
-
-/* Estilos del contenido principal */
-.modelo {
+.informacion {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-top: 50px;
+    flex-direction: row-reverse; /* Invierte la dirección de flexión para colocar la imagen a la derecha */
+    align-items: center; /* Alinea verticalmente los elementos */
 }
+
+.baby_yoda {
+    flex: 1; /* Ocupa el 50% del espacio horizontal en el contenedor */
+    max-width: 50%; /* Ajusta el ancho máximo de la imagen al 50% del contenedor */
+}
+
+.articulos {
+    flex: 1; /* Ocupa el 50% del espacio horizontal en el contenedor */
+    padding: 10px; /* Añade espaciado alrededor del artículo */
+}
+
+
+
 
 .imagen {
     flex: 1;
 }
 
-.baby_yoda img {
-    max-width: 100%;
-}
 
 .informacion {
     flex: 2;
@@ -193,11 +209,7 @@ header{
     margin: 20px 0;
 }
 
-.poitivo, .negativo {
-    font-size: 24px;
-    margin: 0 10px;
-    cursor: pointer;
-}
+
 
 .carrito {
     background-color: #dc3545;
@@ -217,6 +229,7 @@ header{
     display: flex;
     flex-direction: column;
     gap: var(--spacing-36);
+    margin: var(--spacing-68)auto;
 
 }
 .shilder_title{
@@ -224,16 +237,24 @@ header{
     font-size: var(--font-display);
     text-transform: uppercase;
 }
-.shilder_items{
-
-    display: flex;
-    gap: var(--spacing-24);
+iconify-icon{
+    color:var(--dark-bg-solid);
+    font-size: var(--font-xsmall);
+    font-weight: 700;
+}
+.glide__arrow--left{
+    left: 0;
+}
+.glide__arrow--right{
+    right: 0;
 }
 .card-item__cover{
     display: flex;
     position: relative;
 }
-.card-item_tag{
+/*estilos de nuevo*/
+
+.card-item__tag{
     font-size: var(--font-xsmall);
     text-transform: uppercase;
     background-color: var(--primary-solid);
@@ -264,19 +285,21 @@ header{
     font-size: var(--font-xsmall);
     font-weight: 500;
 }
+/*estilos de titulo del producto*/
 
-.producto_titulo{
+.producto_titulo h4{
     font-size: var(--font-medium);
     text-transform: uppercase;
 
     font-weight: 700;
 }
-/* Estilos de los productos relacionados */
+/* Estilos de los productos  */
 .card_price {
     font-size: var(--font-xsmall);
 
     font-weight: 500;
 }
+/*estilos de cuota*/
 
 .card_cuota {
     font-size: var(--font-xsmall);
@@ -285,74 +308,54 @@ header{
 
     font-weight: 700;
 }
+/*animacion img*/
 @keyframes fade{
-    0%{
-        opacity: 0
-        100% };
+    0% {
+        opacity: 0;
+    }
+        100% {
 
         
             opacity: 1;
         }
     }
-}
-.producto_imagenes {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-
-.producto_relacionado img {
-    max-width: 80px; /* Ajusta el tamaño máximo de las imágenes */
-    max-height: 80px; /* Ajusta la altura máxima de las imágenes */
-}
-
-/* Estilos del artículo dentro del producto relacionado */
-.producto_titulo {
-    font-size: 18px;
-    color: #333;
-    margin-top: 10px;
-}
-
-.producto_precio {
-    font-size: 16px;
-    color: #dc3545;
-    margin-top: 5px;
-}
-
 
 
 /* Estilos del footer */
-footer {
-    background-color: #343a40;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
+footer.footer {
+    background-color:var(--dark-bg-solid);
+    padding: var(--spacing-68);
+   
 }
 
-footer nav ul {
+
+.footer_copi {
+    text-align: center;
+   margin-top: var(--spacing-36);
+}
+
+.navbar-items {
     list-style: none;
     margin: 0;
     padding: 0;
 }
-
-footer nav ul li {
-    display: inline-block;
-    margin-right: 20px;
+.navbar-items  {
+    margin-right: var(--spacing-16); /* Agregado margen derecho entre elementos del menú */
+}
+.navbar-logo {
+    flex: 1; /* Ocupa todo el espacio restante */
+    display: flex;
+    align-items: center;
 }
 
-footer a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
+.logo {
+    max-width: 100px; /* Ajusta el ancho del logo según tus necesidades */
+    height: auto; /* Mantiene la proporción del logo */
 }
 
-footer p {
-    margin-top: 10px;
-}
 
-footer figure img {
-    max-width: 80px;
-}
+
+
 
 .flex-container {
     display: flex;
