@@ -212,10 +212,9 @@ main {
 /* PRODUCT */
 
 .product {
+    --time-hover: 0.3s;
     position: relative;
-    transition:
-        scale 0.3s,
-        box-shadow 0.3s;
+    transition: scale var(--time-hover);
     background-color: white;
     padding: 0.5em;
     /* max-width: 250px; */
@@ -224,10 +223,21 @@ main {
     /* borde solo utilizado para probar el layout */
 }
 
+.product::before {
+    position: absolute;
+    opacity: 0;
+    transition: opacity var(--time-hover);
+    inset: 0;
+    box-shadow: 0 0 0.8rem #0008;
+    content: '';
+}
+
 .product:hover {
     scale: 1.05;
-    cursor: pointer;
-    box-shadow: 0 0 0.8rem #0008;
+}
+
+.product:hover::before {
+    opacity: 1;
 }
 
 @media (width < 650px) {
