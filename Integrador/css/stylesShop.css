@@ -211,6 +211,11 @@ main {
 
 /* PRODUCT */
 
+.product-grid > a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .product {
     --time-hover: 0.3s;
     position: relative;
