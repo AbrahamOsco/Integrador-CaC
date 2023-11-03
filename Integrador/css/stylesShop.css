@@ -1,15 +1,29 @@
 *,
-*::before,
-*::after {
+::before,
+::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    color: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    font-family: inherit;
+}
+
 html {
-    /* custom properties para ser reutilizadas con var(--nombre-de-property) */
     --color-fondo: rgb(48, 52, 63);
-    font-family: 'Raleway';
+    font-family: 'Raleway', sans-serif;
 }
 
 /* GENERAL LAYOUT */
@@ -48,7 +62,6 @@ header {
 
 @media (width < 650px) {
     header {
-        display: flex;
         flex-direction: column;
         align-items: center;
     }
@@ -107,7 +120,6 @@ footer {
 main {
     display: flex;
     justify-content: space-evenly;
-    gap: 2.5rem;
     padding: 3rem 3%;
 }
 
@@ -199,11 +211,15 @@ main {
 
 /* PRODUCT */
 
+.product-grid > a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .product {
+    --time-hover: 0.3s;
     position: relative;
-    transition:
-        scale 0.3s,
-        box-shadow 0.3s;
+    transition: scale var(--time-hover);
     background-color: white;
     padding: 0.5em;
     /* max-width: 250px; */
@@ -212,10 +228,21 @@ main {
     /* borde solo utilizado para probar el layout */
 }
 
+.product::before {
+    position: absolute;
+    opacity: 0;
+    transition: opacity var(--time-hover);
+    inset: 0;
+    box-shadow: 0 0 0.8rem #0008;
+    content: '';
+}
+
 .product:hover {
     scale: 1.05;
-    cursor: pointer;
-    box-shadow: 0 0 0.8rem #0008;
+}
+
+.product:hover::before {
+    opacity: 1;
 }
 
 @media (width < 650px) {
@@ -236,11 +263,6 @@ main {
 }
 
 /* INSIDE PRODUCT */
-
-.product__img {
-    max-width: 100%;
-    /* evitar que las imagenes sean mas grandes que el propio contenedor */
-}
 
 .product__new-tag {
     display: none;
