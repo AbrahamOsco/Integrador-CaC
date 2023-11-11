@@ -4,7 +4,7 @@
 ## Folders
 
 ```txt
-├── server.js
+├── index.js
 ├── controllers/
 ├── models/
 ├── public/
@@ -19,13 +19,47 @@
     └── partials/
 ```
 
+## Pages
+
+### Abraham
+
+`home`
+`login`
+`register` (heredada)
+
+### Nicolas
+
+`shop`
+`admin`
+`cart` (heredada)
+
+### Ana
+
+`item`
+`edit`
+`create` (heredada)
+
 ## Routes
+
+### Main Routes
 
 home.html
 
 `GET` `/home` (page)
 
 ---
+
+other
+
+`GET` `/contact` (text)
+
+`GET` `/about` (text)
+
+`GET` `/faqs` (text)
+
+---
+
+### Shop Routes
 
 shop.html
 
@@ -46,6 +80,8 @@ cart.html
 `POST` `/shop/cart` (button pay)
 
 ---
+
+### Admin Routes
 
 admin.html
 
@@ -71,6 +107,8 @@ edit.html
 
 ---
 
+### Auth Routes
+
 login.html
 
 `GET` `/auth/login` (page)
@@ -87,18 +125,8 @@ register.html
 
 ---
 
-header in admin/
+header in admin pages
 
 `GET` `/auth/logout` (button logout)
-
----
-
-other
-
-`GET` `/contact` (text)
-
-`GET` `/about` (text)
-
-`GET` `/faqs` (text)
 
 ---
