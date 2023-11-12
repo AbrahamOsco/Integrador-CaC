@@ -22,7 +22,9 @@ app.use('/shop', shopRoutes.shop);
 app.use('/shop/item', shopRoutes.item);
 */
 
-
+app.use((req, res) => {
+	res.sendStatus(404)
+})
 
 app.listen(PORT, () => {
   console.log(`Servidor iniciado en http://localhost:${PORT}`);
