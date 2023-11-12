@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const { shopRouter } = require('./routes/shop.routes.js')
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -22,7 +23,11 @@ app.use('/shop', shopRoutes.shop);
 app.use('/shop/item', shopRoutes.item);
 */
 
+app.use('/shop', shopRouter)
 
+app.use((req, res) => {
+	res.sendStatus(404)
+})
 
 app.listen(PORT, () => {
   console.log(`Servidor iniciado en http://localhost:${PORT}`);
