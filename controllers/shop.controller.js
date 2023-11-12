@@ -18,4 +18,4 @@ shopController.renderCartPage = (_req, res) => {
 	res.sendFile('./shop/cart.html', opts)
 }
 
-module.exports = { shopController }
+module.exports = { shopController, opts }
