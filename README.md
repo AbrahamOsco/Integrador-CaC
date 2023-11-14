@@ -1,7 +1,7 @@
-# Integrador-Elbow to elbow
-# Structure
 
-## Folders
+# Integrador Codo A Codo
+
+## Folder Structure
 
 ```txt
 ├── index.js
@@ -23,21 +23,21 @@
 
 ### Abraham
 
-`home`
-`login`
-`register` (heredada)
+`home`  
+`login`  
+`register` (heredada)  
 
 ### Nicolas
 
-`shop`
-`admin`
-`cart` (heredada)
+`shop`  
+`admin`  
+`cart` (heredada)  
 
 ### Ana
 
-`item`
-`edit`
-`create` (heredada)
+`item`  
+`edit`  
+`create` (heredada)  
 
 ## Routes
 
@@ -130,4 +130,3 @@ header in admin pages
 `GET` `/auth/logout` (button logout)
 
 ---
-
