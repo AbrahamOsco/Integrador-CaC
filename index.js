@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const { shopRouter } = require('./routes/shop.routes.js')
+const { adminRouter } = require('./routes/admin.routes.js')
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -24,6 +25,8 @@ app.use('/shop/item', shopRoutes.item);
 */
 
 app.use('/shop', shopRouter)
+
+app.use('/admin', adminRouter)
 
 app.use((req, res) => {
 	res.sendStatus(404)
