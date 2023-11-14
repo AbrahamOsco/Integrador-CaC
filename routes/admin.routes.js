@@ -6,6 +6,8 @@ const adminRouter = express.Router()
 
 adminRouter.get('/', adminController.renderAdminPage)
 
+adminRouter.delete('/delete/:id', adminController.deleteProduct)
+
 module.exports = {
 	adminRouter,
 }
