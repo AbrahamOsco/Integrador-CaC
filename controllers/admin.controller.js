@@ -1,5 +1,5 @@
 const path = require('node:path')
-const { opts } = require('./admin.controller.js')
+const { opts } = require('./shop.controller.js')
 
 /*
 	Esta ruta (/admin) sería compartida
