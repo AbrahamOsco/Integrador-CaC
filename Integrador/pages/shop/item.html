@@ -1,51 +1,52 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>item</title>   
+    <title>Item</title>   
     <link rel="stylesheet" href="../../css/estilositem.css">
-    
-
 </head>
 
 <body>
-        <header class="page-header">
-            <nav class="navbar container">
-            <picture class="navbar_logo">
+    <header>
+        <nav class="navbar container">
+            <figure>
                 <a href="../../index.html">
                     <img src="../../img/branding/logo_light_horizontal.svg" alt="isologo">
                 </a>
-            </picture>
-            <ul class="menu_item">
-                <li class="item">
-                    <a class="navbar_link" href="../../pages/Shop.html">SHOP<iconify-icon icon="ion:chevron-down"></iconify-icon></a>
-                    <ul class="submenu">
-                        <li class="submenu_item"><a href="#" class="navbar_link"></a></li>
-                        <li class="submenu_item"><a href="#" class="submenu_link"></a></li>
-                        <li class="submenu_item"><a href="#" class="submenu_link"></a></li>
-                    </ul>
-                </li>
-                <li class="item">
-                    <a class="link" href="../../pages/contact.html">CONTACTO</a>
-                </li>
-                <li class="item">
-                    <a class="link" href="../admin/login.html">LOGIN</a>
-                </li>
-                <li class="item">
-                    <a class="link" href="../../pages/car.html"> <!-- Corregido el atributo href -->
-                        <img src="../../img/icons/cart-icon.svg" alt="carrito">
-                    </a>
-                </li>
-            </ul>
+            </figure>
+            <nav>
+                <ul class="menu_item">
+                    <li>
+                        <a href="../../pages/Shop.html">SHOP<iconify-icon icon="ion:chevron-down"></iconify-icon></a>
+                        <ul class="submenu">
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="../../pages/contact.html">CONTACTO</a>
+                    </li>
+                    <li>
+                        <a href="../admin/login.html">LOGIN</a>
+                    </li>
+                    <li>
+                        <a href="../../pages/car.html">
+                            <img src="../../img/icons/cart-icon.svg" alt="carrito">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </nav>
-        </header>
-        
+    </header>
+
+    <main class="container">
         <div class="informacion">
             <article class="articulos">
-                <h3 class="articulo_titulo">star wars</h3>
+                <h3 class="articulo_titulo">Star Wars</h3>
                 <h2 class="articulo_titulo2">BABY YODA BLUEBALL</h2>
-                <p class="articulo_detalle">Figura coleccionada de baby yoda (group) - the mandalorian Saga, edición limitada.</p>
+                <p class="articulo_detalle">Figura coleccionada de Baby Yoda (Group) - The Mandalorian Saga, edición limitada.</p>
                 <p class="precio_producto">$1799,99</p>
                 <div class="cantidad-items">
                     <button id="subtract" class="item_quantity" type="button">-</button>
@@ -53,14 +54,13 @@
                     <button id="add" class="item_quantity" type="button">+</button>
                     <button class="item__submit btn btn--primary btn--medium" type="submit">Agregar al carrito</button>
                 </div>
-                <p class="item_promo"><a href="#">Ver método de pago</a> - 3 cuotas sin interés</p>
+                <a class="item_promo" href="#">Ver método de pago</a><p class="cuotas">-3 cuotas sin interés</p> 
             </article>
             <picture class="baby_yoda">
                 <img src="../../img/star-wars/baby-yoda-1.webp" alt="">
             </picture>
         </div>
-        
-                
+    </main>
 
     <section class="shilder glide">
         <h2 class="shilder_title">Productos relacionados</h2>
@@ -120,6 +120,7 @@
                     </article>
                 </li>
             </ul>
+      
         </div>
         <div class="glide__arrows" data-glide-el="controls">
             <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><iconify-icon icon="tabler:chevron-left"></iconify-icon></button>
@@ -127,19 +128,22 @@
         </div>
     </section>
     
-    <footer class="footer">
-        <nav class="navbar container">
+    <footer>
+        <nav >
             <ul class="navbar-items">
-                <li class="item"><a class="link" href="../../pages/shop/shop.html">SHOP</a></li>
-                <li class="item"><a class="link" href="../../pages/admin/register.html">REGISTRARSE</a></li>
-                <li class="item"><a class="link" href="../../pages/contact.html">CONTACTO</a></li>
+                <li><a href="../../pages/shop/shop.html">SHOP</a></li>
+                <li><a href="../../pages/admin/register.html">REGISTRARSE</a></li>
+                <li><a href="../../pages/contact.html">CONTACTO</a></li>
             </ul>
-    
-            <picture class="navbar_logo">
-                <img class="logo" src="../../img/branding/isotype.svg" alt="Logo de Funkoshop">
-            </picture>
         </nav>
         <p class="footer_copi">Todos los derechos reservados 2023 - Funkoshop &copy;</p>
+
+            <figure>
+                <a href="../../index.html">
+                    <img class="logo" src="../../img/branding/isotype.svg" alt="Logo de Funkoshop">
+                </a>
+            </figure>
+        
     </footer>
     
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
@@ -149,4 +153,3 @@
 
 </body>
 </html>
-    
