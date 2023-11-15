@@ -1,7 +1,7 @@
 
-# Integrador Codo A Codo
+# Structure
 
-## Folder Structure
+## Folders
 
 ```txt
 ├── index.js
@@ -23,21 +23,21 @@
 
 ### Abraham
 
-`home`  
-`login`  
-`register` (heredada)  
+`home`
+`login`
+`register` (heredada)
 
 ### Nicolas
 
-`shop`  
-`admin`  
-`cart` (heredada)  
+`shop`
+`admin`
+`cart` (heredada)
 
 ### Ana
 
-`item`  
-`edit`  
-`create` (heredada)  
+`item`
+`edit`
+`create` (heredada)
 
 ## Routes
 
