@@ -45,49 +45,59 @@
 --spacing-12:1.2rem;
 --spacing-8:0.8rem;
 
-
-
-
 }
 
+*,
+*::before,
+*::after {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     text-decoration: none;
+     
+}
 html{
-    font-family: var(--base-font);
+    font-family: 'inter',sans-serif;
     font-size: 62.5%;
-    color: var(--dark-bg-solid);
+    font-family: inherit;
+ color:#1f1f1f;
 }
 a{
     text-decoration: none;
-    font-size: 2rem;
-    font-family: inherit;
+    font-size: 2em;
     color: inherit;
 }
-
-
-
-
-
+header,footer{
+    font-family: 'Raleway',sans-serif;
+    color: white;
+    
+}
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--dark-bg-solid);
+    padding: 1.5rem 4%;
+}
 ul,ol{
-    list-style-type: none;
+     list-style-type: none;
 }
 p{
-    font-size: 1rem;
+    font-size: 1.8em;
+    
 }
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
+
+.container{
+    max-width:1200px;
+    margin:0 auto;
 }
+
 img{
     width: 100%;
 }
 
-header, footer{
-    font-family: var(--alternative-font);
-    color: var(--ligt-font-solid);
-}
-header{
-    background-color: var(--dark-bg-solid);
-    padding: var(--spacing-36);
-}
+
 
 .navmenu {
 
@@ -116,9 +126,10 @@ header{
     transition: background .3s ease-in-out;
 }
 
-.link :hover{
+.link:hover {
     background-color: var(--primary-900);
 }
+
 .witch_icon{
     display: flex;
     align-items: center;
@@ -147,10 +158,12 @@ header{
      font-size: var(--font-medium);
 
 }
-.navbar{
+.navbar-items{
     display: flex;
-    justify-content:space-between;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.3rem;
+    list-style-type: none;
 }
 .navbar_link:hover{
     background-color: var(--primary-900);
@@ -185,18 +198,19 @@ header{
 }
 
 
-.informacion {
-    flex: 2;
-    padding: 0 20px;
+/* Estilo para el título "Star Wars" */
+.articulo_titulo {
+    text-transform: uppercase; /* Convertir a mayúsculas */
+    color: #000000; /* Color negro */
+    font-family: var(--alternative-font);
+    
 }
 
-.articulo_titulo {
-    color: #dc3545;
-    font-size: 18px;
-}
 
 .articulo_titulo2 {
     font-size: 24px;
+    font-family: var(--alternative-font);
+    text-transform: uppercase;
 }
 
 .articulo_detalle {
@@ -232,12 +246,12 @@ header{
     margin: var(--spacing-68)auto;
 
 }
-.shilder_title{
+h2.shilder_title{
     font-family: var(--alternative-font);
     font-size: var(--font-display);
     text-transform: uppercase;
 }
-iconify-icon{
+.iconify-icon{
     color:var(--dark-bg-solid);
     font-size: var(--font-xsmall);
     font-weight: 700;
@@ -285,14 +299,8 @@ iconify-icon{
     font-size: var(--font-xsmall);
     font-weight: 500;
 }
-/*estilos de titulo del producto*/
 
-.producto_titulo h4{
-    font-size: var(--font-medium);
-    text-transform: uppercase;
 
-    font-weight: 700;
-}
 /* Estilos de los productos  */
 .card_price {
     font-size: var(--font-xsmall);
@@ -322,26 +330,38 @@ iconify-icon{
 
 
 /* Estilos del footer */
-footer.footer {
+footer{
     background-color:var(--dark-bg-solid);
     padding: var(--spacing-68);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 4%;
+
    
 }
 
 
 .footer_copi {
+   
+    position: relative;
+    top: 3.5rem;
     text-align: center;
-   margin-top: var(--spacing-36);
+
 }
 
+
 .navbar-items {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.navbar-items  {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.3rem;
+    list-style-type: none;
     margin-right: var(--spacing-16); /* Agregado margen derecho entre elementos del menú */
+ 
+  
 }
+
 .navbar-logo {
     flex: 1; /* Ocupa todo el espacio restante */
     display: flex;
@@ -350,7 +370,6 @@ footer.footer {
 
 .logo {
     max-width: 100px; /* Ajusta el ancho del logo según tus necesidades */
-    height: auto; /* Mantiene la proporción del logo */
 }
 
 
@@ -375,9 +394,44 @@ footer.footer {
     display: flex;
     flex-direction: column; /* Apilar etiqueta y select verticalmente */
 }
+/* Botón de Agregar al Carrito */
+.item__submit {
+    background-color: #dc3545; /* Rojo */
+    color: #fff; /* Texto blanco para mejor contraste */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    
+}
 
+/* Botón de Menos */
+#subtract {
+    background-color: #808080; /* Gris */
+    color: #fff; /* Texto blanco para mejor contraste */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+}
 
+/* Botón de Más */
+#add {
+    background-color: #808080; /* Gris */
+    color: #fff; /* Texto blanco para mejor contraste */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+}
+/* Estilo específico para el enlace dentro de la clase "item_promo" */
+a.item_promo{
+    color: #007bff; /* Color celeste */
+    text-decoration: underline; /* Subrayado */
+    /* Otros estilos que desees aplicar solo a este enlace */
+}
+.cuotas{
+    color: #007bff; /* Color celeste */
 
-
-
-/* Estilos adicionales para los elementos del formulario según sea necesario */
+}
