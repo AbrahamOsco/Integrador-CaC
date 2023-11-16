@@ -41,7 +41,7 @@
 
 ## Routes
 
-### Main Routes
+### Main
 
 home.html
 
@@ -59,7 +59,7 @@ other
 
 ---
 
-### Shop Routes
+### Shop
 
 shop.html
 
@@ -71,17 +71,21 @@ item.html
 
 `GET` `/shop/item/:id` (page)
 
+`POST` `/shop/item/:id/add` (button add to cart)
+
 ---
 
 cart.html
 
 `GET` `/shop/cart` (page)
 
+`DELETE` `/shop/cart` (button remove from cart)
+
 `POST` `/shop/cart` (button pay)
 
 ---
 
-### Admin Routes
+### Admin
 
 admin.html
 
@@ -107,7 +111,7 @@ edit.html
 
 ---
 
-### Auth Routes
+### Auth
 
 login.html
 
