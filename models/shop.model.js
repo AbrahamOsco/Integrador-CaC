@@ -1,29 +1,45 @@
 // @ts-check
-const dataProducts = require('../SQL-Example/mocks/mock_data_ordered.json')
+const { poolPromise } = require('./mysql/setup.js')
 
 const productsModel = {}
 
-productsModel.getAllProducts = () => {
-	return dataProducts
+productsModel.getAllProducts = async () => {
+	const [allProducts] = await poolPromise.execute('SELECT * FROM product')
+	return allProducts
 }
 
 /**
  * @param {number} id
  */
-productsModel.getProductById = id => {
-	return dataProducts.find(p => p.product_id === id)
+productsModel.getProductById = async id => {
+	const [productsById] = await poolPromise.execute(
+		`
+		SELECT *
+		FROM product
+		WHERE id = ?
+		`,
+		[id],
+	)
+	return productsById[0] ?? false
 }
 
 /**
  * @param {number} id
  */
-productsModel.deleteProductById = id => {
-	const deletedIndex = dataProducts.findIndex(p => p.product_id === id)
-	if (deletedIndex === -1) {
+productsModel.deleteProductById = async id => {
+	/** @type {[import('mysql2').ResultSetHeader, unknown]} */
+	const [results] = await poolPromise.execute(
+		`
+		DELETE FROM product
+		WHERE id = ?
+		`,
+		[id],
+	)
+
+	if (!results.affectedRows) {
+		// deleted nothing
 		return false
 	}
-
-	dataProducts.splice(deletedIndex, 1)
 	return true
 }
 
