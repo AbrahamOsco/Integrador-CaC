@@ -8,6 +8,8 @@ shopRouter.get('/', shopController.renderShopPage)
 
 shopRouter.get('/cart', shopController.renderCartPage)
 
+shopRouter.post('/cart', shopController.buyProduct)
+
 module.exports = {
 	shopRouter,
 }
