@@ -12,9 +12,16 @@ const shopController = {}
 /**
  * @type {import('express').RequestHandler}
  */
-shopController.renderShopPage = (_req, res) => {
-	console.log(shopModel.getAllProducts())
-	console.log(shopModel.getProductById(2))
+shopController.renderShopPage = (req, res) => {
+	const { query } = req
+
+	if (Object.keys(req.query).length !== 0) {
+		console.log('Query:', req.query)
+	} else {
+		console.log('All products:', shopModel.getAllProducts())
+		console.log('Product by id:', shopModel.getProductById(2))
+	}
+
 	res.sendFile('./shop/shop.html', opts)
 }
 
