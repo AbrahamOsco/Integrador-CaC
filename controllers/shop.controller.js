@@ -1,3 +1,4 @@
+// @ts-check
 const path = require('node:path')
 const { shopModel } = require('../models/shop.model.js')
 
@@ -8,16 +9,25 @@ const shopController = {}
 
 // This wont be done with .sendFile() in the future... probably
 
+/**
+ * @type {import('express').RequestHandler}
+ */
 shopController.renderShopPage = (_req, res) => {
 	console.log(shopModel.getAllProducts())
 	console.log(shopModel.getProductById(2))
 	res.sendFile('./shop/shop.html', opts)
 }
 
+/**
+ * @type {import('express').RequestHandler}
+ */
 shopController.renderCartPage = (_req, res) => {
 	res.sendFile('./shop/cart.html', opts)
 }
 
+/**
+ * @type {import('express').RequestHandler}
+ */
 shopController.buyProduct = (_req, res) => {
 	// Mostrar luego un cartel o algo
 	console.log('Productos comprados')
