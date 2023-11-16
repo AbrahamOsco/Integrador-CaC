@@ -1,16 +1,23 @@
+// @ts-check
 const dataProducts = require('../SQL-Example/mocks/mock_data_ordered.json')
 
-const shopModel = {}
+const productsModel = {}
 
-shopModel.getAllProducts = () => {
+productsModel.getAllProducts = () => {
 	return dataProducts
 }
 
-shopModel.getProductById = id => {
+/**
+ * @param {number} id
+ */
+productsModel.getProductById = id => {
 	return dataProducts.find(p => p.product_id === id)
 }
 
-shopModel.deleteProductById = id => {
+/**
+ * @param {number} id
+ */
+productsModel.deleteProductById = id => {
 	const deletedIndex = dataProducts.findIndex(p => p.product_id === id)
 	if (deletedIndex === -1) {
 		return false
@@ -20,4 +27,4 @@ shopModel.deleteProductById = id => {
 	return true
 }
 
-module.exports = { shopModel }
+module.exports = { shopModel: productsModel }
