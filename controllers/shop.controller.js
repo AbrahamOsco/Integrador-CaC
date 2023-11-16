@@ -12,14 +12,14 @@ const shopController = {}
 /**
  * @type {import('express').RequestHandler}
  */
-shopController.renderShopPage = (req, res) => {
+shopController.renderShopPage = async (req, res) => {
 	const { query } = req
 
 	if (Object.keys(req.query).length !== 0) {
 		console.log('Query:', req.query)
 	} else {
-		console.log('All products:', shopModel.getAllProducts())
-		console.log('Product by id:', shopModel.getProductById(2))
+		console.log('All products:', await shopModel.getAllProducts())
+		console.log('Product by id:', await shopModel.getProductById(2))
 	}
 
 	res.sendFile('./shop/shop.html', opts)
@@ -28,14 +28,14 @@ shopController.renderShopPage = (req, res) => {
 /**
  * @type {import('express').RequestHandler}
  */
-shopController.renderCartPage = (_req, res) => {
+shopController.renderCartPage = async (_req, res) => {
 	res.sendFile('./shop/cart.html', opts)
 }
 
 /**
  * @type {import('express').RequestHandler}
  */
-shopController.buyProduct = (_req, res) => {
+shopController.buyProduct = async (_req, res) => {
 	// Mostrar luego un cartel o algo
 	console.log('Productos comprados')
 	res.sendFile('./shop/cart.html', opts)
