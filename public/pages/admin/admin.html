@@ -158,7 +158,9 @@
                 if (response.ok) {
                     window.location.reload()
                 } else {
-                    console.error(await response.text())
+                    const errorMessage = await response.text()
+                    console.error(errorMessage)
+                    alert(errorMessage)
                 }
             })
         })
