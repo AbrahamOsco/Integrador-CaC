@@ -14,9 +14,11 @@ const shopController = {}
  */
 shopController.renderShopPage = async (req, res) => {
 	const { query } = req
+	const filteringWithQuery = Object.keys(req.query).length !== 0
 
-	if (Object.keys(req.query).length !== 0) {
-		console.log('Query:', req.query)
+	if (filteringWithQuery) {
+		console.log('Query:', query)
+		console.log('Filtered products:', await shopModel.getAllProductsFiltered(query))
 	} else {
 		console.log('All products:', await shopModel.getAllProducts())
 		console.log('Product by id:', await shopModel.getProductById(2))

@@ -14,10 +14,26 @@ const { shopModel } = require('../models/shop.model.js')
 
 const adminController = {}
 
-adminController.renderAdminPage = async (_req, res) => {
+/**
+ * @type {import('express').RequestHandler}
+ */
+adminController.renderAdminPage = async (req, res) => {
+	const { query } = req
+	const filteringWithQuery = Object.keys(req.query).length !== 0
+
+	if (filteringWithQuery) {
+		console.log('Query:', query)
+		console.log('Filtered products:', await shopModel.getAllProductsFilteredAdmin(query))
+	} else {
+		console.log('All products:', await shopModel.getAllProducts())
+	}
+
 	res.sendFile('./admin/admin.html', opts)
 }
 
+/**
+ * @type {import('express').RequestHandler}
+ */
 adminController.deleteProduct = async (req, res) => {
 	const deleteId = Number(req.params.id)
 	if (Number.isNaN(deleteId)) return res.sendStatus(400)
