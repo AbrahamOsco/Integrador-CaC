@@ -12,6 +12,10 @@ adminRouter.get('/', adminController.renderAdminPage)
 
 adminRouter.delete('/delete/:id', adminController.deleteProduct)
 
+adminRouter.delete('/delete', (_req, res) => {
+	res.status(400).send('Tried to delete a product but no id was provided')
+})
+
 adminRouter.use((_req, res) => {
 	res.status(404).send('Called /admin with wrong HTTP method or path')
 })
