@@ -27,7 +27,7 @@ const { poolPromise } = require('./mysql/setup.js')
 function parseQuery(query) {
 	// query params if not passed might be undefined, if passed with no value, may be ''
 	const sqlFilter = {}
-	sqlFilter.textSearch = `%${query.busqueda ?? ''}%`
+	sqlFilter.textSearch = `%${query.busqueda?.trim() ?? ''}%`
 	sqlFilter.order = query.order === 'menor_a_mayor' ? 'ASC' : 'DESC'
 	sqlFilter.maxPrice = query.max || '9999'
 	sqlFilter.minPrice = query.min || '0'
