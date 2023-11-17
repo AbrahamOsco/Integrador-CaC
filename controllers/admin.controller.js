@@ -36,10 +36,10 @@ adminController.renderAdminPage = async (req, res) => {
  */
 adminController.deleteProduct = async (req, res) => {
 	const deleteId = Number(req.params.id)
-	if (Number.isNaN(deleteId)) return res.sendStatus(400)
+	if (Number.isNaN(deleteId)) return res.status(400).send('The id in the request was malformed')
 
 	const deleteStatus = await shopModel.deleteProductById(deleteId)
-	if (!deleteStatus) return res.sendStatus(404)
+	if (!deleteStatus) return res.status(404).send(`Product with id '${deleteId}' was not in the database`)
 
 	return res.sendStatus(200)
 }
