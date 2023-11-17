@@ -65,6 +65,26 @@ productsModel.getAllProductsFiltered = async queryParams => {
 }
 
 /**
+ * @param {QueryParams} queryParams
+ */
+productsModel.getAllProductsFilteredAdmin = async queryParams => {
+	const sqlFilter = parseQuery(queryParams)
+
+	const [filteredProducts] = await poolPromise.execute(
+		`
+		SELECT * FROM product
+		WHERE
+			product_sku LIKE ?
+			OR product_name LIKE ?
+			OR licence_name LIKE ?
+		ORDER BY id ASC
+		`,
+		[sqlFilter.textSearch, sqlFilter.textSearch, sqlFilter.textSearch],
+	)
+	return filteredProducts
+}
+
+/**
  * @param {number} id
  */
 productsModel.getProductById = async id => {
