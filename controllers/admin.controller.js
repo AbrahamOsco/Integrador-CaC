@@ -20,14 +20,20 @@ adminController.renderAdminPage = async (req, res) => {
 	const { query } = req
 	const filteringWithQuery = Object.keys(req.query).length !== 0
 
+	let products
+
 	if (filteringWithQuery) {
+		console.log('Searching filtered products')
 		console.log('Query:', query)
-		console.log('Filtered products:', await shopModel.getAllProductsFilteredAdmin(query))
+		// console.log('Filtered products:', await shopModel.getAllProductsFilteredAdmin(query))
+		products = await shopModel.getAllProductsFilteredAdmin(query)
 	} else {
-		console.log('All products:', await shopModel.getAllProducts())
+		// console.log('All products:', await shopModel.getAllProducts())
+		console.log('Searching all products')
+		products = await shopModel.getAllProducts()
 	}
 
-	res.render('admin/admin.ejs')
+	res.render('admin/admin.ejs', { products })
 }
 
 /**

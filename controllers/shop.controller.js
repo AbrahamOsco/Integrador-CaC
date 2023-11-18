@@ -1,6 +1,7 @@
 // @ts-check
 const path = require('node:path')
 const { shopModel } = require('../models/shop.model.js')
+const { splitIntoArrays } = require('../utils/mysql.js')
 
 const basePath = path.join(__dirname, '../public/pages/')
 const opts = { root: basePath }
@@ -14,15 +15,23 @@ shopController.renderShopPage = async (req, res) => {
 	const { query } = req
 	const filteringWithQuery = Object.keys(req.query).length !== 0
 
+	let products
+
 	if (filteringWithQuery) {
+		console.log('Searching filtered products')
 		console.log('Query:', query)
-		console.log('Filtered products:', await shopModel.getAllProductsFiltered(query))
+		// console.log('Filtered products:', await shopModel.getAllProductsFiltered(query))
+		products = await shopModel.getAllProductsFiltered(query)
 	} else {
-		console.log('All products:', await shopModel.getAllProducts())
-		console.log('Product by id:', await shopModel.getProductById(2))
+		// console.log('All products:', await shopModel.getAllProducts())
+		// console.log('Product by id:', await shopModel.getProductById(2))
+		console.log('Searching all products')
+		products = await shopModel.getAllProducts()
 	}
 
-	res.render('shop/shop.ejs')
+	const productsGrid = splitIntoArrays(products, 9)
+
+	res.render('shop/shop.ejs', { productsGrid })
 }
 
 /**
