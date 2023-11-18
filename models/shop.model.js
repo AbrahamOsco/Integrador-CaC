@@ -1,12 +1,12 @@
 // @ts-check
 const { poolPromise } = require('./mysql/setup.js')
-const { parseQuery } = require('../utils/mysql.js')
+const { parseQuery, parseReceived } = require('../utils/mysql.js')
 
 const productsModel = {}
 
 productsModel.getAllProducts = async () => {
 	const [allProducts] = await poolPromise.execute('SELECT * FROM product')
-	return allProducts
+	return parseReceived(allProducts)
 }
 
 /**
@@ -29,7 +29,7 @@ productsModel.getAllProductsFiltered = async queryParams => {
 		`,
 		[sqlFilter.textSearch, sqlFilter.textSearch, sqlFilter.minPrice, sqlFilter.maxPrice],
 	)
-	return filteredProducts
+	return parseReceived(filteredProducts)
 }
 
 /**
@@ -49,7 +49,7 @@ productsModel.getAllProductsFilteredAdmin = async queryParams => {
 		`,
 		[sqlFilter.textSearch, sqlFilter.textSearch, sqlFilter.textSearch],
 	)
-	return filteredProducts
+	return parseReceived(filteredProducts)
 }
 
 /**
@@ -64,7 +64,7 @@ productsModel.getProductById = async id => {
 		`,
 		[id],
 	)
-	return productsById[0] ?? false
+	return parseReceived(productsById[0]) ?? false
 }
 
 /**
