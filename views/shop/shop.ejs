@@ -88,7 +88,9 @@
 				<div class="glide">
 					<div class="glide__track" data-glide-el="track">
 						<div class="glide__slides">
+							<% productsGrid.forEach(productsGroup => { %>
 							<div class="product-grid glide__slide">
+								<% productsGroup.forEach(product=>{ %>
 								<a href="/shop/item/1">
 									<article class="product product--new">
 										<img class="product__img" src="/img/pokemon/vulpix-1.webp" alt="vulpix" />
@@ -99,95 +101,9 @@
 										<p class="product__other">3 cuotas sin interes</p>
 									</article>
 								</a>
-
-								<a href="/shop/item/1">
-									<article class="product">
-										<img class="product__img" src="/img/pokemon/vulpix-1.webp" alt="vulpix" />
-										<p class="product__new-tag">Nuevo</p>
-										<p class="product__edition">Pokemon</p>
-										<p class="product__name">Vulpix</p>
-										<p class="product__price">300</p>
-										<p class="product__other">3 cuotas sin interes</p>
-									</article>
-								</a>
-
-								<a href="/shop/item/1">
-									<article class="product product--new">
-										<img class="product__img" src="/img/pokemon/vulpix-1.webp" alt="vulpix" />
-										<p class="product__new-tag">Nuevo</p>
-										<p class="product__edition">Pokemon</p>
-										<p class="product__name">Vulpix</p>
-										<p class="product__price">300</p>
-										<p class="product__other">3 cuotas sin interes</p>
-									</article>
-								</a>
-
-								<a href="/shop/item/1">
-									<article class="product">
-										<img class="product__img" src="/img/pokemon/vulpix-1.webp" alt="vulpix" />
-										<p class="product__new-tag">Nuevo</p>
-										<p class="product__edition">Pokemon</p>
-										<p class="product__name">Vulpix</p>
-										<p class="product__price">300</p>
-										<p class="product__other">3 cuotas sin interes</p>
-									</article>
-								</a>
-
-								<a href="/shop/item/1">
-									<article class="product product--new">
-										<img class="product__img" src="/img/pokemon/vulpix-1.webp" alt="vulpix" />
-										<p class="product__new-tag">Nuevo</p>
-										<p class="product__edition">Pokemon</p>
-										<p class="product__name">Vulpix</p>
-										<p class="product__price">300</p>
-										<p class="product__other">3 cuotas sin interes</p>
-									</article>
-								</a>
-
-								<a href="/shop/item/1">
-									<article class="product">
-										<img class="product__img" src="/img/pokemon/vulpix-1.webp" alt="vulpix" />
-										<p class="product__new-tag">Nuevo</p>
-										<p class="product__edition">Pokemon</p>
-										<p class="product__name">Vulpix</p>
-										<p class="product__price">300</p>
-										<p class="product__other">3 cuotas sin interes</p>
-									</article>
-								</a>
-
-								<a href="/shop/item/1">
-									<article class="product product--new">
-										<img class="product__img" src="/img/pokemon/vulpix-1.webp" alt="vulpix" />
-										<p class="product__new-tag">Nuevo</p>
-										<p class="product__edition">Pokemon</p>
-										<p class="product__name">Vulpix</p>
-										<p class="product__price">300</p>
-										<p class="product__other">3 cuotas sin interes</p>
-									</article>
-								</a>
-
-								<a href="/shop/item/1">
-									<article class="product">
-										<img class="product__img" src="/img/pokemon/vulpix-1.webp" alt="vulpix" />
-										<p class="product__new-tag">Nuevo</p>
-										<p class="product__edition">Pokemon</p>
-										<p class="product__name">Vulpix</p>
-										<p class="product__price">300</p>
-										<p class="product__other">3 cuotas sin interes</p>
-									</article>
-								</a>
-
-								<a href="/shop/item/1">
-									<article class="product product--new">
-										<img class="product__img" src="/img/pokemon/vulpix-1.webp" alt="vulpix" />
-										<p class="product__new-tag">Nuevo</p>
-										<p class="product__edition">Pokemon</p>
-										<p class="product__name">Vulpix</p>
-										<p class="product__price">300</p>
-										<p class="product__other">3 cuotas sin interes</p>
-									</article>
-								</a>
+								<% }) %>
 							</div>
+							<% }) %>
 						</div>
 					</div>
 
