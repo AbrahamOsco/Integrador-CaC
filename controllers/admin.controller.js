@@ -33,7 +33,7 @@ adminController.renderAdminPage = async (req, res) => {
 		products = await shopModel.getAllProducts()
 	}
 
-	res.render('admin/admin.ejs', { products })
+	res.render('admin/admin.ejs', { products, query })
 }
 
 /**

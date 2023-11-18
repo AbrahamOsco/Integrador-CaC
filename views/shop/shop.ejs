@@ -57,29 +57,57 @@
 				<form action="/shop" method="get">
 					<fieldset>
 						<legend>Buscar</legend>
-						<input type="search" name="busqueda" placeholder="item o categoria" size="10" />
+						<input type="search" name="busqueda" placeholder="item o categoria" size="10" value="<%= query.busqueda %>" />
 					</fieldset>
 
 					<fieldset>
 						<legend>Ordenar Por</legend>
 						<select name="order">
 							<option value="mayor_a_menor">Mayor a menor</option>
+							<% if (query.order === "menor_a_mayor") { %>
+							<option value="menor_a_mayor" selected>Menor a mayor</option>
+							<% } else { %>
 							<option value="menor_a_mayor">Menor a mayor</option>
+							<% } %>
 						</select>
 					</fieldset>
 
 					<fieldset class="price">
 						<legend>Precio</legend>
-						<label> Min <input type="text" name="min" placeholder="0" size="4" inputmode="numeric" /> </label>
-						<label> Max <input type="text" name="max" placeholder="0" size="4" inputmode="numeric" /> </label>
+						<label> Min <input type="text" name="min" placeholder="0" size="4" inputmode="numeric" value="<%= query.min %>" /> </label>
+						<label> Max <input type="text" name="max" placeholder="0" size="4" inputmode="numeric" value="<%= query.max %>" /> </label>
 					</fieldset>
 
 					<fieldset class="filter">
 						<legend>Filtrar</legend>
-						<label> <input type="checkbox" name="filter" value="nuevos" /> Nuevos <br /> </label>
-						<label> <input type="checkbox" name="filter" value="ofertas" /> Ofertas <br /> </label>
-						<label> <input type="checkbox" name="filter" value="especial" /> Edicion Especial <br /> </label>
-						<label> <input type="checkbox" name="filter" value="favoritos" /> Favoritos <br /> </label>
+						<label>
+							<% if (query.filter?.includes("nuevos")) { %>
+							<input type="checkbox" name="filter" value="nuevos" checked /> Nuevos <br />
+							<% } else { %>
+							<input type="checkbox" name="filter" value="nuevos" /> Nuevos <br />
+							<% } %>
+						</label>
+						<label>
+							<% if (query.filter?.includes("ofertas")) { %>
+							<input type="checkbox" name="filter" value="ofertas" checked /> Ofertas <br />
+							<% } else { %>
+							<input type="checkbox" name="filter" value="ofertas" /> Ofertas <br />
+							<% } %>
+						</label>
+						<label>
+							<% if (query.filter?.includes("especial")) { %>
+							<input type="checkbox" name="filter" value="especial" checked /> Edicion Especial <br />
+							<% } else { %>
+							<input type="checkbox" name="filter" value="especial" /> Edicion Especial <br />
+							<% } %>
+						</label>
+						<label>
+							<% if (query.filter?.includes("favoritos")) { %>
+							<input type="checkbox" name="filter" value="favoritos" checked /> Favoritos <br />
+							<% } else { %>
+							<input type="checkbox" name="filter" value="favoritos" /> Favoritos <br />
+							<% } %>
+						</label>
 					</fieldset>
 					<button type="submit">Filtrar</button>
 				</form>
