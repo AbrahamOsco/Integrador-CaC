@@ -19,6 +19,8 @@ shopController.renderShopPage = async (req, res) => {
 
 	if (filteringWithQuery) {
 		console.log('Searching filtered products')
+		if (typeof query.filter === 'undefined') query.filter = ['']
+		else if (typeof query.filter === 'string') query.filter = [query.filter]
 		console.log('Query:', query)
 		// console.log('Filtered products:', await shopModel.getAllProductsFiltered(query))
 		products = await shopModel.getAllProductsFiltered(query)
