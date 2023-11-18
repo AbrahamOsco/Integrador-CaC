@@ -7,8 +7,6 @@ const opts = { root: basePath }
 
 const shopController = {}
 
-// This wont be done with .sendFile() in the future... probably
-
 /**
  * @type {import('express').RequestHandler}
  */
@@ -24,7 +22,7 @@ shopController.renderShopPage = async (req, res) => {
 		console.log('Product by id:', await shopModel.getProductById(2))
 	}
 
-	res.sendFile('./shop/shop.html', opts)
+	res.render('shop/shop.ejs')
 }
 
 /**

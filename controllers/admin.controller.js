@@ -1,5 +1,4 @@
-const path = require('node:path')
-const { opts } = require('./shop.controller.js')
+// @ts-check
 const { shopModel } = require('../models/shop.model.js')
 
 /*
@@ -28,7 +27,7 @@ adminController.renderAdminPage = async (req, res) => {
 		console.log('All products:', await shopModel.getAllProducts())
 	}
 
-	res.sendFile('./admin/admin.html', opts)
+	res.render('admin/admin.ejs')
 }
 
 /**
@@ -36,12 +35,18 @@ adminController.renderAdminPage = async (req, res) => {
  */
 adminController.deleteProduct = async (req, res) => {
 	const deleteId = Number(req.params.id)
-	if (Number.isNaN(deleteId)) return res.status(400).send('The id in the request was malformed')
+	if (Number.isNaN(deleteId)) {
+		res.status(400).send('The id in the request was malformed')
+		return
+	}
 
 	const deleteStatus = await shopModel.deleteProductById(deleteId)
-	if (!deleteStatus) return res.status(404).send(`Product with id '${deleteId}' was not in the database`)
+	if (!deleteStatus) {
+		res.status(404).send(`Product with id '${deleteId}' was not in the database`)
+		return
+	}
 
-	return res.sendStatus(200)
+	res.sendStatus(200)
 }
 
 module.exports = { adminController }
