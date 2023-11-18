@@ -52,7 +52,24 @@ function parseReceived(products) {
 	return products
 }
 
+/**
+ * Split elements of array into other arrays of the specified size
+ * This will be used by the shop controller
+ * @param {object[]} arr
+ * @param {number} groupSize
+ * @returns {object[][]}
+ */
+function splitIntoArrays(arr, groupSize) {
+	const newArr = []
+	for (let i = 0; i < arr.length; i += groupSize) {
+		const group = arr.slice(i, i + groupSize)
+		newArr.push(group)
+	}
+	return newArr
+}
+
 module.exports = {
 	parseQuery,
 	parseReceived,
+	splitIntoArrays,
 }
