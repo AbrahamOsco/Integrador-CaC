@@ -27,16 +27,16 @@ inputArray.forEach(inputGroup => {
 
 	buttonPlus?.addEventListener('click', () => {
 		inputElement.value = operationStringNumber(inputElement.value, 1)
-		updatePrice(productCard)
+		updateResume()
 	})
 
 	buttonMinus?.addEventListener('click', () => {
 		inputElement.value = operationStringNumber(inputElement.value, -1)
-		updatePrice(productCard)
+		updateResume()
 	})
 
 	inputElement.addEventListener('input', () => {
-		updatePrice(productCard)
+		updateResume()
 	})
 })
 
@@ -46,6 +46,7 @@ const productCards = document.querySelectorAll('.product-card')
  * Update total price of a product card
  * It uses its price and the quantity
  * @param {Element} productCard
+ * @returns {{totalPrice:number, quantity:number}}
  */
 function updatePrice(productCard) {
 	const productPriceElement = productCard.querySelector('.product-card__details .price')
@@ -61,6 +62,7 @@ function updatePrice(productCard) {
 	if (totalPriceElement) {
 		totalPriceElement.textContent = totalPrice.toFixed(2)
 	}
+	return { totalPrice, quantity }
 }
 
 /**
@@ -72,4 +74,35 @@ function updatePrices() {
 	})
 }
 
-updatePrices()
+const resumeChart = {
+	element: document.querySelector('.resume__chart'),
+	quantity: document?.querySelector('.resume__chart .quantity .number'),
+	subtotal: document?.querySelector('.resume__chart .subtotal .number'),
+	shipping: document?.querySelector('.resume__chart .shipping .number'),
+	total: document?.querySelector('.resume__chart .total .number'),
+}
+
+function updateResume() {
+	let quantity = 0
+	let subtotal = 0
+	let shipping = 0
+	let total = 0
+
+	productCards?.forEach(productCard => {
+		const { totalPrice: cardPrice, quantity: cardQuantity } = updatePrice(productCard)
+		quantity += cardQuantity
+		subtotal += cardPrice * cardQuantity
+	})
+
+	total = subtotal + shipping
+
+	if (resumeChart.quantity && resumeChart.subtotal && resumeChart.shipping && resumeChart.total) {
+		resumeChart.quantity.textContent = quantity.toString()
+		resumeChart.subtotal.textContent = subtotal.toFixed(2)
+		resumeChart.shipping.textContent = shipping.toFixed(2)
+		resumeChart.total.textContent = total.toFixed(2)
+	}
+}
+
+// updatePrices()
+updateResume()
