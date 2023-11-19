@@ -4,22 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../../img/branding/isotype.svg" type="image/svg+xml">
+    <link rel="icon" href="/img/branding/isotype.svg" type="image/svg+xml">
     <title> Admin </title>
     <!-- Raleway Font-->
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
     <!-- Local Style Sheets -->
-    <link rel="stylesheet" href="../../css/stylesShop.css">
-    <link rel="stylesheet" href="../../css/stylesAdmin.css">
+    <link rel="stylesheet" href="/css/admin/admin.css">
+    <!-- Local Scripts -->
+    <script type="module" src="/js/admin/admin.js"></script>
 </head>
 <body>
 
     <header>
 
         <figure>
-            <a href="../../index.html">
+            <a href="/home">
                 <h1>
-                    <img class="header__full-logo" src="../../img/branding/logo_light_horizontal.svg" alt="Funkoshop">
+                    <img class="header__full-logo" src="/img/branding/logo_light_horizontal.svg" alt="Funkoshop">
                 </h1>
             </a>
         </figure>
@@ -27,13 +28,13 @@
         <nav>
             <ul class="header__navbar">
                 <li>
-                    <a href="../shop/shop.html">VER TIENDA</a>
+                    <a href="/shop">VER TIENDA</a>
                 </li>
                 <li>
-                    <a href="../admin/admin.html">ADMIN</a>
+                    <a href="/admin">ADMIN</a>
                 </li>
                 <li>
-                    <a href="#">SALIR</a>
+                    <a href="/auth/logout">SALIR</a>
                 </li>
             </ul>
         </nav>
@@ -43,21 +44,20 @@
 
         <section class="search-product">
             <form>
-                <p>
-                    <label class="search-input">
+                <div class="search-input">
+                    <button type="submit">
                         <svg width="43" height="43" viewBox="0 0 43 43" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="search-icon">
                             <path d="M33.5931 35.6048L23.7931 25.8048C22.9181 26.5048 21.9118 27.059 20.7743 27.4673C19.6368 27.8757 18.4264 28.0798 17.1431 28.0798C13.9639 28.0798 11.2736 26.9785 9.07207 24.7758C6.87057 22.5732 5.76923 19.8828 5.76807 16.7048C5.76807 13.5257 6.8694 10.8353 9.07207 8.63383C11.2747 6.43233 13.9651 5.331 17.1431 5.32983C20.3222 5.32983 23.0126 6.43117 25.2141 8.63383C27.4156 10.8365 28.5169 13.5268 28.5181 16.7048C28.5181 17.9882 28.3139 19.1986 27.9056 20.3361C27.4972 21.4736 26.9431 22.4798 26.2431 23.3548L36.0868 33.1986C36.4077 33.5194 36.5681 33.9132 36.5681 34.3798C36.5681 34.8465 36.3931 35.2548 36.0431 35.6048C35.7222 35.9257 35.3139 36.0861 34.8181 36.0861C34.3222 36.0861 33.9139 35.9257 33.5931 35.6048ZM17.1431 24.5798C19.3306 24.5798 21.1902 23.8139 22.7221 22.2821C24.2539 20.7503 25.0192 18.8912 25.0181 16.7048C25.0181 14.5173 24.2521 12.6577 22.7203 11.1258C21.1885 9.594 19.3294 8.82867 17.1431 8.82983C14.9556 8.82983 13.0959 9.59575 11.5641 11.1276C10.0322 12.6594 9.2669 14.5185 9.26807 16.7048C9.26807 18.8923 10.034 20.752 11.5658 22.2838C13.0977 23.8157 14.9567 24.581 17.1431 24.5798Z" />
                         </svg>
-                        <input type="search" name="busqueda" placeholder="codigo, nombre o categoria">
-                    </label>
-                </p>
-
+                    </button>
+                    <input type="search" name="busqueda" placeholder="codigo, nombre o categoria">
+                </div>
             </form>
         </section>
 
         <section class="list-products">
             <h2>Listado de productos</h2>
-            <div class="agregar">AGREGAR <a href="./create.html">+</a></div>
+            <div class="agregar">AGREGAR <a href="/admin/create">+</a></div>
             <div class="table-products">
                 <table>
                     <thead>
@@ -77,7 +77,7 @@
                             <td> Baby Yoda Blueball </td>
                             <td> STAR WARS </td>
                             <td>
-                                <a href="./edit.html">
+                                <a href="/admin/edit/1">
                                     <svg width="33" height="34" viewBox="0 0 33 34" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="pencil">
                                         <path d="M26.2126 13.0236L20.5459 7.24858L22.4126 5.32358C22.9237 4.7965 23.5517 4.53296 24.2966 4.53296C25.0415 4.53296 25.669 4.7965 26.1793 5.32358L28.0459 7.24858C28.557 7.77567 28.8237 8.41183 28.8459 9.15708C28.8681 9.90233 28.6237 10.538 28.1126 11.0642L26.2126 13.0236ZM5.81259 29.6267C5.43481 29.6267 5.11792 29.4947 4.86192 29.2307C4.60592 28.9667 4.47836 28.6404 4.47925 28.2517V24.3673C4.47925 24.184 4.51259 24.0062 4.57925 23.8338C4.64592 23.6615 4.74592 23.507 4.87925 23.3705L18.6126 9.20796L24.2793 15.0517L10.5459 29.2142C10.4126 29.3517 10.2628 29.4548 10.0966 29.5236C9.93036 29.5923 9.75792 29.6267 9.57925 29.6267H5.81259Z" />
                                     </svg>
@@ -97,7 +97,7 @@
                             <td> Baby Yoda Blueball </td>
                             <td> STAR WARS </td>
                             <td>
-                                <a href="./edit.html">
+                                <a href="/admin/edit/1">
                                     <svg width="33" height="34" viewBox="0 0 33 34" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="pencil">
                                         <path d="M26.2126 13.0236L20.5459 7.24858L22.4126 5.32358C22.9237 4.7965 23.5517 4.53296 24.2966 4.53296C25.0415 4.53296 25.669 4.7965 26.1793 5.32358L28.0459 7.24858C28.557 7.77567 28.8237 8.41183 28.8459 9.15708C28.8681 9.90233 28.6237 10.538 28.1126 11.0642L26.2126 13.0236ZM5.81259 29.6267C5.43481 29.6267 5.11792 29.4947 4.86192 29.2307C4.60592 28.9667 4.47836 28.6404 4.47925 28.2517V24.3673C4.47925 24.184 4.51259 24.0062 4.57925 23.8338C4.64592 23.6615 4.74592 23.507 4.87925 23.3705L18.6126 9.20796L24.2793 15.0517L10.5459 29.2142C10.4126 29.3517 10.2628 29.4548 10.0966 29.5236C9.93036 29.5923 9.75792 29.6267 9.57925 29.6267H5.81259Z" />
                                     </svg>
@@ -122,48 +122,26 @@
         <nav>
             <ul class="footer__navbar">
                 <li>
-                    <a href="../shop/shop.html"> SHOP </a>
+                    <a href="/shop"> SHOP </a>
                 </li>
                 <li>
-                    <a href="../admin/register.html"> REGISTRARSE </a>
+                    <a href="/auth/register"> REGISTRARSE </a>
                 </li>
                 <li>
-                    <a href="../admin/login.html"> INGRESAR </a>
+                    <a href="/auth/login"> INGRESAR </a>
                 </li>
                 <li>
-                    <a href="#"> CONTACTO </a>
+                    <a href="/contact"> CONTACTO </a>
                 </li>
             </ul>
         </nav>
         <p class="footer__copyright"> All rights reserved 2023 - Funkoshop &copy; </p>
 
         <figure>
-            <a href="../../index.html">
-                <img class="footer__logo" src="../../img/branding/isotype.svg" alt="logo de Funkoshop">
+            <a href="/home">
+                <img class="footer__logo" src="/img/branding/isotype.svg" alt="logo de Funkoshop">
             </a>
         </figure>
     </footer>
-    <script type="module">
-        // @ts-check
-        /** @type {NodeListOf<HTMLButtonElement>} */
-        const buttonsDelete = document.querySelectorAll('tbody td button')
-
-        buttonsDelete.forEach(button => {
-            button.addEventListener('click', async e => {
-                const id = button.dataset.id ?? ''
-
-                const response = await fetch(`/admin/delete/${id}`, {
-                    method: 'DELETE',
-                })
-                if (response.ok) {
-                    window.location.reload()
-                } else {
-                    const errorMessage = await response.text()
-                    console.error(errorMessage)
-                    alert(errorMessage)
-                }
-            })
-        })
-    </script>
 </body>
 </html>
