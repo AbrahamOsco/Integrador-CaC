@@ -1,5 +1,4 @@
-const path = require('node:path')
-const { opts } = require('./shop.controller.js')
+// @ts-check
 const { shopModel } = require('../models/shop.model.js')
 
 /*
@@ -21,14 +20,20 @@ adminController.renderAdminPage = async (req, res) => {
 	const { query } = req
 	const filteringWithQuery = Object.keys(req.query).length !== 0
 
+	let products
+
 	if (filteringWithQuery) {
+		console.log('Searching filtered products')
 		console.log('Query:', query)
-		console.log('Filtered products:', await shopModel.getAllProductsFilteredAdmin(query))
+		// console.log('Filtered products:', await shopModel.getAllProductsFilteredAdmin(query))
+		products = await shopModel.getAllProductsFilteredAdmin(query)
 	} else {
-		console.log('All products:', await shopModel.getAllProducts())
+		// console.log('All products:', await shopModel.getAllProducts())
+		console.log('Searching all products')
+		products = await shopModel.getAllProducts()
 	}
 
-	res.sendFile('./admin/admin.html', opts)
+	res.render('admin/admin.ejs', { products, query })
 }
 
 /**
@@ -36,12 +41,18 @@ adminController.renderAdminPage = async (req, res) => {
  */
 adminController.deleteProduct = async (req, res) => {
 	const deleteId = Number(req.params.id)
-	if (Number.isNaN(deleteId)) return res.status(400).send('The id in the request was malformed')
+	if (Number.isNaN(deleteId)) {
+		res.status(400).send('The id in the request was malformed')
+		return
+	}
 
 	const deleteStatus = await shopModel.deleteProductById(deleteId)
-	if (!deleteStatus) return res.status(404).send(`Product with id '${deleteId}' was not in the database`)
+	if (!deleteStatus) {
+		res.status(404).send(`Product with id '${deleteId}' was not in the database`)
+		return
+	}
 
-	return res.sendStatus(200)
+	res.sendStatus(200)
 }
 
 module.exports = { adminController }
