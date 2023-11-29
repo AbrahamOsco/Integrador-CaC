@@ -1,3 +1,4 @@
+// @ts-check
 const { timestampIsNew } = require('./time.js')
 
 /**
@@ -20,16 +21,19 @@ const { timestampIsNew } = require('./time.js')
  */
 
 /**
- * @param {QueryParams} query
+ * @param {QueryParams | undefined} query
  * @returns {SqlFilter}
  */
 function parseQuery(query) {
 	// query params if not passed might be undefined, if passed with no value, may be ''
+	// || => replace if nullish, zero or empty string
+	// ?? => replace only if nullish
 	const sqlFilter = {}
-	sqlFilter.textSearch = `%${query.busqueda?.trim() ?? ''}%`
-	sqlFilter.order = query.order === 'menor_a_mayor' ? 'ASC' : 'DESC'
-	sqlFilter.maxPrice = query.max || '9999'
-	sqlFilter.minPrice = query.min || '0'
+	sqlFilter.textSearch = `%${query?.busqueda?.trim() ?? ''}%`
+	sqlFilter.order = query?.order === 'menor_a_mayor' ? 'ASC' : 'DESC'
+	sqlFilter.maxPrice = query?.max || '999999'
+	sqlFilter.minPrice = query?.min || '0'
+
 	return sqlFilter
 }
 
