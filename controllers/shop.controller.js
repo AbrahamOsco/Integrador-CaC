@@ -28,7 +28,7 @@ shopController.renderShopPage = async (req, res) => {
 		// console.log('All products:', await shopModel.getAllProducts())
 		// console.log('Product by id:', await shopModel.getProductById(2))
 		console.log('Searching all products')
-		products = await shopModel.getAllProducts()
+		products = await shopModel.getAllProductsFiltered()
 	}
 
 	const productsGrid = splitIntoArrays(products, 9)
