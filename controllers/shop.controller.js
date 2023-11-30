@@ -8,19 +8,28 @@ const opts = { root: basePath }
 
 const shopController = {}
 
+function basicQueryParsing(query) {
+	if (typeof query.filter === 'undefined') query.filter = ['']
+	else if (typeof query.filter === 'string') query.filter = [query.filter]
+
+	if (Number(query.max) < Number(query.min)) {
+		query.max = (Number(query.min) + 1).toString()
+	}
+	return query
+}
+
 /**
  * @type {import('express').RequestHandler}
  */
 shopController.renderShopPage = async (req, res) => {
-	const { query } = req
+	let { query } = req
 	const filteringWithQuery = Object.keys(req.query).length !== 0
 
 	let products
 
 	if (filteringWithQuery) {
 		console.log('Searching filtered products')
-		if (typeof query.filter === 'undefined') query.filter = ['']
-		else if (typeof query.filter === 'string') query.filter = [query.filter]
+		query = basicQueryParsing(query)
 		console.log('Query:', query)
 		// console.log('Filtered products:', await shopModel.getAllProductsFiltered(query))
 		products = await shopModel.getAllProductsFiltered(query)
