@@ -23,22 +23,13 @@ function basicQueryParsing(query) {
  */
 shopController.renderShopPage = async (req, res) => {
 	let { query } = req
-	const filteringWithQuery = Object.keys(req.query).length !== 0
 
 	let products
 
-	if (filteringWithQuery) {
-		console.log('Searching filtered products')
-		query = basicQueryParsing(query)
-		console.log('Query:', query)
-		// console.log('Filtered products:', await shopModel.getAllProductsFiltered(query))
-		products = await shopModel.getAllProductsFiltered(query)
-	} else {
-		// console.log('All products:', await shopModel.getAllProducts())
-		// console.log('Product by id:', await shopModel.getProductById(2))
-		console.log('Searching all products')
-		products = await shopModel.getAllProductsFiltered()
-	}
+	query = basicQueryParsing(query)
+	products = await shopModel.getAllProductsFiltered(query)
+	console.log('Query:', query)
+	console.log('Products:', products)
 
 	const productsGrid = splitIntoArrays(products, 9)
 
