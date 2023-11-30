@@ -123,11 +123,14 @@
 								<a href="/shop/item/<%= product.id %>">
 									<article class="product product--new">
 										<img class="product__img" src="<%= product.img_front %>" alt="<%= product.name %>" />
+										<% if (product.isNew) { %>
 										<p class="product__new-tag">Nuevo</p>
+										<% } %>
+
 										<p class="product__edition"><%= product.licence_name %></p>
 										<p class="product__name"><%= product.product_name %></p>
 										<p class="product__price"><%= product.product_price %></p>
-										<% if (product.dues === 1) {%>
+										<% if (product.dues === 1) { %>
 
 										<p class="product__other"><%= product.dues %> cuota sin interes</p>
 

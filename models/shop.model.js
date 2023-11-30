@@ -10,7 +10,7 @@ productsModel.getAllProducts = async () => {
 }
 
 /**
- * @param {object} queryParams
+ * @param {object | undefined} [queryParams]
  */
 productsModel.getAllProductsFiltered = async queryParams => {
 	const sqlFilter = parseQuery(queryParams)
