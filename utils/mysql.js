@@ -1,3 +1,5 @@
+const { timestampIsNew } = require('./time.js')
+
 /**
  * This is received in the url from the page
  * @typedef {object} QueryParams
@@ -32,6 +34,7 @@ function parseQuery(query) {
 }
 
 function formatFloat(floatNumber) {
+	if (!floatNumber) floatNumber = 0
 	return Number.parseFloat(floatNumber.toFixed(2))
 }
 
@@ -46,8 +49,9 @@ function parseReceived(products) {
 	}
 
 	products.forEach(product => {
-		product.product_price = formatFloat(product.product_price ?? 0)
-		product.discount = formatFloat(product.discount ?? 0)
+		product.product_price = formatFloat(product.product_price)
+		product.discount = formatFloat(product.discount)
+		product.isNew = timestampIsNew(product.create_time)
 	})
 	return products
 }

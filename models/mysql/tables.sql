@@ -14,7 +14,8 @@ CREATE TABLE IF NOT EXISTS product (
   img_front VARCHAR(200),
   img_back VARCHAR(200),
   discount FLOAT,
-  stock INT NOT NULL
+  stock INT NOT NULL,
+  create_time TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 SELECT

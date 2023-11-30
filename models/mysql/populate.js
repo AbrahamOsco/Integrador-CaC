@@ -22,10 +22,11 @@ async function populateSql() {
 				img_front,
 				img_back,
 				discount,
-				stock
+				stock,
+				create_time
 			)
 			VALUES
-				(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+				(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 			`,
 			[
 				product.licence_name,
@@ -39,6 +40,7 @@ async function populateSql() {
 				product.img_back,
 				product.discount,
 				product.stock,
+				new Date(product.create_time),
 			],
 		)
 	}
