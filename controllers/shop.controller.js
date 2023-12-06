@@ -32,7 +32,7 @@ shopController.renderShopPage = async (req, res) => {
 	console.log('Products:', products)
 
 	const productsGrid = splitIntoArrays(products, 9)
-
+	res.send("Estoy en shop\n");
 	res.render('shop/shop.ejs', { productsGrid, query })
 }
 
