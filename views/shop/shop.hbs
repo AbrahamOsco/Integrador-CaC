@@ -16,11 +16,9 @@
 	">
 </head>
 <body>
-
     <header>
-
         <figure>
-            <a href="../../index.html">
+            <a href="/">
                 <h1>
                     <img class="header__full-logo" src="../../img/branding/logo_light_horizontal.svg" alt="Funkoshop">
                 </h1>
@@ -30,16 +28,16 @@
         <nav>
             <ul class="header__navbar">
                 <li>
-                    <a href="../shop/shop.html">SHOP</a>
+                    <a href="/shop">SHOP</a>
                 </li>
                 <li>
-                    <a href="#">CONTACT</a>
+                    <a href="/contact">CONTACT</a>
                 </li>
                 <li>
                     <a href="../admin/login.html">LOGIN</a>
                 </li>
                 <li>
-                    <a href="../shop/cart.html">
+                    <a href="/cart">
                         <svg width="33" height="31" viewBox="0 0 33 31" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12.5 31C13.8807 31 15 29.8807 15 28.5C15 27.1193 13.8807 26 12.5 26C11.1193 26 10 27.1193 10 28.5C10 29.8807 11.1193 31 12.5 31Z" />
                             <path d="M25.5 31C26.8807 31 28 29.8807 28 28.5C28 27.1193 26.8807 26 25.5 26C24.1193 26 23 27.1193 23 28.5C23 29.8807 24.1193 31 25.5 31Z" />
@@ -52,7 +50,6 @@
     </header>
 
     <main>
-
         <section class="sidebar-section">
             <form>
                 <fieldset>
@@ -100,121 +97,23 @@
                 <div class="glide__track" data-glide-el="track">
                     <div class="glide__slides">
                         <div class="product-grid glide__slide">
-
-                            <a href="../shop/item.html">
-
+                            {{#each products}}
+                            <a href="/item/{{product_id}}">                                
                                 <article class="product product--new">
-                                    <img class="product__img" src="../../img/pokemon/vulpix-1.webp" alt="vulpix">
+                                    <img class="product__img" src="../../{{image_front}}" alt="vulpix">
                                     <p class="product__new-tag">Nuevo</p>
-                                    <p class="product__edition">Pokemon</p>
-                                    <p class="product__name">Vulpix</p>
-                                    <p class="product__price">300</p>
-                                    <p class="product__other"> 3 cuotas sin interes </p>
+                                    <p class="product__edition">{{licence_name}}</p>
+                                    <p class="product__name">{{product_name}}</p>
+                                    <p class="product__price">{{price}}</p>
+                                    <p class="product__other"> {{dues}} cuotas sin interes </p>
                                 </article>
                             </a>
-
-                            <a href="../shop/item.html">
-
-                                <article class="product">
-                                    <img class="product__img" src="../../img/pokemon/vulpix-1.webp" alt="vulpix">
-                                    <p class="product__new-tag">Nuevo</p>
-                                    <p class="product__edition">Pokemon</p>
-                                    <p class="product__name">Vulpix</p>
-                                    <p class="product__price">300</p>
-                                    <p class="product__other"> 3 cuotas sin interes </p>
-                                </article>
-                            </a>
-
-                            <a href="../shop/item.html">
-
-                                <article class="product product--new">
-                                    <img class="product__img" src="../../img/pokemon/vulpix-1.webp" alt="vulpix">
-                                    <p class="product__new-tag">Nuevo</p>
-                                    <p class="product__edition">Pokemon</p>
-                                    <p class="product__name">Vulpix</p>
-                                    <p class="product__price">300</p>
-                                    <p class="product__other"> 3 cuotas sin interes </p>
-                                </article>
-                            </a>
-
-                            <a href="../shop/item.html">
-
-                                <article class="product">
-                                    <img class="product__img" src="../../img/pokemon/vulpix-1.webp" alt="vulpix">
-                                    <p class="product__new-tag">Nuevo</p>
-                                    <p class="product__edition">Pokemon</p>
-                                    <p class="product__name">Vulpix</p>
-                                    <p class="product__price">300</p>
-                                    <p class="product__other"> 3 cuotas sin interes </p>
-                                </article>
-                            </a>
-
-                            <a href="../shop/item.html">
-
-                                <article class="product product--new">
-                                    <img class="product__img" src="../../img/pokemon/vulpix-1.webp" alt="vulpix">
-                                    <p class="product__new-tag">Nuevo</p>
-                                    <p class="product__edition">Pokemon</p>
-                                    <p class="product__name">Vulpix</p>
-                                    <p class="product__price">300</p>
-                                    <p class="product__other"> 3 cuotas sin interes </p>
-                                </article>
-                            </a>
-
-                            <a href="../shop/item.html">
-
-                                <article class="product">
-                                    <img class="product__img" src="../../img/pokemon/vulpix-1.webp" alt="vulpix">
-                                    <p class="product__new-tag">Nuevo</p>
-                                    <p class="product__edition">Pokemon</p>
-                                    <p class="product__name">Vulpix</p>
-                                    <p class="product__price">300</p>
-                                    <p class="product__other"> 3 cuotas sin interes </p>
-                                </article>
-                            </a>
-
-                            <a href="../shop/item.html">
-
-                                <article class="product product--new">
-                                    <img class="product__img" src="../../img/pokemon/vulpix-1.webp" alt="vulpix">
-                                    <p class="product__new-tag">Nuevo</p>
-                                    <p class="product__edition">Pokemon</p>
-                                    <p class="product__name">Vulpix</p>
-                                    <p class="product__price">300</p>
-                                    <p class="product__other"> 3 cuotas sin interes </p>
-                                </article>
-                            </a>
-
-                            <a href="../shop/item.html">
-
-                                <article class="product">
-                                    <img class="product__img" src="../../img/pokemon/vulpix-1.webp" alt="vulpix">
-                                    <p class="product__new-tag">Nuevo</p>
-                                    <p class="product__edition">Pokemon</p>
-                                    <p class="product__name">Vulpix</p>
-                                    <p class="product__price">300</p>
-                                    <p class="product__other"> 3 cuotas sin interes </p>
-                                </article>
-                            </a>
-
-                            <a href="../shop/item.html">
-
-                                <article class="product product--new">
-                                    <img class="product__img" src="../../img/pokemon/vulpix-1.webp" alt="vulpix">
-                                    <p class="product__new-tag">Nuevo</p>
-                                    <p class="product__edition">Pokemon</p>
-                                    <p class="product__name">Vulpix</p>
-                                    <p class="product__price">300</p>
-                                    <p class="product__other"> 3 cuotas sin interes </p>
-                                </article>
-                            </a>
-
+                            {{/each }}
                         </div>
                     </div>
                 </div>
 
                 <div class="product-buttons-section">
-
                     <div class="product-buttons glide__bullets" data-glide-el="controls[nav]">
                         <button data-glide-dir="=0">1</button>
                         <button data-glide-dir="=1">2</button>
@@ -231,24 +130,22 @@
     </main>
 
     <footer>
-
         <nav>
             <ul class="footer__navbar">
                 <li>
-                    <a href="../shop/shop.html"> SHOP </a>
+                    <a href="/shop"> SHOP </a>
                 </li>
                 <li>
-                    <a href="../admin/register.html"> REGISTRARSE </a>
+                    <a href="/register"> REGISTRARSE </a>
                 </li>
                 <li>
-                    <a href="#"> CONTACTO </a>
+                    <a href="/contact"> CONTACTO </a>
                 </li>
             </ul>
         </nav>
         <p class="footer__copyright"> All rights reserved 2023 - Funkoshop &copy; </p>
-
         <figure>
-            <a href="../../index.html">
+            <a href="/">
                 <img class="footer__logo" src="../../img/branding/isotype.svg" alt="logo de Funkoshop">
             </a>
         </figure>
@@ -273,10 +170,8 @@
                 productGrid.after(productGrid.cloneNode(true))
             }
         }
-
         cloneGrid(4)
         setupGlide()
-
     </script>
 
 </body>

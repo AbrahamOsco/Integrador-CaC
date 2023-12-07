@@ -1,8 +1,7 @@
     <header>   <!-- inicio header-->
-    <p> {{title}} </p>
-        <nav class="navbar">
+    <nav class="navbar">
             <picture>
-                <a href="../../index.html"> 
+                <a href="/"> 
                     <img src="./img/branding/logo_light_horizontal.svg" alt="logo de logo_light">
                 </a>
             </picture>
@@ -14,10 +13,10 @@
                     <a  href="#">CONTACT</a>
                 </li>
                 <li class="navbar__item">
-                    <a  href="./pages/admin/login.html">LOGIN</a>
+                    <a  href="/login">LOGIN</a>
                 </li>
                 <li class="navbar__item">
-                    <a   href="./pages/shop/cart.html">
+                    <a   href="/cart">
                         <svg width="33" height="31" viewBox="0 0 33 31" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12.5 31C13.8807 31 15 29.8807 15 28.5C15 27.1193 13.8807 26 12.5 26C11.1193 26 10 27.1193 10 28.5C10 29.8807 11.1193 31 12.5 31Z" />
                             <path d="M25.5 31C26.8807 31 28 29.8807 28 28.5C28 27.1193 26.8807 26 25.5 26C24.1193 26 23 27.1193 23 28.5C23 29.8807 24.1193 31 25.5 31Z" />
@@ -33,7 +32,7 @@
             <article class="articleIng" >
                 <h3 class="articleIng__h3">Nuevos ingresos </h3>
                 <p class="articleIng__p"> Descubri el proximo funko Pop de tu coleccion </p>
-                <a class="articleIng__a" href="#">SHOP</a>
+                <a class="articleIng__a" href="/shop">SHOP</a>
             </article>
         </section>
         <section >
@@ -43,7 +42,7 @@
                     <h3 class="articleMerGra__h3"> {{licence_name}} <br> </h3>
                     <p class="articleMerGra__p"> {{licence_description}} </p>
                     <hr class="articleMerGra__hr  ">
-                    <a class="articleMerGra__a" href="./pages/shop/shop.html"> VER COLECCIÓN </a>
+                    <a class="articleMerGra__a" href="/shop"> VER COLECCIÓN </a>
                 </article>
                 <picture class="pictureMerGra">
                     <img src=".{{licence_image}}" alt=" figura coleccionable de {{licence_image}}">
@@ -58,10 +57,10 @@
                 <div class="carousel-inner">
                   <div class="carousel-item active">
                     <ul class="carou-body">
-                        {{#each productsTop3}}
+                        {{#each productFirst3}}
                         <li class="card-item">
                             <articule class="card-pack"> 
-                                <a href="" class = "UltLan__a">
+                                <a href="/shop" class = "UltLan__a">
                                     <picture class="card-imagen-cover">
                                         <span class="card-item-tag"> NUEVO</span>
                                         <img class="card-imagen-front" src="{{image_front}}" alt="figura de troper blanco">
@@ -82,57 +81,25 @@
                   
                   <div class="carousel-item">
                     <ul class="carou-body">
+                        {{#each productLast3}}
                         <li class="card-item">
                             <articule class="card-pack"> 
-                                <a href="" class = "UltLan__a">
+                                <a href="/shop" class = "UltLan__a">
                                     <picture class="card-imagen-cover">
                                         <span class="card-item-tag"> NUEVO</span>
-                                        <img class="card-imagen-front" src="./img/star-wars/trooper-1.webp" alt="figura de troper blanco">
-                                        <img class="card-imagen-back" src="./img/star-wars/trooper-box.webp" alt="figura de troper blanco">
+                                        <img class="card-imagen-front" src="{{image_front}}" alt="figura de troper blanco">
+                                        <img class="card-imagen-back" src="{{image_back}}" alt="figura de troper blanco">
                                     </picture>
                                     <div class="card-content">
-                                        <p class="card-content-title">STAR WARS </p>
-                                        <h3 class="card-content-nameProduct"> STORMTROOPER LIGHTSABER </h3>
-                                        <p class="card-content-price">  $1799,99  </p>
-                                        <p class="card-content-cuotas" > 3 CUOTAS SIN INTERÉS </p>
+                                        <p class="card-content-title">{{licence_name}} </p>
+                                        <h3 class="card-content-nameProduct"> {{product_name}} </h3>
+                                        <p class="card-content-price">  {{price}}  </p>
+                                        <p class="card-content-cuotas" > {{dues}} CUOTAS SIN INTERÉS </p>
                                     </div>       
                                 </a>
                             </articule>
                         </li>
-                        <li class="card-item">
-                            <articule>
-                                <a class="UltLan__a" href="">
-                                    <picture class="card-imagen-cover">
-                                        <span class="card-item-tag"> NUEVO</span>
-                                        <img class="card-imagen-front" src="./img/pokemon/pidgeotto-1.webp" alt="figura de pokemon pidgeotto">
-                                        <img class="card-imagen-back" src="./img/pokemon/pidgeotto-box.webp" alt="figura de pokemon pidgeotto">                            
-                                    </picture>
-                                    <div class="card-content">
-                                        <p class="card-content-title">POKEMON </p>
-                                        <h3 class="card-content-nameProduct"> PIDGEOTTO </h3>
-                                        <p class="card-content-price"> $1799,99  </p>
-                                        <p class="card-content-cuotas" > 3 CUOTAS SIN INTERÉS </p>
-                                    </div>    
-                                </a>
-                            </articule>
-                        </li>
-                        <li class="card-item">
-                            <articule>
-                                <a class="UltLan__a"  href="">
-                                    <picture class="card-imagen-cover">
-                                        <span class="card-item-tag"> NUEVO</span>
-                                        <img class="card-imagen-front" src="./img/harry-potter/luna-1.webp" alt="figura de lunner harry-potter">
-                                        <img class="card-imagen-back" src="./img/harry-potter/luna-box.webp" alt="figura de pokemon pidgeotto">                            
-                                    </picture>
-                                    <div class="card-content">
-                                        <p class="card-content-title">HARRY POTTER </p>
-                                        <h3 class="card-content-nameProduct"> LUNA LOVEGOOD LION MASK </h3>
-                                        <p class="card-content-price"> $1799,99  </p>
-                                        <p class="card-content-cuotas"> 3 CUOTAS SIN INTERÉS </p>
-                                    </div>  
-                                </a>
-                            </articule>
-                        </li>
+                        {{/each }}
                     </ul>
                   </div>
                 
@@ -158,12 +125,12 @@
         <section>
             <nav class="navbarFooter">
                 <ul>
-                    <li class="navbar__item" ><a href="./pages/shop/shop.html"> SHOP  </a></li>
-                    <li class="navbar__item" ><a href="./pages/admin/register.html"> REGISTRARSE  </a></li>
-                    <li class="navbar__item" ><a href="./pages/contact.html"> CONTACTO    </a></li>
+                    <li class="navbar__item" ><a href="/shop"> SHOP  </a></li>
+                    <li class="navbar__item" ><a href="/register"> REGISTRARSE  </a></li>
+                    <li class="navbar__item" ><a href="/contact"> CONTACTO    </a></li>
                 </ul>
                 <picture class="navbar__logo">  
-                    <a href=""> 
+                    <a href="/"> 
                         <img src="./img/branding/isotype.svg" alt="logo de logo_light">
                     </a>
                 </picture>
