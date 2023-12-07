@@ -52,64 +52,31 @@
         {{/each }}
         <!-- Agregar div__paddRight en el div pricipal a cada elemento de orden "par" y en el hr un articleMerGra__hr__small -->
         </section>    
-        
         <section>
             <h2 class="carou-title"> Últimos lanzamientos </h2>
             <div id="carouselExampleControls" class="carousel slide carousel__Size" data-ride="carousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
                     <ul class="carou-body">
+                        {{#each productsTop3}}
                         <li class="card-item">
                             <articule class="card-pack"> 
                                 <a href="" class = "UltLan__a">
                                     <picture class="card-imagen-cover">
                                         <span class="card-item-tag"> NUEVO</span>
-                                        <img class="card-imagen-front" src="./img/star-wars/trooper-1.webp" alt="figura de troper blanco">
-                                        <img class="card-imagen-back" src="./img/star-wars/trooper-box.webp" alt="figura de troper blanco">
+                                        <img class="card-imagen-front" src="{{image_front}}" alt="figura de troper blanco">
+                                        <img class="card-imagen-back" src="{{image_back}}" alt="figura de troper blanco">
                                     </picture>
                                     <div class="card-content">
-                                        <p class="card-content-title">STAR WARS </p>
-                                        <h3 class="card-content-nameProduct"> STORMTROOPER LIGHTSABER </h3>
-                                        <p class="card-content-price">  $1799,99  </p>
-                                        <p class="card-content-cuotas" > 3 CUOTAS SIN INTERÉS </p>
+                                        <p class="card-content-title">{{licence_name}} </p>
+                                        <h3 class="card-content-nameProduct"> {{product_name}} </h3>
+                                        <p class="card-content-price">  {{price}}  </p>
+                                        <p class="card-content-cuotas" > {{dues}} CUOTAS SIN INTERÉS </p>
                                     </div>       
                                 </a>
                             </articule>
                         </li>
-                        <li class="card-item">
-                            <articule>
-                                <a class="UltLan__a" href="">
-                                    <picture class="card-imagen-cover">
-                                        <span class="card-item-tag"> NUEVO</span>
-                                        <img class="card-imagen-front" src="./img/pokemon/pidgeotto-1.webp" alt="figura de pokemon pidgeotto">
-                                        <img class="card-imagen-back" src="./img/pokemon/pidgeotto-box.webp" alt="figura de pokemon pidgeotto">                            
-                                    </picture>
-                                    <div class="card-content">
-                                        <p class="card-content-title">POKEMON </p>
-                                        <h3 class="card-content-nameProduct"> PIDGEOTTO </h3>
-                                        <p class="card-content-price"> $1799,99  </p>
-                                        <p class="card-content-cuotas" > 3 CUOTAS SIN INTERÉS </p>
-                                    </div>    
-                                </a>
-                            </articule>
-                        </li>
-                        <li class="card-item">
-                            <articule>
-                                <a class="UltLan__a"  href="">
-                                    <picture class="card-imagen-cover">
-                                        <span class="card-item-tag"> NUEVO</span>
-                                        <img class="card-imagen-front" src="./img/harry-potter/luna-1.webp" alt="figura de lunner harry-potter">
-                                        <img class="card-imagen-back" src="./img/harry-potter/luna-box.webp" alt="figura de pokemon pidgeotto">                            
-                                    </picture>
-                                    <div class="card-content">
-                                        <p class="card-content-title">HARRY POTTER </p>
-                                        <h3 class="card-content-nameProduct"> LUNA LOVEGOOD LION MASK </h3>
-                                        <p class="card-content-price"> $1799,99  </p>
-                                        <p class="card-content-cuotas"> 3 CUOTAS SIN INTERÉS </p>
-                                    </div>  
-                                </a>
-                            </articule>
-                        </li>
+                        {{/each }}
                     </ul>
                   </div>
                   
@@ -168,6 +135,7 @@
                         </li>
                     </ul>
                   </div>
+                
                 </div>
                 <a class="carousel-control-prev  " href="#carouselExampleControls" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon carousel__setupArrow" aria-hidden="true"></span>

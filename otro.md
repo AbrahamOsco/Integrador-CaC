@@ -5,7 +5,5 @@
         DELETE FROM product WHERE licence_id = 4;
         DELETE FROM licence WHERE licence_id = 4;
         ALTER TABLE licence MODIFY COLUMN licence_name VARCHAR(255); 
-        
-
 1.  
 
