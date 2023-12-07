@@ -1,5 +1,6 @@
-// @ts-check
-const { poolPromise } = require('./mysql/setup.js')
+/*
+
+const { poolPromise } = require('./mysql/connectionDB.js')
 const { parseQuery, parseReceived } = require('../utils/mysql.js')
 
 const productsModel = {}
@@ -9,9 +10,6 @@ productsModel.getAllProducts = async () => {
 	return parseReceived(allProducts)
 }
 
-/**
- * @param {object | undefined} [queryParams]
- */
 productsModel.getAllProductsFiltered = async queryParams => {
 	const sqlFilter = parseQuery(queryParams)
 
@@ -32,9 +30,6 @@ productsModel.getAllProductsFiltered = async queryParams => {
 	return parseReceived(filteredProducts)
 }
 
-/**
- * @param {object} queryParams
- */
 productsModel.getAllProductsFilteredAdmin = async queryParams => {
 	const sqlFilter = parseQuery(queryParams)
 
@@ -52,9 +47,6 @@ productsModel.getAllProductsFilteredAdmin = async queryParams => {
 	return parseReceived(filteredProducts)
 }
 
-/**
- * @param {number} id
- */
 productsModel.getProductById = async id => {
 	const [productsById] = await poolPromise.execute(
 		`
@@ -67,11 +59,8 @@ productsModel.getProductById = async id => {
 	return parseReceived(productsById[0]) ?? false
 }
 
-/**
- * @param {number} id
- */
+
 productsModel.deleteProductById = async id => {
-	/** @type {[import('mysql2').ResultSetHeader, unknown]} */
 	const [results] = await poolPromise.execute(
 		`
 		DELETE FROM product
@@ -88,3 +77,4 @@ productsModel.deleteProductById = async id => {
 }
 
 module.exports = { shopModel: productsModel }
+*/

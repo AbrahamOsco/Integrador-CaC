@@ -97,8 +97,30 @@ en el selector directo el 'a' del navbar NO en el padre ni en el abuelo.
     display: flex; /* Activa el flexbox para alinear los elementos en fila */
     align-items: center; /* pone los elementos en la misma linea centrada */
     justify-content: center; /* centrar objetos sin usar padding ni margin aplica al div q contiene los elementos*/
-    padding-top: 10px;
+    padding-top: 5px;
+    padding-left: 50px;
 }
+
+.DivMerGra:nth-child(even) {
+    /* Estilos para elementos pares */
+    flex-direction: row-reverse; /* Invertir el orden en elementos pares */
+  }
+  
+  .DivMerGra picture {
+    /* Estilos para la etiqueta <picture> */
+    flex: 1; /* Hace que la imagen ocupe el espacio disponible */
+    order: 2; /* Cambia el orden para que <picture> vaya primero */
+  }
+  
+  .DivMerGra article {
+    /* Estilos para la etiqueta <article> */
+    flex: 1; /* Hace que el contenido del artículo ocupe el espacio disponible */
+    order: 1; /* Cambia el orden para que <article> vaya segundo */
+  }
+
+
+
+
 
 .articleMerGra__h3, .articleMerGra__p, .UltLan__h2, .UltLan__a{
     color: black;
@@ -106,6 +128,7 @@ en el selector directo el 'a' del navbar NO en el padre ni en el abuelo.
 
 .articleMerGra__h3{
     font-size:40px;
+    text-transform: uppercase;
 }
 
 .articleMerGra__p{
@@ -118,6 +141,10 @@ en el selector directo el 'a' del navbar NO en el padre ni en el abuelo.
     width: 165%;
     border-style: solid;
     border-width: 2px;
+}
+
+.articleMerGra__hr:nth-child(odd){
+    width: 90%;
 }
 
 .articleMerGra__a{
@@ -133,13 +160,14 @@ en el selector directo el 'a' del navbar NO en el padre ni en el abuelo.
     padding-left: 0px;
 }
 
-.articleMerGra__hr__small{
-    width: 680px;
-}
+
+
+
 
 .div__paddRight{
     margin: 0px 180px 0px 0px;
 }
+
 
 
 .UltLan__h2{

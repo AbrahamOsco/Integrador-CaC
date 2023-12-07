@@ -8,7 +8,7 @@
             </picture>
             <ul class="navbar__menu" >
                 <li class="navbar__item">
-                    <a  href="/shop/">SHOP</a>
+                    <a  href="/shop">SHOP</a>
                 </li>
                 <li class="navbar__item">
                     <a  href="#">CONTACT</a>
@@ -28,7 +28,6 @@
             </ul>
         </nav>
     </header>  <!-- Fin header-->
-
     <main>
         <section>
             <article class="articleIng" >
@@ -38,41 +37,20 @@
             </article>
         </section>
         <section >
-            <div class="DivMerGra">
-                <article>
-                    <h3 class="articleMerGra__h3"> STAR WARS & <br> THE MANDALORIAN </h3>
-                    <p class="articleMerGra__p"> Disfruta de una saga que sigue <br> agregando personajes a su colección. </p>
-                    <hr class="articleMerGra__hr">
-                    <a class="articleMerGra__a" href="./pages/shop/shop.html"> VER COLECCIÓN </a>
-                </article>
-                <picture class="pictureMerGra"   >
-                    <img src="./img/star-wars/baby-yoda-1.webp" alt=" figura coleccionable de yoda bebe">
-                </picture>    
-            </div>
-            <div class="DivMerGra div__paddRight">
-                <picture class="pictureMerGra">
-                    <img src="./img/pokemon/vulpix-1.webp" alt=" figura coleccionable de vuplix pokemon">
-                </picture>
-                <article>
-                    <h3 class="articleMerGra__h3" > POKEMON INDIGO  </h3>
-                    <p class="articleMerGra__p"> Atrapa todos los que puedas y disfruta <br> de una colección llena de amigos. </p>
-                    <hr class="articleMerGra__hr articleMerGra__hr__small "  >
-                    <a class="articleMerGra__a" href="./pages/shop/shop.html"> VER COLECCIÓN </a>
-                </article>
-
-            </div>
-            
+        {{#each licences }}
             <div class="DivMerGra" >
                 <article>
-                    <h3 class="articleMerGra__h3" > HARRY POTTER  </h3>
-                    <p class="articleMerGra__p" > Revive los recuerdos de una saga llena <br> de magia y encanto </p>
-                    <hr class="articleMerGra__hr articleMerGra__hr__small  ">
-                    <a class="articleMerGra__a " href="./pages/shop/shop.html"> VER COLECCIÓN </a>
+                    <h3 class="articleMerGra__h3"> {{licence_name}} <br> </h3>
+                    <p class="articleMerGra__p"> {{licence_description}} </p>
+                    <hr class="articleMerGra__hr  ">
+                    <a class="articleMerGra__a" href="./pages/shop/shop.html"> VER COLECCIÓN </a>
                 </article>
-                <picture class="pictureMerGra pictureMerGra__small" >
-                    <img src="./img/harry-potter/snape-patronus-1.webp" alt=" figura coleccionable de snape patronus">
-                </picture>    
+                <picture class="pictureMerGra">
+                    <img src=".{{licence_image}}" alt=" figura coleccionable de {{licence_image}}">
+                </picture>
             </div>
+        {{/each }}
+        <!-- Agregar div__paddRight en el div pricipal a cada elemento de orden "par" y en el hr un articleMerGra__hr__small -->
         </section>    
         
         <section>
