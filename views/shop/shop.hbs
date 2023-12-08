@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../../img/branding/isotype.svg" type="image/svg+xml">
+    <link rel="icon" href="img/branding/isotype.svg" type="image/svg+xml">
     <title> Shop </title>
     <!-- Raleway Font-->
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
@@ -20,7 +20,7 @@
         <figure>
             <a href="/">
                 <h1>
-                    <img class="header__full-logo" src="../../img/branding/logo_light_horizontal.svg" alt="Funkoshop">
+                    <img class="header__full-logo" src="img/branding/logo_light_horizontal.svg" alt="Funkoshop">
                 </h1>
             </a>
         </figure>
@@ -98,9 +98,9 @@
                     <div class="glide__slides">
                         <div class="product-grid glide__slide">
                             {{#each products}}
-                            <a href="/item/{{product_id}}">                                
+                            <a href="shop/item/{{product_id}}">                                
                                 <article class="product product--new">
-                                    <img class="product__img" src="../../{{image_front}}" alt="vulpix">
+                                    <img class="product__img" src="{{image_front}}" alt="vulpix">
                                     <p class="product__new-tag">Nuevo</p>
                                     <p class="product__edition">{{licence_name}}</p>
                                     <p class="product__name">{{product_name}}</p>
@@ -146,7 +146,7 @@
         <p class="footer__copyright"> All rights reserved 2023 - Funkoshop &copy; </p>
         <figure>
             <a href="/">
-                <img class="footer__logo" src="../../img/branding/isotype.svg" alt="logo de Funkoshop">
+                <img class="footer__logo" src="img/branding/isotype.svg" alt="logo de Funkoshop">
             </a>
         </figure>
     </footer>

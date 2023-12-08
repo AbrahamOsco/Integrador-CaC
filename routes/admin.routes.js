@@ -1,10 +1,6 @@
-// @ts-check
+/*
 const express = require('express')
 const { adminController } = require('../controllers/admin.controller.js')
-
-/*
-	router: /admin
-*/
 
 const adminRouter = express.Router()
 
@@ -23,3 +19,4 @@ adminRouter.use((_req, res) => {
 module.exports = {
 	adminRouter,
 }
+*/

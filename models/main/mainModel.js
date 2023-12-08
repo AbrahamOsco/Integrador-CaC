@@ -25,9 +25,9 @@ const getProductsTop6 = async () => {
   });  
 }
 
-const getProductForIndex = async () => {
+const getProductForCarrousel = async () => {
     const sixProducts = await getProductsTop6();
     return [sixProducts.splice(3,3), sixProducts.splice(0,3)];
 }
 
-module.exports = { getLicences, getProductForIndex };
+module.exports = { getLicences, getProductForCarrousel};

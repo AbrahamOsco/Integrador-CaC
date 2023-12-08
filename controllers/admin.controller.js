@@ -1,6 +1,3 @@
-// @ts-check
-const { shopModel } = require('../models/shop.model.js')
-
 /*
 	Esta ruta (/admin) sería compartida
 	Por ahora podes poner tus configuraciones en un archivo aparte
@@ -9,13 +6,8 @@ const { shopModel } = require('../models/shop.model.js')
 	Mas adelante veriamos como juntarlos
 
 	TLDR: NO toques mucho este archivo, hace el tuyo
-*/
-
 const adminController = {}
 
-/**
- * @type {import('express').RequestHandler}
- */
 adminController.renderAdminPage = async (req, res) => {
 	const { query } = req
 	const filteringWithQuery = Object.keys(req.query).length !== 0
@@ -36,9 +28,6 @@ adminController.renderAdminPage = async (req, res) => {
 	res.render('admin/admin.ejs', { products, query })
 }
 
-/**
- * @type {import('express').RequestHandler}
- */
 adminController.deleteProduct = async (req, res) => {
 	const deleteId = Number(req.params.id)
 	if (Number.isNaN(deleteId)) {
@@ -56,3 +45,4 @@ adminController.deleteProduct = async (req, res) => {
 }
 
 module.exports = { adminController }
+*/

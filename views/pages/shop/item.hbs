@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item</title>   
+    <link rel="stylesheet" href="/css/estilositem.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar container">
+            <figure>
+                <a href="/">
+                    <img src="/img/branding/logo_light_horizontal.svg" alt="isologo"> <!-- Raro necesitamos el / al inicio.  -->
+                </a>
+            </figure>
+            <nav>
+                <ul class="menu_item">
+                    <li>
+                        <a href="/shop">SHOP<iconify-icon icon="ion:chevron-down"></iconify-icon></a>
+                        <ul class="submenu">
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/contact">CONTACTO</a>
+                    </li>
+                    <li>
+                        <a href="/login">LOGIN</a>
+                    </li>
+                    <li>
+                        <a href="/cart">
+                            <img src="/img/icons/cart-icon.svg" alt="carrito">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="informacion">
+            <article class="articulos">
+                <h3 class="articulo_titulo">{{infoProduct.licence_name}}</h3>
+                <h2 class="articulo_titulo2">{{infoProduct.product_name}}</h2>
+                <p class="articulo_detalle">{{infoProduct.product_description}}</p>
+                <p class="precio_producto">{{infoProduct.price}}</p>
+                <div class="cantidad-items">
+                    <button id="subtract" class="item_quantity" type="button">-</button>
+                    <input class="item_input" type="text" name="quantity" id="quantity" placeholder="0">
+                    <button id="add" class="item_quantity" type="button">+</button>
+                    <button class="item__submit btn btn--primary btn--medium" type="submit">Agregar al carrito</button>
+                </div>
+                <a class="item_promo" href="#">Ver método de pago</a><p class="cuotas">{{infoProduct.dues}} cuotas sin interés</p> 
+            </article>
+            <picture class="baby_yoda">
+                <img src="{{infoProduct.image_front}}" alt="">
+            </picture>
+        </div>
+    </main>
+
+    <section class="shilder glide">
+        <h2 class="shilder_title">Productos relacionados</h2>
+        <div class="glide__track" data-glide-el="track">
+            <ul class="shilder_items glide__slides">
+                {{#each products}}
+                <li class="shilder_item glide__slide">
+                    <article class="card_item">
+                        <a class="card-item__link" href="{{product_id}}"> <!-- Aca Ojo si pones /productId te lleva a localhost:3000/id  -->
+                                <picture class="card-item__cover">
+                                    <span class="card-item__tag">Nuevo</span>
+                                    <img class="card-item__img--front" src="{{image_front }}" alt="Figura de trooper blanco">
+                                    <img class="card-item__img--back" src="{{image_back}}" alt="Figura de trooper en caja">
+                                </picture>
+                                <div class="card-item__content">
+                                    <p class="card_name">{{licence_name}}</p>
+                                    <h4 class="producto_titulo">{{product_name}}</h4>
+                                    <p class="card_price">{{price}}</p>
+                                    <p class="card_cuota">{{dues}} cuotas sin interés</p>
+                                </div>
+                        </a>
+                    </article>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><iconify-icon icon="tabler:chevron-left"></iconify-icon></button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><iconify-icon icon="tabler:chevron-right"></iconify-icon></button>
+        </div>
+    </section>
+    
+    <footer>
+        <nav >
+            <ul class="navbar-items">
+                <li><a href="/shop">SHOP</a></li>
+                <li><a href="/register">REGISTRARSE</a></li>
+                <li><a href="/contact">CONTACTO</a></li>
+            </ul>
+        </nav>
+        <p class="footer_copi">Todos los derechos reservados 2023 - Funkoshop &copy;</p>
+
+            <figure>
+                <a href="/">
+                    <img class="logo" src="/img/branding/isotype.svg" alt="Logo de Funkoshop">
+                </a>
+            </figure>
+        
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+    <script src="/js/item/glide.js"></script>
+    <script src="/js/item/Botones.js"></script>
+    <!-- Por algun Motivo todos los .js deben estar dentro de una carpeta js. Ademas deben estar bien definido su ruta.!-->
+</body>
+</html>
