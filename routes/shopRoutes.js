@@ -7,6 +7,9 @@ shopRouter.get('/', shopController.renderShopPage)
 
 shopRouter.get('/item/:productId', shopController.renderItemId)
 
+shopRouter.post('/item/:productId/add', shopController.addProduct)
+
+shopRouter.get('/cart', shopController.renderCartPage)
 
 
 module.exports = {

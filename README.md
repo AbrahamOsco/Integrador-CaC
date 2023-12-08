@@ -18,31 +18,8 @@
     │   └── shop/
     └── partials/
 ```
-
 ## Pages
-
-### Abraham
-
-`home`  
-`login`  
-`register` (heredada)  
-
-### Nicolas
-
-`shop`  
-`admin`  
-`cart` (heredada)  
-
-### Ana
-
-`item`  
-`edit`  
-`create` (heredada)  
-
-## Routes
-
 ### Main
-
 home.html
 
 `GET` `/home` (page)

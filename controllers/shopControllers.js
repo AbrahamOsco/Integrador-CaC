@@ -8,20 +8,32 @@ const renderShopPage = async (req, res) =>{
     })
 }
 
-
 const renderItemId = async (req, res) => {
     const productId = req.params.productId
     const queryInfoProduct = await shopModel.getInfoProduct(productId);
     const a3Products = await shopModel.get3ProductsExceptIdProduct(productId)
-    console.log(a3Products)
-
-    console.log(req.params.productId)
     res.render('pages/shop/item',
     {infoProduct:queryInfoProduct[0],
      products:a3Products})  // Ojo cuando entras a carpetas es sin la "/" al inicio . 
 }
 
 
-module.exports = {renderShopPage, renderItemId}
+const renderCartPage = async (req, res) => {
+    const productsInCart = await shopModel.getProductsInCart()
+    res.render('pages/shop/cart', {
+        products: productsInCart 
+    })
+
+}
+
+const addProduct = async (req, res) => {
+    const aProductId = req.params.productId
+    const quantity = req.body.productQuantity
+    console.log("aProductId", aProductId)
+    console.log("Recibimos cantidad: ", quantity)
+    shopModel.addProductToTheCart(aProductId, quantity)    
+}
+
+module.exports = {renderShopPage, renderItemId, renderCartPage, addProduct}
 
 
