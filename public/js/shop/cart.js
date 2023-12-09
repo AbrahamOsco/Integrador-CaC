@@ -1,43 +1,94 @@
-const plusBtn = document.querySelector('#plus');
-const minusBtn = document.querySelector('#minus');
-const deleteXBtn = document.querySelector('#deleteX');
-const quantity = document.querySelector('#quantityInput') 
-
-const handlerPlusBtn = () => {
-	console.log('Handler handlerPlusBtn\n');	
+// Validar la cantidad en el evento "change" -Función para validar y asegurarse de que la cantidad no sea menor a 0
+const validateQuantity = (aQuantity) => {
+	let cantidad = parseInt(aQuantity.value);
+	if (isNaN(cantidad) || cantidad < 0) aQuantity.value = 0;
 }
 
-const handlerMinusBtn = () => {
-	console.log('Handler handlerMinusBtn\n');	
-
+const sendUpdateProductToBackend = (aInputQuantity, positionBtn) => {
+	const hrefWithProductId = document.querySelectorAll('.reference_product_id')[positionBtn];
+	const productId = parseInt(hrefWithProductId.getAttribute('href').split('/').pop()) 
+	const aQuantity = parseInt(aInputQuantity.value);
+	console.log("Enviando un fetch con: (productId, aQuantity)", productId, aQuantity)
+	fetch(`/shop/item/${productId}/update`,{
+		method:'PUT',
+		headers: {
+		  'Content-type': 'application/json'
+		},
+		body: JSON.stringify({
+		  productQuantity:aQuantity,
+		}),
+	  }).then( (res) => {
+		console.log("Enviando el put con exito")
+		return res.json()
+	}).catch( (error) => {
+		console.error("Entro a la excepcion del fetch: Error:", error)
+	})
 }
 
-const handlerDeleteXBtn = () => {
-	console.log('handlerDeleteXBtn')
+const updateFinalPriceTotalAndQuantity = () => {
+	let finalPriceTotal = 0 
+	document.querySelectorAll('.product-card__price').forEach( (priceProductElement) => {
+		finalPriceTotal += parseFloat(priceProductElement.textContent.replace('$', '').trim()) 
+	})
+
+	let quantityTotalProducts = 0
+	document.querySelectorAll('.quantityInput').forEach( (quantityProductElement) => {
+		quantityTotalProducts += parseInt( quantityProductElement.value)
+	} )
+	document.querySelector('.finalQuantity').textContent = quantityTotalProducts
+	document.querySelector('.finalSubTotalPrice').textContent = `$ ${finalPriceTotal.toFixed(2)}`
+	document.querySelector('.finalTotalPrice').textContent = `$ ${finalPriceTotal.toFixed(2)}`
 }
 
+const updatePrices = (quantityInput, positionBtn, aOrigen) => {
+	const priceElement = document.querySelectorAll('.product-card__price')[positionBtn]
+	const priceUnit = document.querySelectorAll('.price')[positionBtn].textContent.trim()
+	if(aOrigen == "OPERATION") quantityInput.dispatchEvent(new Event('change'));
+	const finalPrice = parseFloat(quantityInput.value) * parseFloat(priceUnit)
+	priceElement.textContent = `$ ${finalPrice.toFixed(2)}`;	
+	updateFinalPriceTotalAndQuantity()
+}
 
-// Validar la cantidad en el evento "change"
-quantity.addEventListener('change', () => {
-	validateQuantity();
-  });
-  
-  // Función para validar y asegurarse de que la cantidad no sea menor a 0
-  function validateQuantity() {
-	let cantidad = parseInt(quantity.value);
-	if (isNaN(cantidad) || cantidad < 0) {
-	  quantity.value = 0;
-	}
-  }
+const applyHandlerPlusBtn = (aPlusBtn, positionBtn) => {
+	aPlusBtn.addEventListener('click', () => {
+		const quantityInput = document.querySelectorAll('.quantityInput')[positionBtn]
+		quantityInput.value++
+		updatePrices(quantityInput, positionBtn, "OPERATION")
+	})
+}
 
-plusBtn.addEventListener('click', handlerPlusBtn)
+const applyHandlerMinusBtn = (aMinusBtn, positionBtn) => {
+	aMinusBtn.addEventListener('click', () => {
+		const quantityInput = document.querySelectorAll('.quantityInput')[positionBtn]
+		quantityInput.value--
+		updatePrices(quantityInput, positionBtn, "OPERATION")
+		if(quantityInput.value < 0 ) return;
+	})
+}
 
-minusBtn.addEventListener('click', handlerMinusBtn)
+const applyHandlerDeleteBtn = (aDeleteBtn, positionBtn) => {
+	aDeleteBtn.addEventListener('click', () => {
+		const hrefWithProductId = document.querySelectorAll('.reference_product_id')[positionBtn];
+		const productId = hrefWithProductId.getAttribute('href').split('/').pop() 
+	})
+} 
 
-deleteXBtn.addEventListener('click', handlerDeleteXBtn)
+document.querySelectorAll('.quantityInput').forEach( (aInputQuantity, positionBtn) => {
+	aInputQuantity.addEventListener( 'change' , () => {
+		validateQuantity(aInputQuantity)
+		sendUpdateProductToBackend(aInputQuantity, positionBtn);
+		updatePrices(aInputQuantity, positionBtn, "NO_OPERATION")
+	})
+})
+
+document.querySelectorAll('.plus').forEach(applyHandlerPlusBtn)
+document.querySelectorAll('.minus').forEach(applyHandlerMinusBtn)
+document.querySelectorAll('.deleteX').forEach(applyHandlerDeleteBtn)
 
 
-/*
+
+  /*
+
 function operationStringNumber(numString, value) {
 	let myNum = Number(numString)
 	if (Number.isNaN(myNum)) myNum = 0

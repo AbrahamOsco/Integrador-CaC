@@ -212,7 +212,7 @@ CREATE TABLE cart(
 	cart_id INTEGER NOT NULL,
     product_id INTEGER NOT NULL,
     quantity INTEGER, 
-    total_price_product INTEGER,
+    total_price_product decimal(10,2),
     PRIMARY KEY (cart_id, product_id),
     FOREIGN KEY (product_id) REFERENCES product(product_id) ON DELETE CASCADE
 ); 

@@ -60,7 +60,15 @@ const handlerAddToCart = () => {
       productQuantity:currentValue,
     }),
   })
-  .then( (res) => {return res.json()} )
+  .then( (res) => {
+    console.log("Producto agregado al carrito con Exito")
+    if (currentValue == 1){
+      window.alert("Producto agregado al carrito con Exito!");
+    } else { 
+      window.alert("Productos agregados al carrito con Exito!");
+    }
+    return res.json()
+  })
   .catch( (error) => {
     console.error("Entro a la excepcion del fetch: Error:", error)
   })

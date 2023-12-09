@@ -58,7 +58,7 @@
 					{{#each productsCart }}
 					<article class="product-card">
 						<div class="product-card__details">
-							<a href="/shop/item/1">
+							<a class="reference_product_id" href="/shop/item/{{product_id}}">
 								<img src="{{image_front}}" alt="aImagenOf{{image_front}}" class="product-card__img" />
 							</a>
 							<div class="product-card__description">
@@ -70,17 +70,17 @@
 							</div>
 						</div>
 						<div class="product-card__quantity">
-							<input type="text" name="quantityInput" id="quantityInput" placeholder="{{quantity}}" size="4" inputmode="numeric" maxlength="3" />
+							<input type="text" name="quantityInput" class="quantityInput" size="4" inputmode="numeric" maxlength="3" value="{{quantity}}"/>
 							<div class="quantity__buttons">
-								<button id="plus" type="button">+</button>
-								<button id="minus" type="button">-</button>
+								<button class="plus" type="button">+</button>
+								<button class="minus" type="button">-</button>
 							</div>
 						</div>
 						<div class="product-card__price">
 							${{total_price_product}}
 						</div>
 						<div class="product-card__remove">
-							<button id="deleteX" type="button">X</button>
+							<button class="deleteX" type="button">X</button>
 						</div>
 					</article>
 					{{/each }}
@@ -89,10 +89,10 @@
 			<section class="resume-section">
 				<h2>Resumen</h2>
 				<div class="resume__chart">
-					<p class="quantity"><span class="text">cantidad de elementos</span> <span> {{totalQuantity}}  </span></p>
-					<p class="subtotal"><span class="text">subtotal</span> <span>{{finalTotalPrice}}</span></p>
-					<p class="shipping"><span class="text">envio</span ><span>0.00</span></p>
-					<p class="total"><span class="text">total</span> <span>{{finalTotalPrice}}</span></p>
+					<p class="quantity"><span class="text">cantidad de elementos</span> <span class="finalQuantity"> {{totalQuantity}}  </span></p>
+					<p class="subtotal"><span class="text">subtotal</span> <spa class="finalSubTotalPrice">$ {{finalTotalPrice}}</span></p>
+					<p class="shipping"><span class="text">envio</span > <span> $ 0.00</span></p>
+					<p class="total"><span class="text">total</span> <span class = "finalTotalPrice">$ {{finalTotalPrice}}</span></p>
 				</div>
 				<div class="resume__pay">
 					<button class="resume__button" type="button">ir a pagar</button>

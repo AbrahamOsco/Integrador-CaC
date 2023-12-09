@@ -11,6 +11,7 @@ shopRouter.post('/item/:productId/add', shopController.addProduct)
 
 shopRouter.get('/cart', shopController.renderCartPage)
 
+shopRouter.put('/item/:productId/update', shopController.updateProduct)
 
 module.exports = {
 	shopRouter,

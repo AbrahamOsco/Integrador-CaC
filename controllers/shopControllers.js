@@ -29,7 +29,6 @@ const renderCartPage = async (req, res) => {
         finalTotalPrice: finalTotalPrice,
         totalQuantity : totalQuantityProds,
     })
-
 }
 
 const addProduct = async (req, res) => {
@@ -37,10 +36,19 @@ const addProduct = async (req, res) => {
     const quantity = req.body.productQuantity
     console.log("aProductId", aProductId)
     console.log("Recibimos cantidad: ", quantity)
-    shopModel.addProductToTheCart(aProductId, quantity)    
+    shopModel.addProductToTheCart(aProductId, quantity)
+    res.status(200).json({ message: 'Producto agregado al carrito exitosamente' });    
 }
 
+const updateProduct = async (req, res) => {
+    const aProductId = req.params.productId
+    const newQuantity = req.body.productQuantity
+    await shopModel.updateProductInTheCart(aProductId, newQuantity);
+    // server luego de recibir un put debe enviar una rspt al cliente sino este se queda colgado y no hace mas fetch
+    // y el server nunca mas recibe nada ! .  
+    res.status(200).json({ message: 'Actualización exitosa en la tabla cart' });    
+}
 
-module.exports = {renderShopPage, renderItemId, renderCartPage, addProduct}
+module.exports = {renderShopPage, renderItemId, renderCartPage, addProduct, updateProduct}
 
 

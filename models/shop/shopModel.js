@@ -156,7 +156,7 @@ const getFinalTotalPrice = async () => {
 }
 
 const getTotalQuantityProds = async () => {
-  return new Promise( async (resuelta, rechazada) => {
+  return new Promise( (resuelta, rechazada) => {
     const aQuery = "SELECT SUM(quantity) as totalQuantity FROM cart;"
     db.connection.query(aQuery, function(error, results, fields){
       if (error){
@@ -168,7 +168,24 @@ const getTotalQuantityProds = async () => {
   })
 }
 
+
+const updateProductInTheCart = async (idProduct, aQuantityProduct) => {
+  return new Promise( async (resuelta, rechazada) => {
+    const aNewPriceProduct = await getPriceTotalProduct(idProduct, aQuantityProduct)
+    const aQuery = "UPDATE cart SET quantity = ?, total_price_product = ? WHERE product_id = ?"
+    db.connection.query(aQuery, [aQuantityProduct, aNewPriceProduct, idProduct] ,function(error, results, fields){
+      if (error){
+        console.error('Error al ejecutar la consulta -> updateProductInTheCart:\n');
+        throw error;
+      }
+      console.log("Consulta resuelta con exito retorno resultados\n")
+      resuelta(results)
+    })
+  })
+}
+
 module.exports = {getProducts, getInfoProduct, get3ProductsExceptIdProduct,
-                   addProductToTheCart, getProductsInCart, getFinalTotalPrice, getTotalQuantityProds}
+                   addProductToTheCart, getProductsInCart, getFinalTotalPrice,
+                   getTotalQuantityProds, updateProductInTheCart}
 
 
