@@ -40,15 +40,21 @@ const addProduct = async (req, res) => {
     res.status(200).json({ message: 'Producto agregado al carrito exitosamente' });    
 }
 
-const updateProduct = async (req, res) => {
+const updateProductInCart = async (req, res) => {
     const aProductId = req.params.productId
     const newQuantity = req.body.productQuantity
     await shopModel.updateProductInTheCart(aProductId, newQuantity);
     // server luego de recibir un put debe enviar una rspt al cliente sino este se queda colgado y no hace mas fetch
-    // y el server nunca mas recibe nada ! .  
+    // y el server nunca mas recibe nada !.  
     res.status(200).json({ message: 'Actualización exitosa en la tabla cart' });    
 }
 
-module.exports = {renderShopPage, renderItemId, renderCartPage, addProduct, updateProduct}
+const deleteProductInCart = async (req, res) => {
+    const aProductId = req.body.productId;
+    await shopModel.deleteProductInTheCart(aProductId)
+    res.status(200).json({ message: 'Eliminacion exitosa del product: ' + aProductId + ' en la tabla cart' });    
+}
+
+module.exports = {renderShopPage, renderItemId, renderCartPage, addProduct, updateProductInCart, deleteProductInCart}
 
 

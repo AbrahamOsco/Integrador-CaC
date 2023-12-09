@@ -69,7 +69,29 @@ const applyHandlerMinusBtn = (aMinusBtn, positionBtn) => {
 const applyHandlerDeleteBtn = (aDeleteBtn, positionBtn) => {
 	aDeleteBtn.addEventListener('click', () => {
 		const hrefWithProductId = document.querySelectorAll('.reference_product_id')[positionBtn];
-		const productId = hrefWithProductId.getAttribute('href').split('/').pop() 
+		const productIdToSend = hrefWithProductId.getAttribute('href').split('/').pop()
+		console.log("Eliminado el producto del carrito :", productIdToSend)
+		fetch(`/shop/cart`,{
+			method:'DELETE',
+			headers: {
+			  'Content-type': 'application/json'
+			},
+			body: JSON.stringify({
+			  productId:productIdToSend,
+			}),
+		  }).then( (res) => {
+			console.log("Recibiendo respuesta del delete con exito \n")
+			return res.json()
+		}).then((data) => {
+            console.log("Respuesta del servidor:", data);
+            // Recargar la página después de la eliminación
+            location.reload();
+        })
+		
+		.catch( (error) => {
+			console.error("Entro a la excepcion del fetch: Error:", error)
+		})
+
 	})
 } 
 

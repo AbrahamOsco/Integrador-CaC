@@ -184,8 +184,24 @@ const updateProductInTheCart = async (idProduct, aQuantityProduct) => {
   })
 }
 
+const deleteProductInTheCart = async (idProduct) => {
+  return new Promise( async (resuelta, rechazada) => {
+    const aQuery = "DELETE FROM cart WHERE product_id = ?;"
+    db.connection.query(aQuery, [idProduct] ,function(error, results, fields){
+      if (error){
+        console.error('Error al ejecutar la consulta -> deleteProductInTheCart:\n');
+        throw error;
+      }
+      console.log("Consulta resuelta con exito retorno resultados\n")
+      resuelta(results)
+    })
+  })
+}
+
+
+
 module.exports = {getProducts, getInfoProduct, get3ProductsExceptIdProduct,
                    addProductToTheCart, getProductsInCart, getFinalTotalPrice,
-                   getTotalQuantityProds, updateProductInTheCart}
+                   getTotalQuantityProds, updateProductInTheCart, deleteProductInTheCart}
 
 

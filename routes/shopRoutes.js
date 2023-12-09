@@ -11,7 +11,9 @@ shopRouter.post('/item/:productId/add', shopController.addProduct)
 
 shopRouter.get('/cart', shopController.renderCartPage)
 
-shopRouter.put('/item/:productId/update', shopController.updateProduct)
+shopRouter.put('/item/:productId/update', shopController.updateProductInCart)
+
+shopRouter.delete('/cart', shopController.deleteProductInCart)
 
 module.exports = {
 	shopRouter,
