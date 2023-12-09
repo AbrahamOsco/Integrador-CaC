@@ -131,7 +131,7 @@ const addProductToTheCart = async (idProduct, quantityProduct) => {
 
 const getProductsInCart = async (idProduct, quantityProduct) => {
   return new Promise( async (resuelta, rechazada) => {
-    const aQuery = "SELECT * FROM cart c INNER JOIN product p ON p.product_id = c.product_id;"
+    const aQuery = "SELECT * FROM cart c INNER JOIN product p INNER JOIN licence l ON p.product_id = c.product_id AND p.licence_id = l.licence_id;"
     db.connection.query(aQuery, function(error, results, fields){
       if (error){
         console.error('Error al ejecutar la consulta -> getProductsInCart:\n');
@@ -142,6 +142,33 @@ const getProductsInCart = async (idProduct, quantityProduct) => {
   })
 }
 
-module.exports = {getProducts, getInfoProduct, get3ProductsExceptIdProduct, addProductToTheCart, getProductsInCart}
+const getFinalTotalPrice = async () => {
+  return new Promise( async (resuelta, rechazada) => {
+    const aQuery = "SELECT SUM(total_price_product) as FinalTotalPrice FROM cart;"
+    db.connection.query(aQuery, function(error, results, fields){
+      if (error){
+        console.error('Error al ejecutar la consulta -> getFinalTotalPrice:\n');
+        throw error;
+      }
+      resuelta(JSON.parse(JSON.stringify(results))[0]['FinalTotalPrice'])
+    })
+  })
+}
+
+const getTotalQuantityProds = async () => {
+  return new Promise( async (resuelta, rechazada) => {
+    const aQuery = "SELECT SUM(quantity) as totalQuantity FROM cart;"
+    db.connection.query(aQuery, function(error, results, fields){
+      if (error){
+        console.error('Error al ejecutar la consulta -> getFinalTotalPrice:\n');
+        throw error;
+      }
+      resuelta(JSON.parse(JSON.stringify(results))[0]['totalQuantity'])
+    })
+  })
+}
+
+module.exports = {getProducts, getInfoProduct, get3ProductsExceptIdProduct,
+                   addProductToTheCart, getProductsInCart, getFinalTotalPrice, getTotalQuantityProds}
 
 

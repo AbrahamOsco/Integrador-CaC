@@ -20,8 +20,14 @@ const renderItemId = async (req, res) => {
 
 const renderCartPage = async (req, res) => {
     const productsInCart = await shopModel.getProductsInCart()
+    const finalTotalPrice = await shopModel.getFinalTotalPrice()
+    const totalQuantityProds = await shopModel.getTotalQuantityProds() 
+    console.log("finalTotalPrice", finalTotalPrice)
+    console.log(productsInCart.length)
     res.render('pages/shop/cart', {
-        products: productsInCart 
+        productsCart: productsInCart,
+        finalTotalPrice: finalTotalPrice,
+        totalQuantity : totalQuantityProds,
     })
 
 }
@@ -33,6 +39,7 @@ const addProduct = async (req, res) => {
     console.log("Recibimos cantidad: ", quantity)
     shopModel.addProductToTheCart(aProductId, quantity)    
 }
+
 
 module.exports = {renderShopPage, renderItemId, renderCartPage, addProduct}
 

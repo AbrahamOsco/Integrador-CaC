@@ -9,8 +9,6 @@
 		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
 		<!-- Local Style Sheets -->
 		<link rel="stylesheet" href="/css/shop/cart.css" />
-		<!-- Local Scripts -->
-		<script type="module" src="/js/shop/cart.js"></script>
 	</head>
 	<body>
 		<header>
@@ -57,96 +55,44 @@
 						<p>cantidad</p>
 						<p>total</p>
 					</article>
+					{{#each productsCart }}
 					<article class="product-card">
 						<div class="product-card__details">
 							<a href="/shop/item/1">
-								<img src="/img/pokemon/vulpix-1.webp" alt="vulpix" class="product-card__img" />
+								<img src="{{image_front}}" alt="aImagenOf{{image_front}}" class="product-card__img" />
 							</a>
 							<div class="product-card__description">
 								<hgroup>
-									<h3>Vulpix</h3>
-									<p>Pokemon</p>
+									<h3>{{product_name}}</h3>
+									<p>{{licence_name}}</p>
 								</hgroup>
-								<p>precio: <span class="price">1799.99</span></p>
+								<p>precio: <span class="price">{{price}}</span></p>
 							</div>
 						</div>
 						<div class="product-card__quantity">
-							<input type="text" name="quantity" placeholder="0" size="4" inputmode="numeric" maxlength="3" />
+							<input type="text" name="quantityInput" id="quantityInput" placeholder="{{quantity}}" size="4" inputmode="numeric" maxlength="3" />
 							<div class="quantity__buttons">
-								<button class="plus" type="button">+</button>
-								<button class="minus" type="button">-</button>
+								<button id="plus" type="button">+</button>
+								<button id="minus" type="button">-</button>
 							</div>
 						</div>
 						<div class="product-card__price">
-							<p>3599.99</p>
+							${{total_price_product}}
 						</div>
 						<div class="product-card__remove">
-							<button type="button">X</button>
+							<button id="deleteX" type="button">X</button>
 						</div>
 					</article>
-					<article class="product-card">
-						<div class="product-card__details">
-							<a href="/shop/item/1">
-								<img src="/img/pokemon/vulpix-1.webp" alt="vulpix" class="product-card__img" />
-							</a>
-							<div class="product-card__description">
-								<hgroup>
-									<h3>Vulpix</h3>
-									<p>Pokemon</p>
-								</hgroup>
-								<p>precio: <span class="price">1799.99</span></p>
-							</div>
-						</div>
-						<div class="product-card__quantity">
-							<input type="text" name="quantity" placeholder="0" size="4" inputmode="numeric" maxlength="3" />
-							<div class="quantity__buttons">
-								<button class="plus" type="button">+</button>
-								<button class="minus" type="button">-</button>
-							</div>
-						</div>
-						<div class="product-card__price">
-							<p>3599.99</p>
-						</div>
-						<div class="product-card__remove">
-							<button type="button">X</button>
-						</div>
-					</article>
-					<article class="product-card">
-						<div class="product-card__details">
-							<a href="/shop/item/1">
-								<img src="/img/pokemon/vulpix-1.webp" alt="vulpix" class="product-card__img" />
-							</a>
-							<div class="product-card__description">
-								<hgroup>
-									<h3>Vulpix</h3>
-									<p>Pokemon</p>
-								</hgroup>
-								<p>precio: <span class="price">1799.99</span></p>
-							</div>
-						</div>
-						<div class="product-card__quantity">
-							<input type="text" name="quantity" placeholder="0" size="4" inputmode="numeric" maxlength="3" />
-							<div class="quantity__buttons">
-								<button class="plus" type="button">+</button>
-								<button class="minus" type="button">-</button>
-							</div>
-						</div>
-						<div class="product-card__price">
-							<p>3599.99</p>
-						</div>
-						<div class="product-card__remove">
-							<button type="button">X</button>
-						</div>
-					</article>
+					{{/each }}
 				</section>
 			</section>
 			<section class="resume-section">
 				<h2>Resumen</h2>
 				<div class="resume__chart">
-					<p class="quantity"><span class="text">cantidad de elementos</span><span class="number">3</span></p>
-					<p class="subtotal"><span class="text">subtotal</span><span class="number">5399.97</span></p>
-					<p class="shipping"><span class="text">envio</span><span class="number">0.00</span></p>
-					<p class="total"><span class="text">total</span><span class="number">5.399.97</span></p>
+					<p class="quantity"><span class="text">cantidad de elementos</span> <span> {{totalQuantity}}  </span></p>
+					<p class="subtotal"><span class="text">subtotal</span> <span>{{finalTotalPrice}}</span></p>
+					<p class="shipping"><span class="text">envio</span ><span>0.00</span></p>
+					<p class="total"><span class="text">total</span> <span>{{finalTotalPrice}}</span></p>
 				</div>
 				<div class="resume__pay">
 					<button class="resume__button" type="button">ir a pagar</button>
@@ -176,5 +122,7 @@
 				</a>
 			</figure>
 		</footer>
+		<!-- Local Scripts -->
+		<script type="module" src="/js/shop/cart.js"></script>
 	</body>
 </html>

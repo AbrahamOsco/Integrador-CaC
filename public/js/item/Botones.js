@@ -18,6 +18,7 @@ subtract.addEventListener('click', () => {
   validateQuantity();
 });
 
+
 // Validar la cantidad en el evento "change"
 quantity.addEventListener('change', () => {
   validateQuantity();

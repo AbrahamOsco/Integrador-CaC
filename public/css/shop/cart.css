@@ -151,9 +151,6 @@ main {
 	text-align: center;
 }
 
-.product-card__price p::before {
-	content: "$ ";
-}
 
 /* BUTTON */
 
@@ -232,7 +229,7 @@ main {
 	padding-top: 0.5em;
 }
 
-.resume__chart p:not(:first-child) .number::before {
+.resume__chart p:not(:first-child){
 	content: "$ ";
 }
 

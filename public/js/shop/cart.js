@@ -1,12 +1,43 @@
-// @ts-check
+const plusBtn = document.querySelector('#plus');
+const minusBtn = document.querySelector('#minus');
+const deleteXBtn = document.querySelector('#deleteX');
+const quantity = document.querySelector('#quantityInput') 
 
-/**
- * Receives a number as string, converts it,
- * makes an operation, converts it again, and returns it
- * @param {string} numString
- * @param {number} value
- * @returns {string}
- */
+const handlerPlusBtn = () => {
+	console.log('Handler handlerPlusBtn\n');	
+}
+
+const handlerMinusBtn = () => {
+	console.log('Handler handlerMinusBtn\n');	
+
+}
+
+const handlerDeleteXBtn = () => {
+	console.log('handlerDeleteXBtn')
+}
+
+
+// Validar la cantidad en el evento "change"
+quantity.addEventListener('change', () => {
+	validateQuantity();
+  });
+  
+  // Función para validar y asegurarse de que la cantidad no sea menor a 0
+  function validateQuantity() {
+	let cantidad = parseInt(quantity.value);
+	if (isNaN(cantidad) || cantidad < 0) {
+	  quantity.value = 0;
+	}
+  }
+
+plusBtn.addEventListener('click', handlerPlusBtn)
+
+minusBtn.addEventListener('click', handlerMinusBtn)
+
+deleteXBtn.addEventListener('click', handlerDeleteXBtn)
+
+
+/*
 function operationStringNumber(numString, value) {
 	let myNum = Number(numString)
 	if (Number.isNaN(myNum)) myNum = 0
@@ -42,15 +73,9 @@ inputArray.forEach(inputGroup => {
 
 const productCards = document.querySelectorAll('.product-card')
 
-/**
- * Update total price of a product card
- * It uses its price and the quantity
- * @param {Element} productCard
- * @returns {{totalPrice:number, quantity:number}}
- */
+
 function updatePrice(productCard) {
 	const productPriceElement = productCard.querySelector('.product-card__details .price')
-	/** @type {HTMLInputElement | null} */
 	const quantityElement = productCard.querySelector('.product-card__quantity input')
 	const totalPriceElement = productCard.querySelector('.product-card__price p')
 
@@ -65,9 +90,6 @@ function updatePrice(productCard) {
 	return { totalPrice, quantity }
 }
 
-/**
- * Iterate through all products to update all prices
- */
 function updatePrices() {
 	productCards?.forEach(productCard => {
 		updatePrice(productCard)
@@ -106,3 +128,4 @@ function updateResume() {
 
 // updatePrices()
 updateResume()
+*/
