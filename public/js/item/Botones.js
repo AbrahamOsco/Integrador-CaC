@@ -67,6 +67,7 @@ const handlerAddToCart = () => {
     } else { 
       window.alert("Productos agregados al carrito con Exito!");
     }
+    document.querySelector('#quantity').value = 0;
     return res.json()
   })
   .catch( (error) => {

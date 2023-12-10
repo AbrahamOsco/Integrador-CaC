@@ -22,8 +22,6 @@ const renderCartPage = async (req, res) => {
     const productsInCart = await shopModel.getProductsInCart()
     const finalTotalPrice = await shopModel.getFinalTotalPrice()
     const totalQuantityProds = await shopModel.getTotalQuantityProds() 
-    console.log("finalTotalPrice", finalTotalPrice)
-    console.log(productsInCart.length)
     res.render('pages/shop/cart', {
         productsCart: productsInCart,
         finalTotalPrice: finalTotalPrice,
@@ -55,6 +53,13 @@ const deleteProductInCart = async (req, res) => {
     res.status(200).json({ message: 'Eliminacion exitosa del product: ' + aProductId + ' en la tabla cart' });    
 }
 
-module.exports = {renderShopPage, renderItemId, renderCartPage, addProduct, updateProductInCart, deleteProductInCart}
+const payCart = async(req, res) => {
+    await shopModel.payCartQuery()
+    res.status(200).json({ message: 'Se pago con exito el carrito. Se eliminaron todos los productos porque iran a tu domicilio! \n' });    
+} 
+
+module.exports = {renderShopPage, renderItemId, renderCartPage,
+             addProduct, updateProductInCart, deleteProductInCart,
+             payCart }
 
 

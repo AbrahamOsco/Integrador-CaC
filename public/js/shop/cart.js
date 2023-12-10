@@ -86,9 +86,7 @@ const applyHandlerDeleteBtn = (aDeleteBtn, positionBtn) => {
             console.log("Respuesta del servidor:", data);
             // Recargar la página después de la eliminación
             location.reload();
-        })
-		
-		.catch( (error) => {
+        }).catch( (error) => {
 			console.error("Entro a la excepcion del fetch: Error:", error)
 		})
 
@@ -108,9 +106,30 @@ document.querySelectorAll('.minus').forEach(applyHandlerMinusBtn)
 document.querySelectorAll('.deleteX').forEach(applyHandlerDeleteBtn)
 
 
+const handlerPayCartBtn = () => {
+	console.log("Se hizo click en comprar el carrito todos los productos seran enviados a tu domicilio!.\n")
+	// @TODO Supuesto supondremos que al hacer post se eliminaran todos los elementos del carrito porque fueron ya enviados al domicilio. 
+	fetch(`/shop/cart`,{
+		method:'POST',
+		headers: {
+		  'Content-type': 'application/json'
+		},
+	  }).then( (res) => {
+		console.log("Recibiendo respuesta del Pay Cart con exito \n")
+		return res.json()
+	}).then((data) => {
+		console.log("Respuesta del servidor:", data);
+		location.reload();
+		window.alert('Se compraron todos los productos del carrito con Exito!.\nLos productos seran enviados a tu domicilio!')
+	}).catch( (error) => {
+		console.error("Entro a la excepcion del fetch: Error:", error)
+	})
+}
 
-  /*
+const payCartBtn =  document.querySelector('.resume__button')
+payCartBtn.addEventListener('click', handlerPayCartBtn)
 
+/*
 function operationStringNumber(numString, value) {
 	let myNum = Number(numString)
 	if (Number.isNaN(myNum)) myNum = 0
