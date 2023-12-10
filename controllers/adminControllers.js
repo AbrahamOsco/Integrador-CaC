@@ -1,4 +1,18 @@
+const shopModel = require('../models/shop/shopModel')
+
+const renderAdminPage = async (req, res) => {
+	const queryProducts = await shopModel.getProducts();
+
+	res.render('admin/admin',{ 
+		products :queryProducts
+	})
+}
+
+
+module.exports = { renderAdminPage }
+
 /*
+
 	Esta ruta (/admin) sería compartida
 	Por ahora podes poner tus configuraciones en un archivo aparte
 	para evitar interferencias y conflictos	
@@ -45,4 +59,5 @@ adminController.deleteProduct = async (req, res) => {
 }
 
 module.exports = { adminController }
+
 */
