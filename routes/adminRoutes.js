@@ -1,3 +1,11 @@
+const express = require('express')
+// const { adminController } = require('../controllers/admin.controller.js')
+
+const adminRouter = express.Router()
+
+module.exports = {adminRouter}
+
+
 /*
 const express = require('express')
 const { adminController } = require('../controllers/admin.controller.js')
