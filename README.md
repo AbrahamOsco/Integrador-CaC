@@ -1,6 +1,8 @@
-
 # Integrador Codo A Codo
-
+## Integrantes
+1. Abraham Osco
+2. Nicolas Mateo
+3. Ana Sanchez
 ## Folder Structure
 
 ```txt
