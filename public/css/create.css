@@ -127,6 +127,7 @@ header{
 
 .navbar__link:hover{
     background-color: var(--primary-900);
+    color: black;
 }
 
 /* MAIN */

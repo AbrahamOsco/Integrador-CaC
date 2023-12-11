@@ -1,8 +1,26 @@
-// @ts-check
+const applyHandlerDeleteBtn = (aDeleteBtn, positionBtn) => {
+	aDeleteBtn.addEventListener('click', () => {
+		const aProductId = document.querySelectorAll('.tdWithProductId')[positionBtn].textContent
+		fetch(`/admin/delete/${aProductId}`,{
+			method:'DELETE',
+			headers: {
+			  'Content-type': 'application/json'
+			},
+		  }).then( (res) => {
+			return res.json()
+		}).then((data) => {
+            // Recargar la página después de la eliminación
+            location.reload();
+        }).catch( (error) => {
+			console.error("Entro a la excepcion del fetch: Error:", error)
+		})
+	})
+}
 
-/** @type {NodeListOf<HTMLButtonElement>} */
-const buttonsDelete = document.querySelectorAll('tbody td button')
+document.querySelectorAll('.deleteBtn').forEach(applyHandlerDeleteBtn)
 
+
+/*
 buttonsDelete.forEach(button => {
 	button.addEventListener('click', async e => {
 		const id = button.dataset.id ?? ''
@@ -22,3 +40,4 @@ buttonsDelete.forEach(button => {
 		}
 	})
 })
+*/

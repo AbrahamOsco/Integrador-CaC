@@ -1,7 +1,7 @@
 const express = require('express')
 const shopRouter = express.Router()
 
-const shopController  = require('../controllers/shopControllers.js')
+const shopController  = require('../controllers/shopControllers')
 
 shopRouter.get('/', shopController.renderShopPage)
 

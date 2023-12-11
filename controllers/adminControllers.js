@@ -1,15 +1,62 @@
 const shopModel = require('../models/shop/shopModel')
+const adminModel = require('../models/admin/adminModel')
 
 const renderAdminPage = async (req, res) => {
 	const queryProducts = await shopModel.getProducts();
-
 	res.render('admin/admin',{ 
 		products :queryProducts
 	})
 }
 
+const deleteAProduct = async(req, res) => {
+	await adminModel.deleteAProductQuery(req.params.productId)
+	res.status(200).json({ message: 'Producto eliminado de la tabla de productos exitosamente' });    
+}
 
-module.exports = { renderAdminPage }
+const renderCreatePage = async (req, res) => {
+	const categorysProducts = await adminModel.getCategorys()
+	const licencesProducts = await adminModel.getLicences()
+	res.render('pages/admin/create',{
+		categorys: categorysProducts,
+		licenses: licencesProducts  
+	})
+}
+
+const addNewProduct = async (req, res) => {
+	const dataProducts = {
+		aCategory: req.body.aCategory,
+		aLicense: req.body.aLicense,
+		aNameProduct: req.body.aNameProduct,
+		aDescription: req.body.aDescription,
+		aSku: req.body.aSku,
+		aPrice: req.body.aPrice,
+		aStock: req.body.aStock,
+		aDiscount: req.body.aDiscount,
+		aDues: req.body.aDues,
+		aFrontImg: req.body.aFrontImg,
+		aBackImg: req.body.aBackImg,
+		aCreationTime: req.body.aCreationTime
+	};
+	console.log(dataProducts)
+	await adminModel.addNewProduct(dataProducts)
+	res.status(200).json({ message: 'Producto agregado a la tabla de productos exitosamente\n'});    
+}
+
+
+const renderEditPage = async (req, res) => {
+	const productId = req.params.productId
+	console.log('productId: ', productId)
+	res.render('pages/admin/edit', {
+			
+	})
+}
+
+const updateAProduct = async (req, res) => {
+
+}
+
+module.exports = { renderAdminPage, deleteAProduct, renderCreatePage,
+	 				addNewProduct, renderEditPage, updateAProduct}
 
 /*
 

@@ -50,7 +50,7 @@ en el selector directo el 'a' del navbar NO en el padre ni en el abuelo.
 
 .navbar__item a:hover {
     background-color: white;
-    color: var(--color-fondo);
+    color: black;
 }
 
 /* estilos propios del index.html  */
