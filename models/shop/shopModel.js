@@ -120,10 +120,8 @@ const addProductToTheCart = async (idProduct, quantityProduct) => {
   const numberProductsWithId = await isThereProductIdInTheCart(idProduct);
   // paso la rspt(RowData) a un array de json()[claves con ""] y luego a un array de javascript [Claves sin "" ]
   if(numberProductsWithId == 0 ){
-    console.log("Ese producto no esta en el carrito asi que lo agregamos -mi primera vez")
     addNewProductToTheCart(idProduct, quantityProduct) 
   } else {
-    console.log("El productId ya existe en el carrito sumamos modificamos quantity y precios ")
     modifyProductInCart(idProduct, quantityProduct)
   }
 }

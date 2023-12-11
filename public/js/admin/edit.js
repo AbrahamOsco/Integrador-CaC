@@ -7,23 +7,15 @@ const inputPrice = document.getElementById('precio')
 const inputStock = document.getElementById('stock')
 const inputDiscount = document.getElementById('descuento')
 const inputDues = document.getElementById('cuotas')
-const addProductBtn = document.getElementById('addProduct')
-const cleanFieldsBtn = document.getElementById('cleanFields')
+const modifiedProductBtn = document.getElementById('modifiedProduct')
 const inputFileImg = document.getElementById('fileImg')
-
-const getCurrentDateTime = () => {
-    const now = new Date();
-    const offset = now.getTimezoneOffset();
-    now.setMinutes(now.getMinutes() - offset);
-    const formattedDateTime = now.toISOString().slice(0, 19).replace('T', ' ');
-    return formattedDateTime;
-}
+const imgFrontElement = document.getElementById('imgFront')
+const imgBackElement = document.getElementById('imgBack')
 
 let currenImgType = 'Frente'
 let imgNames = []
 
-inputFileImg.addEventListener('change', () => {
-    console.log('inputFileImg.value, ', inputFileImg.value)
+inputFileImg.addEventListener('change',  () => {
     const aImgName = inputFileImg.value.replace('C:\\fakepath\\','') 
     if(currenImgType == 'Frente'){
         frenteLabel.style.display = 'inline'
@@ -73,44 +65,57 @@ const getPathInitial = () => {
     }
     return pathInitialImg
 }
-
-const sendDataProduct = () => {
-    if (!areOkInputs() || (imgNames.length < 2) ){
-        alert('Error en los datos: asegurate de completar de forma correcta todos los campos!')
-        return;
-    }    
-    const pathInitialImg = getPathInitial()
-    console.log('Se ha ingresado con exito todos los datos del producto')
-    fetch(`/admin/create`,{
-      method:'POST',
-      headers: {
-        'Content-type': 'application/json'
-      },
-      body: JSON.stringify({
-        aCategory: categorySelect.value,
-        aLicense: licenseSelect.value,
-        aNameProduct: inputNameProduct.value,
-        aDescription: inputDescription.value,
-        aSku: inputSku.value,
-        aPrice: parseFloat(inputPrice.value),
-        aStock: parseInt(inputStock.value),
-        aDiscount: parseInt(inputDiscount.value),
-        aDues: parseInt(inputDues.value),
-        aFrontImg: (pathInitialImg + imgNames[0]),
-        aBackImg: (pathInitialImg + imgNames[1]),
-        aCreationTime: getCurrentDateTime()
-      }),
-    })
-    .then( (res) => {
-      window.alert("Producto agregado a la tabla producto con exito!\n");
-      return res.json()
-    })
-    .catch( (error) => {
-      console.error("Entro a la excepcion del fetch: Error:", error)
-    })
+const getImgFrontAndBackToSend = () => {
+    let imgFrontToSend = imgFrontElement.src
+    let imgBackToSend = imgBackElement.src
+    const pathInitialImg = getPathInitial();
+    if (imgNames.length == 1 ){
+        imgFrontToSend = pathInitialImg + imgNames[0]
+    } else if (imgNames.length == 2 ){
+        imgFrontToSend = pathInitialImg + imgNames[0]
+        imgBackToSend = pathInitialImg + imgNames[1]
+    }
+    return {imgFrontToSend, imgBackToSend}
 }
 
+const sendProductModifications = () => {
+    if (!areOkInputs() ){
+        alert('Error en los datos: asegurate de completar de forma correcta todos los campos!')
+        return;
+    }
+    const {imgFrontToSend, imgBackToSend} = getImgFrontAndBackToSend()
+    console.log("imgFrontToSend: ",imgFrontToSend, "imgBackToSend: ",  imgBackToSend)
+    const productId = parseInt( window.location.pathname.split('/').pop()) 
+    // parseo la url y obtengo el ultimo elemento q es justo el id del producto.
+    console.log('Los datos estan ingresados de forma correcta se procede a realizar el fetch con el PUT.')
+    
+    fetch(`/admin/edit/${productId}`,{
+        method:'PUT',
+        headers: {
+          'Content-type': 'application/json'
+        },
+        body: JSON.stringify({
+          aCategory: categorySelect.value,
+          aLicense: licenseSelect.value,
+          aNameProduct: inputNameProduct.value,
+          aDescription: inputDescription.value,
+          aSku: inputSku.value,
+          aPrice: parseFloat(inputPrice.value),
+          aStock: parseInt(inputStock.value),
+          aDiscount: parseInt(inputDiscount.value),
+          aDues: parseInt(inputDues.value),
+          aFrontImg: imgFrontToSend,
+          aBackImg: imgBackToSend,
+        }),
+      })
+      .then( (res) => {
+        window.alert("Producto modificado en la tabla product con exito!\n");
+        return res.json()
+      })
+      .catch( (error) => {
+        console.error("Entro a la excepcion del fetch: Error:", error)
+      })
+}
 
-addProductBtn.addEventListener('click', sendDataProduct)
+modifiedProductBtn.addEventListener('click', sendProductModifications)
 
-module.exports = { isAValidNumber, areOkInputs }
