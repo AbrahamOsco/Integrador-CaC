@@ -7,7 +7,7 @@ const mainController = require("../controllers/mainControllers")
 
 mainRouter.get("/", mainController.renderHome)
 
-
+mainRouter.get("/contact", mainController.renderContactPage)
 
 /*
 mainRouter.use((req, res, next) => {

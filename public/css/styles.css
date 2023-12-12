@@ -52,6 +52,9 @@ en el selector directo el 'a' del navbar NO en el padre ni en el abuelo.
     background-color: white;
     color: black;
 }
+.navbar__item{
+    margin-top: 12px;
+}
 
 /* estilos propios del index.html  */
 

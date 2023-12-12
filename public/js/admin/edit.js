@@ -14,8 +14,7 @@ const imgBackElement = document.getElementById('imgBack')
 
 let currenImgType = 'Frente'
 let imgNames = []
-
-inputFileImg.addEventListener('change',  () => {
+const getImgNames = () => {
     const aImgName = inputFileImg.value.replace('C:\\fakepath\\','') 
     if(currenImgType == 'Frente'){
         frenteLabel.style.display = 'inline'
@@ -30,7 +29,8 @@ inputFileImg.addEventListener('change',  () => {
         currenImgType = 'Frente'
         imgNames[1] = aImgName
     }
-})
+} 
+
 
 const isAValidNumber = (aInputNumber, type) => {
     let value = parseFloat(aInputNumber.value)
@@ -50,6 +50,7 @@ const areOkInputs = () => {
     if(categorySelect.value == 'Seleccionar' || licenseSelect.value == 'Seleccionar' 
         || inputNameProduct.value == '' || inputDescription.value == '' || (inputSku.value == '' || isFinite(inputSku.value)) 
         || !isAValidNumber(inputPrice, '') || ! isAValidNumber(inputStock,'STOCK') || !isAValidNumber(inputDiscount,'DISC') ){
+        alert('Error en los datos: asegurate de completar de forma correcta todos los campos!')
         return false;
     }
     return true;
@@ -65,6 +66,7 @@ const getPathInitial = () => {
     }
     return pathInitialImg
 }
+
 const getImgFrontAndBackToSend = () => {
     let imgFrontToSend = imgFrontElement.src
     let imgBackToSend = imgBackElement.src
@@ -80,7 +82,6 @@ const getImgFrontAndBackToSend = () => {
 
 const sendProductModifications = () => {
     if (!areOkInputs() ){
-        alert('Error en los datos: asegurate de completar de forma correcta todos los campos!')
         return;
     }
     const {imgFrontToSend, imgBackToSend} = getImgFrontAndBackToSend()
@@ -118,4 +119,6 @@ const sendProductModifications = () => {
 }
 
 modifiedProductBtn.addEventListener('click', sendProductModifications)
+inputFileImg.addEventListener('change', getImgNames)
+
 

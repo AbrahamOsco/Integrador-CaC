@@ -39,7 +39,7 @@ const tryRegisterANewUser = async(req, res) => {
 }
 
 const renderLogoutPage = (req, res) => {
-    res.send('Seccion cerrada con exito! ')
+    res.render('pages/auth/logout', {})
 }
 
 module.exports = {renderLoginPage, tryLoginUser, renderRegisterPage, tryRegisterANewUser, renderLogoutPage}

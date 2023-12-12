@@ -22,8 +22,7 @@ const getCurrentDateTime = () => {
 let currenImgType = 'Frente'
 let imgNames = []
 
-inputFileImg.addEventListener('change', () => {
-    console.log('inputFileImg.value, ', inputFileImg.value)
+const getImgNames = () => {
     const aImgName = inputFileImg.value.replace('C:\\fakepath\\','') 
     if(currenImgType == 'Frente'){
         frenteLabel.style.display = 'inline'
@@ -38,7 +37,8 @@ inputFileImg.addEventListener('change', () => {
         currenImgType = 'Frente'
         imgNames[1] = aImgName
     }
-})
+} 
+
 
 const isAValidNumber = (aInputNumber, type) => {
     let value = parseFloat(aInputNumber.value)
@@ -58,6 +58,7 @@ const areOkInputs = () => {
     if(categorySelect.value == 'Seleccionar' || licenseSelect.value == 'Seleccionar' 
         || inputNameProduct.value == '' || inputDescription.value == '' || (inputSku.value == '' || isFinite(inputSku.value)) 
         || !isAValidNumber(inputPrice, '') || ! isAValidNumber(inputStock,'STOCK') || !isAValidNumber(inputDiscount,'DISC') ){
+        alert('Error en los datos: asegurate de completar de forma correcta todos los campos!')
         return false;
     }
     return true;
@@ -76,7 +77,6 @@ const getPathInitial = () => {
 
 const sendDataProduct = () => {
     if (!areOkInputs() || (imgNames.length < 2) ){
-        alert('Error en los datos: asegurate de completar de forma correcta todos los campos!')
         return;
     }    
     const pathInitialImg = getPathInitial()
@@ -110,7 +110,21 @@ const sendDataProduct = () => {
     })
 }
 
+const handlerCleanFieldsBtn = () => {
+    categorySelect.value = 'Seleccionar'
+    licenseSelect.value = 'Seleccionar' 
+    inputNameProduct.value = ''
+    inputDescription.value = ''
+    inputSku.value = ''
+    inputPrice.value = ''
+    inputStock.value = ''
+    inputDiscount.value = ''
+    inputDues.value = '3'
+}
 
 addProductBtn.addEventListener('click', sendDataProduct)
+cleanFieldsBtn.addEventListener('click', handlerCleanFieldsBtn)
+inputFileImg.addEventListener('change', getImgNames )
 
 module.exports = { isAValidNumber, areOkInputs }
+

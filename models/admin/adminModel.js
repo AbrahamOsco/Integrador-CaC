@@ -1,5 +1,18 @@
 const db = require('../mysql/connectionDB')
 
+const getProductsOrderById = async () => {
+  return new Promise( (resuelta, rechazada) => {
+    const aQuery = 'SELECT * FROM product p INNER JOIN licence l ON l.licence_id = p.licence_id ORDER BY p.product_id ASC LIMIT 100;'
+    db.connection.query(aQuery, function(error, results, fields){
+      if (error) {
+        console.error('Error al ejecutar la consulta -> getProducts:\n');
+        throw error;
+      }
+      resuelta(results);  // Asigno el results a resuelta. 
+    } )
+  });  
+}
+
 const deleteAProductQuery = async (productId) => {
   return new Promise( (resuelta, rechazada) => {
     const aQuery = 'DELETE FROM product p WHERE p.product_id = ?;'
@@ -192,4 +205,4 @@ const updateAProduct = async (aProductId, dataProduct) => {
 module.exports = {deleteAProductQuery, addNewProduct, getCategorys,
                   getLicences, getCategoryNameSelect, getLicenseNameSelect,
                   getOtherCategorysName, getOtherLicenseName, getDataProduct,
-                  getDueSelect, updateAProduct }
+                  getDueSelect, updateAProduct, getProductsOrderById }

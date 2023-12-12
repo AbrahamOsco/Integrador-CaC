@@ -1,8 +1,7 @@
-const shopModel = require('../models/shop/shopModel')
 const adminModel = require('../models/admin/adminModel')
 
 const renderAdminPage = async (req, res) => {
-	const queryProducts = await shopModel.getProducts();
+	const queryProducts = await adminModel.getProductsOrderById();
 	res.render('admin/admin',{ 
 		products :queryProducts
 	})
