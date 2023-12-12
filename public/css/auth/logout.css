@@ -105,8 +105,15 @@ main{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-bottom: -150px;
+    margin-bottom: -180px;
 }
+
+.backgSky{
+    background-color: rgb(218, 235, 135);
+    color: black;
+    font-weight: bolder;
+}
+
 .div__main h1{
     font-size: 70px;
 }
