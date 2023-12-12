@@ -1,19 +1,5 @@
 const db = require('../mysql/connectionDB')
 
-const getProducts = async () => {
-    return new Promise( (resuelta, rechazada) => {
-      const aQuery = 'SELECT * FROM product p INNER JOIN licence l ON l.licence_id = p.licence_id LIMIT 15;'
-      db.connection.query(aQuery, function(error, results, fields){
-        if (error) {
-          console.error('Error al ejecutar la consulta -> getProducts:\n');
-          throw error;
-        }
-        resuelta(results);  // Asigno el results a resuelta. 
-      } )
-    });  
-}
-
-
 const deleteAProductQuery = async (productId) => {
   return new Promise( (resuelta, rechazada) => {
     const aQuery = 'DELETE FROM product p WHERE p.product_id = ?;'
@@ -30,8 +16,8 @@ const deleteAProductQuery = async (productId) => {
 
 const getCategoryIdByName = async (aDataProduct) => {
   return new Promise( (resuelta, rechazada) => {
-    const aQuery = 'SELECT category_id AS categoryId FROM category WHERE category_name = ?; ;' 
-    db.connection.query(aQuery, aDataProduct['aCategory'],  function(error, results, fields){
+    const aQuery = 'SELECT category_id AS categoryId FROM category WHERE category_name = ?;' 
+    db.connection.query(aQuery, [aDataProduct['aCategory']],  function(error, results, fields){
       if (error) {
         console.error('Error al ejecutar la consulta -> addNewProduct:\n');
         throw error;
@@ -44,7 +30,7 @@ const getCategoryIdByName = async (aDataProduct) => {
 const getLicenseIdByName = async (aDataProduct) => {
   return new Promise( (resuelta, rechazada) => {
     const aQuery = 'SELECT licence_id AS licenseId FROM licence WHERE licence_name = ?;' 
-    db.connection.query(aQuery, aDataProduct['aLicense'],  function(error, results, fields){
+    db.connection.query(aQuery, [aDataProduct['aLicense']],  function(error, results, fields){
       if (error) {
         console.error('Error al ejecutar la consulta -> addNewProduct:\n');
         throw error;

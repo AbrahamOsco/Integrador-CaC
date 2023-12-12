@@ -44,7 +44,6 @@
     --spacing-16:1.6rem;
     --spacing-12:1.2rem;
     --spacing-8:0.8rem;
-
 }
 
 *,
@@ -85,10 +84,7 @@ img{
     width: 100%;
 }
 
-.container{
-    max-width: 1200px;
-    margin: 0 auto;
-}
+
 /*Fin de Normalizacion y declaracion de variables*/
 
 /*HEADER*/
@@ -148,24 +144,39 @@ main{
 .formulario{
    padding: var(--spacing-12);
    width: 50%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   padding-right: 100px;
+   margin: auto;
+}
+
+.form__data{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: var(--spacing-12);
+    justify-content: center;
+    align-items: center; /* Alinea verticalmente */
 }
 
 .formulario label{
     font-style: var(--alternative-font); 
     font-size: var(--font-small);
+    font-size: 23px;
     width: 50%;   
 }
 
 .form__data input{
     width: 50%; 
+    font-size: 23px;
     margin-bottom: var(--spacing-12);
     border: none;
     border-bottom: 3px solid var(--primary-solid);
+    margin-right: var(--spacing-128);
 }
 
-.form__data{
-    display: flex;
-    margin-bottom: var(--spacing-12);
+.form__data label{
+    margin-left: var(--spacing-128);
 }
 
 button{
@@ -178,8 +189,10 @@ button{
 }
 
 .div__button{
-    justify-content:space-around;
+    display: flex;
+    flex-direction: row;
     align-items: center; 
+    justify-content: end;
 }
 
 .div__button label{

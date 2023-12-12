@@ -3,6 +3,8 @@ const path = require('path');
 const { shopRouter } = require('./routes/shopRoutes.js')
 const { mainRouter } = require('./routes/mainRoutes.js')
 const { adminRouter } = require('./routes/adminRoutes.js')
+const { authRouter } = require('./routes/authRoutes.js')
+
 //const { adminRouter } = require('./routes/admin.routes.js')
 
 const app = express();
@@ -24,6 +26,7 @@ app.use(express.json());
 app.use('/', mainRouter)
 app.use('/shop', shopRouter)
 app.use('/admin', adminRouter)
+app.use('/auth', authRouter)
 
 //app.use('/admin', adminRouter)
 

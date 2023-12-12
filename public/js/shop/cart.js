@@ -89,7 +89,6 @@ const applyHandlerDeleteBtn = (aDeleteBtn, positionBtn) => {
         }).catch( (error) => {
 			console.error("Entro a la excepcion del fetch: Error:", error)
 		})
-
 	})
 } 
 

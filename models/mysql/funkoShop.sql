@@ -185,7 +185,7 @@ CREATE TABLE `user_has_role` (
   KEY `fk_user_has_role_role1_idx` (`role_role_id`),
   KEY `fk_user_has_role_user_idx` (`user_user_id`),
   CONSTRAINT `fk_user_has_role_role1` FOREIGN KEY (`role_role_id`) REFERENCES `role` (`role_id`),
-  CONSTRAINT `fk_user_has_role_user` FOREIGN KEY (`user_user_id`) REFERENCES `user` (`user_id`)
+  CONSTRAINT `fk_user_has_role_user` FOREIGN KEY (`user_user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 --
@@ -227,6 +227,8 @@ UPDATE licence SET licence_description = " Disfruta de una saga que sigue agrega
 UPDATE licence SET licence_name = "Pokemon Indigo" WHERE licence_id = 1;
 UPDATE licence SET licence_name =  "Star Wars & The Mandalorian " where licence_id = 2; 
 
+-- Inserto roles en la tablas role: 
+INSERT INTO role(role_name) VALUES ('admin')
 
 /*
 Prueba agregando una licencia
