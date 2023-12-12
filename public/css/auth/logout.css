@@ -94,18 +94,11 @@ footer{
 
 /* main ---------*/
 
-
-main{
-    background-color: white;
-    padding-bottom: 180px;
-}
-
 .div__main{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-bottom: -180px;
 }
 
 .backgSky{
