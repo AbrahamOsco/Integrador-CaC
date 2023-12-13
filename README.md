@@ -17,6 +17,7 @@ Paso 2: Iniciar el servicio copiar el sgt codigo: https://github.com/AbrahamOsco
 
 ## Ejecutar el proyecto: 
 Paso 1: Clonar el repo y en la misma ubicacion del index.js correr: **npm run dev**.
+
 Paso 2: Ir a http://localhost:3000 para ver el desarollo. 
 
 ## Folder Structure
