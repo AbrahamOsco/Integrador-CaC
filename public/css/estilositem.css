@@ -231,27 +231,27 @@ en el selector directo el 'a' del navbar NO en el padre ni en el abuelo.
     text-transform: uppercase; /* Convertir a mayúsculas */
     color: #000000; /* Color negro */
     font-family: var(--alternative-font);
-    
+    font-size: 18px;
 }
 
 
 .articulo_titulo2 {
-    font-size: 24px;
+    font-size: 34px;
+    font-weight: bolder;
     font-family: var(--alternative-font);
     text-transform: uppercase;
 }
 
 .articulo_detalle {
-    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
     margin-top: 10px;
 }
 
 .precio_producto {
-    font-size: 24px;
+    font-size: 35px;
     margin: 20px 0;
 }
-
-
 
 .carrito {
     background-color: #dc3545;
@@ -274,6 +274,13 @@ en el selector directo el 'a' del navbar NO en el padre ni en el abuelo.
     margin: var(--spacing-68)auto;
 
 }
+.item_input{
+    width: 80px;
+    height: 35px;
+    font-size: 32px;
+    text-align: center;
+}
+
 h2.shilder_title{
     font-family: var(--alternative-font);
     font-size: var(--font-display);
@@ -429,7 +436,7 @@ footer{
     border: none;
     padding: 10px;
     cursor: pointer;
-    
+    margin-left: 30px;
 }
 
 /* Botón de Menos */

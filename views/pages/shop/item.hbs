@@ -51,10 +51,10 @@
                 <h3 class="articulo_titulo">{{infoProduct.licence_name}}</h3>
                 <h2 class="articulo_titulo2">{{infoProduct.product_name}}</h2>
                 <p class="articulo_detalle">{{infoProduct.product_description}}</p>
-                <p class="precio_producto">{{infoProduct.price}}</p>
+                <p class="precio_producto">${{infoProduct.price}}</p>
                 <div class="cantidad-items">
                     <button id="subtract" class="item_quantity" type="button">-</button>
-                    <input class="item_input" type="text" name="quantity" id="quantity" placeholder="0">
+                    <input class="item_input" type="text" name="quantity" id="quantity" placeholder="    0   ">
                     <button id="add" class="item_quantity" type="button">+</button>
                     <button class="item__submit btn btn--primary btn--medium" id="addToTheCart" type="submit">Agregar al carrito</button>
                 </div>
