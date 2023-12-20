@@ -1,7 +1,7 @@
 # Integrador Codo A Codo
 ## Integrantes
 1. Abraham Osco
-2. Nicolas Mateo
+2. Nicolas Mateo Campero
 3. Ana Sanchez
 
 ## Setup de la base de datos:  
